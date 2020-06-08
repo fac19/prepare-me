@@ -55,6 +55,7 @@ export default createMuiTheme({
     MuiButton: {
       root: {
         'lineHeight': '2em',
+        'padding': '20px',
         'fontSize': '2.5vh',
         'borderRadius': '30px',
         'fontWeight': 'bold',
