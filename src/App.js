@@ -12,6 +12,7 @@ import updateState from './model/updateState';
 
 // Pages
 import LandingPage from './pages/Landing';
+import StoryTemplates from './pages/StoryTemplates';
 
 function App() {
   const [state, dispatch] = useReducer(updateState, initialState);
@@ -22,7 +23,8 @@ function App() {
         <SiteContext.Provider value={[state, dispatch]}>
           <Router>
             <Switch>
-              <Route path="/" component={LandingPage} />
+              <Route exact path="/" component={LandingPage} />
+              <Route path="/select-story-template" component={StoryTemplates} />
             </Switch>
           </Router>
         </SiteContext.Provider>
