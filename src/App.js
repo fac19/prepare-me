@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer } from "react";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
+import { StylesProvider } from "@material-ui/core/styles";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import "./App.css";
+import theme from "./theme";
+import SiteContext from "./model/SiteContext";
+import initialState from "./model/initialState";
+import updateState from "./model/updateState";
+
+// Pages
+import LandingPage from "./pages/Landing";
 
 function App() {
+  const [state, dispatch] = useReducer(updateState, initialState);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StylesProvider injectFirst>
+      <MuiThemeProvider theme={theme}>
+        <SiteContext.Provider value={[state, dispatch]}>
+          <Router>
+            <Switch>
+              <Route path="/" component={LandingPage} />
+            </Switch>
+          </Router>
+        </SiteContext.Provider>
+      </MuiThemeProvider>
+    </StylesProvider>
   );
 }
 
