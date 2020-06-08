@@ -1,0 +1,27 @@
+{
+    "extends": [
+        "react-app",
+        "plugin:jsx-a11y/recommended"
+    ],
+    "rules": {
+        "prefer-promise-reject-errors": "off",
+        "max-len": [
+            "error",
+            {
+                "code": 150,
+                "ignoreComments": true,
+                "ignoreUrls": true
+            }
+        ],
+        "react/jsx-filename-extension": [1, {
+            "extensions": [".js", ".jsx"]
+        }],
+        "react/jsx-one-expression-per-line": [0]
+    },
+    "plugins": ["jsx-a11y"],
+    "env": {
+        "es6": true,
+        "jest": true,
+        "browser": true
+    }
+}
