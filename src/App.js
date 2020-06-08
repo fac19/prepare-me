@@ -1,16 +1,16 @@
-import React, { useReducer } from "react";
-import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
-import { StylesProvider } from "@material-ui/core/styles";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { useReducer } from 'react';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import { StylesProvider } from '@material-ui/core/styles';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import "./App.css";
-import theme from "./theme";
-import SiteContext from "./model/SiteContext";
-import initialState from "./model/initialState";
-import updateState from "./model/updateState";
+import './App.css';
+import theme from './theme';
+import SiteContext from './model/SiteContext';
+import initialState from './model/initialState';
+import updateState from './model/updateState';
 
 // Pages
-import LandingPage from "./pages/Landing";
+import LandingPage from './pages/Landing';
 
 function App() {
   const [state, dispatch] = useReducer(updateState, initialState);
