@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { StylesProvider } from '@material-ui/core/styles';
+import { CssBaseline } from '@material-ui/core';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './App.css';
@@ -17,6 +18,7 @@ function App() {
   return (
     <StylesProvider injectFirst>
       <MuiThemeProvider theme={theme}>
+        <CssBaseline />
         <SiteContext.Provider value={[state, dispatch]}>
           <Router>
             <Switch>
