@@ -12,6 +12,7 @@ import updateState from './model/updateState';
 
 // Pages
 import LandingPage from './pages/LandingPage';
+import StoryPage from './pages/StoryPage';
 
 function App() {
   const [state, dispatch] = useReducer(updateState, initialState);
@@ -23,6 +24,7 @@ function App() {
           <Router>
             <Switch>
               <Route path="/" component={LandingPage} />
+              <Route path="/story-page/:pageNumber" component={StoryPage} />
             </Switch>
           </Router>
         </SiteContext.Provider>
