@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import SiteContext from '../model/SiteContext';
+import { useHistory } from 'react-router-dom';
 import {
   Grid,
   Container,
@@ -25,6 +26,15 @@ const MyMedia = styled(CardMedia)`
 `;
 
 const StoryTemplates = () => {
+  const [, dispatch] = React.useContext(SiteContext);
+  const history = useHistory();
+
+  const handleClick = (event) => {
+    const template = event.currentTarget.id;
+    dispatch({ type: 'load story template', template });
+    history.push('/story-page/1');
+  };
+
   return (
     <Container maxWidth="sm">
       <MyGrid
@@ -42,7 +52,7 @@ const StoryTemplates = () => {
           </MyTitle>
         </Grid>
 
-        <Card component={Link} to="/blank-story-template">
+        <Card id="blank" onClick={handleClick}>
           <MyMedia
             component="img"
             alt="Blank Template"
@@ -54,7 +64,7 @@ const StoryTemplates = () => {
           <CardHeader subheader="Blank Template" />
         </Card>
 
-        <Card component={Link} to="/school-story-template">
+        <Card id="school" onClick={handleClick}>
           <MyMedia
             component="img"
             alt="School Template"
