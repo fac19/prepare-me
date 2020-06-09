@@ -11,6 +11,7 @@ import initialState from './model/initialState';
 import updateState from './model/updateState';
 
 // Pages
+import StoryTemplates from './pages/StoryTemplates';
 import LandingPage from './pages/LandingPage';
 import StoryPage from './pages/StoryPage';
 
@@ -23,7 +24,8 @@ function App() {
         <SiteContext.Provider value={[state, dispatch]}>
           <Router>
             <Switch>
-              <Route path="/" component={LandingPage} />
+              <Route exact path="/" component={LandingPage} />
+              <Route path="/select-story-template" component={StoryTemplates} />
               <Route path="/story-page/:pageNumber" component={StoryPage} />
             </Switch>
           </Router>
