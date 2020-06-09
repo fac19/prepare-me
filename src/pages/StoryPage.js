@@ -10,15 +10,21 @@ import Landscape2 from '../components/pageTemplates/Landscape2';
 import FrontCover from '../components/pageTemplates/FrontCover';
 import BackCover from '../components/pageTemplates/BackCover';
 
-const TopNavDiv = styled.div`
-  width: 100%;
-  height: 12vh;
-  background: blue;
-`;
+import TopNavBar from '../components/TopNavBar';
+import BottomNavBar from '../components/BottomNavBar';
 
-const TopNav = () => {
-  return <TopNavDiv />;
-};
+// const TopNavDiv = styled.div`
+//   width: 100%;
+//   height: 12vh;
+//   background: blue;
+// `;
+
+// const TopNavBar = () => {
+//   return <TopNavDiv />;
+// };
+const MyGrid = styled(Grid)`
+  height: 100vh;
+`;
 
 const getPageTemplateByName = {
   Landscape1: Landscape1,
@@ -51,22 +57,19 @@ const StoryPage = () => {
 
   return (
     <>
-      <Grid container direction="column" spacing={2}>
-        <Grid item xs={12}>
-          <TopNav pageNumber={pageNumber} />
+      <MyGrid container direction="column" justify="space-between">
+        <Grid item>
+          <TopNavBar pageNumber={pageNumber} />
         </Grid>
-
         <Grid item>
           <OurPaper>
             <Page pageNumber={pageNumber} fields={fields} />
           </OurPaper>
         </Grid>
-
-        <Grid item xs={12}>
-          <TopNav pageNumber={pageNumber} />
+        <Grid item>
+          <BottomNavBar pageNumber={pageNumber} />
         </Grid>
-      </Grid>
-      {/* <BottomNav pageNumber={pageNumber}/> */}
+      </MyGrid>
     </>
   );
 };

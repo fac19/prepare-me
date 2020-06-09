@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Typography,
   Menu,
   MenuItem,
-  IconButton,
+  // IconButton,
   // ButtonGroup,
   // Button,
+  BottomNavigation,
+  BottomNavigationAction,
 } from '@material-ui/core';
+
+// Icons
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
@@ -16,17 +21,21 @@ import PrintOutlinedIcon from '@material-ui/icons/PrintOutlined';
 import GetAppOutlinedIcon from '@material-ui/icons/GetAppOutlined';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 
-// import styled from 'styled-components';
-
-// const MenuButton = styled(Button)`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: column;
-// `;
-
 const ITEM_HEIGHT = 48;
+const useStyles = makeStyles({
+  root: {
+    'width': '70%',
+    'color': 'black',
+    '&$selected': {
+      color: 'black',
+    },
+  },
+  selected: {},
+});
 
 const TopNavbar = () => {
+  const classes = useStyles();
+  const [value, setValue] = React.useState(0);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -40,57 +49,60 @@ const TopNavbar = () => {
 
   return (
     <>
-      {/* <ButtonGroup
-          // variant="text"
-          // color="primary"
-          aria-label="text primary button group"
-        >
-          <MenuButton>
-            <div>
-              <HomeOutlinedIcon />
-            </div>
-            <Typography>Home</Typography>
-          </MenuButton>
-          <Button>Two</Button>
-          <Button>Three</Button>
-        </ButtonGroup> */}
-      <IconButton color="inherit" aria-label="home" component={Link} to="/">
-        <HomeOutlinedIcon />
-        <Typography variant="h3" align="center">
-          Home
-        </Typography>
-      </IconButton>
-      <IconButton
-        color="inherit"
-        aria-label="delete"
-        component={Link}
-        to="/delete-page"
+      <BottomNavigation
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+        showLabels
       >
-        <DeleteOutlineOutlinedIcon />
-        <Typography variant="h3" align="center">
-          Delete
-        </Typography>
-      </IconButton>
-      <IconButton
-        color="inherit"
-        aria-label="add"
-        component={Link}
-        to="/add-page"
-      >
-        <AddOutlinedIcon />
-        <Typography variant="h3" align="center">
-          Add
-        </Typography>
-      </IconButton>
+        <BottomNavigationAction
+          selected
+          classes={{
+            root: classes.root,
+            selected: classes.selected,
+          }}
+          label="Home"
+          icon={<HomeOutlinedIcon />}
+          component={Link}
+          to="/"
+        />
+        <BottomNavigationAction
+          selected
+          classes={{
+            root: classes.root,
+            selected: classes.selected,
+          }}
+          label="Delete Page"
+          icon={<DeleteOutlineOutlinedIcon />}
+          component={Link}
+          to="/delete-page"
+        />
+        <BottomNavigationAction
+          selected
+          classes={{
+            root: classes.root,
+            selected: classes.selected,
+          }}
+          label="Add Page"
+          icon={<AddOutlinedIcon />}
+          component={Link}
+          to="/add-page"
+        />
 
-      <IconButton
-        aria-label="more"
-        aria-controls="long-menu"
-        aria-haspopup="true"
-        onClick={handleClick}
-      >
-        <MoreVertOutlinedIcon />
-      </IconButton>
+        <BottomNavigationAction
+          selected
+          classes={{
+            root: classes.root,
+            selected: classes.selected,
+          }}
+          aria-label="more"
+          aria-controls="long-menu"
+          aria-haspopup="true"
+          onClick={handleClick}
+          icon={<MoreVertOutlinedIcon />}
+        />
+      </BottomNavigation>
       <Menu
         id="long-menu"
         anchorEl={anchorEl}
@@ -100,7 +112,7 @@ const TopNavbar = () => {
         PaperProps={{
           style: {
             maxHeight: ITEM_HEIGHT * 4.5,
-            width: '20ch',
+            width: '25ch',
           },
         }}
       >
