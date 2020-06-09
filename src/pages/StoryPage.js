@@ -22,6 +22,9 @@ import BottomNavBar from '../components/BottomNavBar';
 // const TopNavBar = () => {
 //   return <TopNavDiv />;
 // };
+const MyGrid = styled(Grid)`
+  height: 100vh;
+`;
 
 const getPageTemplateByName = {
   Landscape1: Landscape1,
@@ -58,7 +61,7 @@ const StoryPage = () => {
 
   return (
     <>
-      <Grid container direction="column" spacing={2}>
+      <MyGrid container direction="column" justify="space-between">
         <Grid item>
           <TopNavBar pageNumber={pageNumber} />
         </Grid>
@@ -70,7 +73,7 @@ const StoryPage = () => {
         <Grid item>
           <BottomNavBar pageNumber={pageNumber} />
         </Grid>
-      </Grid>
+      </MyGrid>
     </>
   );
 };

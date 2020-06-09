@@ -16,6 +16,7 @@ const tealColor = '#0EB5BB';
 const useStyles = makeStyles({
   root: {
     'width': '100%',
+    'color': tealColor,
     '&$selected': {
       color: tealColor,
     },
@@ -31,6 +32,9 @@ function BottomNavBar({ pageNumber }) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const history = useHistory();
+  const bookSize = initialState.pages.length;
+  const isLastPage =
+    pageNumber >= bookSize ? `/final-page` : `/story-page/${pageNumber + 1}`;
 
   return (
     <BottomNavigation
@@ -64,7 +68,7 @@ function BottomNavBar({ pageNumber }) {
         />
       )}
       <Typography variant="h3" align="center">
-        {pageNumber}/{initialState.pages.length}
+        {pageNumber}/{bookSize}
       </Typography>
 
       <BottomNavigationAction
@@ -76,7 +80,7 @@ function BottomNavBar({ pageNumber }) {
         }}
         label="Next"
         icon={<NavigateNextIcon />}
-        onClick={() => history.push(`/story-page/${pageNumber + 1}`)}
+        onClick={() => history.push(isLastPage)}
       />
     </BottomNavigation>
   );
