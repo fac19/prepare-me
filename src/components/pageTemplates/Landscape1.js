@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import editHandler from './editHandler';
 import SiteContext from '../../model/SiteContext';
 
 const OurText = styled.textarea`
@@ -16,20 +17,13 @@ const OurPic = styled.img`
 
 function Landscape1({ pageNumber, fields }) {
   const [, dispatch] = React.useContext(SiteContext);
-
-  function editHandler(event, pageNumber) {
-    const newText = event.currentTarget.value;
-    const fieldName = event.currentTarget.id;
-    dispatch({ type: 'edit field', newText, fieldName, pageNumber });
-  }
-
   return (
     <>
       <OurPic src={fields.pic1}></OurPic>
       <OurText
         id="text1"
         value={fields.text1}
-        onChange={(e) => editHandler(e, pageNumber)}
+        onChange={(e) => editHandler(e, pageNumber, dispatch)}
       ></OurText>
     </>
   );

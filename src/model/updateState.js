@@ -19,6 +19,11 @@ function updateState(state, command) {
       copy.pages = nameToTemplate[template].pages;
       return copy;
     }
+    case 'edit field': {
+      const { newText, fieldName, pageNumber } = command;
+      copy.pages[pageNumber - 1].fields[fieldName] = newText;
+      return copy;
+    }
     default: {
       return copy;
     }
