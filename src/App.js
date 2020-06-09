@@ -13,6 +13,7 @@ import updateState from './model/updateState';
 // Pages
 import StoryTemplates from './pages/StoryTemplates';
 import LandingPage from './pages/LandingPage';
+import StoryPage from './pages/StoryPage';
 
 function App() {
   const [state, dispatch] = useReducer(updateState, initialState);
@@ -25,6 +26,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={LandingPage} />
               <Route path="/select-story-template" component={StoryTemplates} />
+              <Route path="/story-page/:pageNumber" component={StoryPage} />
               <Route path="/delete-page" component={StoryTemplates} />
               <Route path="/add-page" component={StoryTemplates} />
               <Route path="/view-mode" component={StoryTemplates} />
