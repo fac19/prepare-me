@@ -10,15 +10,7 @@ import Landscape2 from '../components/pageTemplates/Landscape2';
 import FrontCover from '../components/pageTemplates/FrontCover';
 import BackCover from '../components/pageTemplates/BackCover';
 
-const TopNavDiv = styled.div`
-  width: 100%;
-  height: 12vh;
-  background: blue;
-`;
-
-const TopNav = () => {
-  return <TopNavDiv />;
-};
+import TopNavBar from '../components/TopNavBar';
 
 const getPageTemplateByName = {
   Landscape1: Landscape1,
@@ -53,7 +45,7 @@ const StoryPage = () => {
     <>
       <Grid container direction="column" spacing={2}>
         <Grid item xs={12}>
-          <TopNav pageNumber={pageNumber} />
+          <TopNavBar pageNumber={pageNumber} />
         </Grid>
 
         <Grid item>
@@ -62,9 +54,9 @@ const StoryPage = () => {
           </OurPaper>
         </Grid>
 
-        <Grid item xs={12}>
-          <TopNav pageNumber={pageNumber} />
-        </Grid>
+        {/* <Grid item xs={12}> */}
+        {/* <TopNav pageNumber={pageNumber} /> */}
+        {/* </Grid> */}
       </Grid>
       {/* <BottomNav pageNumber={pageNumber}/> */}
     </>

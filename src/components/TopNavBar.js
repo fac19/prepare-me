@@ -26,7 +26,7 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 
 const ITEM_HEIGHT = 48;
 
-const TopNavbar = () => {
+const TopNavbar = ({ pageNumber }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 

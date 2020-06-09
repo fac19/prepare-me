@@ -12,8 +12,6 @@ import {
 import styled from 'styled-components';
 import PrepareMeLogo from '../static/pm.png';
 
-import TopNavBar from '../components/TopNavBar';
-
 const MyGrid = styled(Grid)`
   height: 100vh;
 `;
@@ -43,9 +41,6 @@ const StoryTemplates = () => {
         alignItems="center"
         justify="space-evenly"
       >
-        <Grid item>
-          <TopNavBar />
-        </Grid>
         <Grid item>
           <MyTitle variant="h3" align="center">
             Select A Story Template
