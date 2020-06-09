@@ -1,19 +1,76 @@
-import React, { useParams, useContext } from 'react';
+import React, { useContext } from 'react';
+import { useParams } from 'react-router-dom';
 import SiteState from '../model/SiteContext';
+import { Paper } from '@material-ui/core';
+import styled from 'styled-components';
+import { Grid } from '@material-ui/core';
+
+import Landscape1 from '../components/pageTemplates/Landscape1';
+import Landscape2 from '../components/pageTemplates/Landscape2';
+import FrontCover from '../components/pageTemplates/FrontCover';
+import BackCover from '../components/pageTemplates/BackCover';
+
+const TopNavDiv = styled.div`
+  width: 100%;
+  height: 12vh;
+  background: blue;
+`;
+
+const TopNav = () => {
+  return <TopNavDiv />;
+};
+
+const getPageTemplateByName = {
+  Landscape1: Landscape1,
+  Landscape2: Landscape2,
+  FrontCover: FrontCover,
+  BackCover: BackCover,
+};
+
+const OurPaper = styled(Paper)`
+  height: 70vh;
+  width: 50vh;
+  background: green;
+  margin: 0 auto;
+`;
 
 const StoryPage = () => {
+  // Get our page number from the URL params
   const params = useParams();
-  const pageNumber = params.pageNumber;
-  const [state, dispatch] = useContext(SiteState);
+  const pageNumber = Number(params.pageNumber);
+
+  // Get the app state from SiteState context
+  const [state] = useContext(SiteState);
+
+  // Get the fields for the page we are on
   const fields = state.pages[pageNumber - 1].fields;
-  // get template name from state
-  // get the component, as ThePage, by it's name
+
+  // Get the template component for the page we are on
+  const templateName = state.pages[pageNumber - 1].pageTemplate;
+  const Page = getPageTemplateByName[templateName];
+
+  console.log('pageNumber', pageNumber);
+  console.log('fields', fields);
+  console.log('templateName', templateName);
 
   return (
     <>
-      {/* <TopNav pageNumber={pageNumber}/> */}
-      {/* <ThePage pageNumber={pageNumber} fields={fields}/> */}
-      {/* <BottomNav pageNumber={pageNumber}/> */} */}
+      <Grid container direction="column" spacing={2}>
+        <Grid item xs={12}>
+          <TopNav pageNumber={pageNumber} />
+        </Grid>
+
+        <Grid item>
+          <OurPaper>
+            <Page pageNumber={pageNumber} fields={fields} />
+          </OurPaper>
+        </Grid>
+
+        <Grid item xs={12}>
+          <TopNav pageNumber={pageNumber} />
+        </Grid>
+      </Grid>
+      {/* <BottomNav pageNumber={pageNumber}/> */}
     </>
   );
 };
