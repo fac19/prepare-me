@@ -4,7 +4,7 @@ const startingSchool = {
   pages: [
     {
       // page 1
-      pageTemplate: 'FrontCover',
+      pageTemplate: 'Landscape1',
       fields: {
         text1: 'My New School - St Marys National School.',
         pic1:
