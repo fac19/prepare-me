@@ -2,38 +2,65 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Grid,
-  Button,
   Container,
   Card,
   CardMedia,
-  CardContent,
   CardHeader,
+  Typography,
 } from '@material-ui/core';
 import styled from 'styled-components';
+import PrepareMeLogo from '../static/pm.png';
+
+const MyGrid = styled(Grid)`
+  height: 100vh;
+`;
+
+const MyTitle = styled(Typography)``;
+
+const MyMedia = styled(CardMedia)`
+  height: 20vh;
+  width: 30vw;
+`;
 
 const StoryTemplates = () => {
   return (
     <Container maxWidth="sm">
-      <Grid container direction="column">
+      <MyGrid
+        container
+        direction="column"
+        alignItems="center"
+        justify="space-evenly"
+      >
         <Grid item>
-          <h1>Select A Story Template</h1>
+          <MyTitle variant="h3" align="center">
+            Select A Story Template
+          </MyTitle>
         </Grid>
-        {/* <Grid item> */}
+
         <Card component={Link} to={'/blank-story-template'}>
-          <CardMedia
-            image="/public/logo192.png"
+          <MyMedia
+            component="img"
+            alt="Blank Template"
+            height="150"
+            width="30px"
+            image={PrepareMeLogo}
             title="Blank Template"
-          ></CardMedia>
-          <CardHeader title="Blank Template" />
+          ></MyMedia>
+          <CardHeader subheader="Blank Template" />
         </Card>
-        {/* </Grid> */}
-        {/* <Grid item> */}
+
         <Card component={Link} to={'/school-story-template'}>
-          <CardMedia component={'img'} src={'logo192.png'}></CardMedia>
-          <CardHeader title="School Template" />
+          <MyMedia
+            component="img"
+            alt="School Template"
+            height="150"
+            width="30px"
+            image={PrepareMeLogo}
+            title="School Template"
+          ></MyMedia>
+          <CardHeader subheader="School Template" />
         </Card>
-        {/* </Grid> */}
-      </Grid>
+      </MyGrid>
     </Container>
   );
 };

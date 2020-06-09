@@ -11,8 +11,8 @@ import initialState from './model/initialState';
 import updateState from './model/updateState';
 
 // Pages
-import LandingPage from './pages/Landing';
 import StoryTemplates from './pages/StoryTemplates';
+import LandingPage from './pages/LandingPage';
 
 function App() {
   const [state, dispatch] = useReducer(updateState, initialState);
