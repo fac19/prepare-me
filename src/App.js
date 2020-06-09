@@ -32,6 +32,7 @@ function App() {
               <Route path="/view-mode" component={StoryTemplates} />
               <Route path="/download" component={StoryTemplates} />
               <Route path="/print" component={StoryTemplates} />
+              <Route path="/final-page" component={LandingPage} />
             </Switch>
           </Router>
         </SiteContext.Provider>
