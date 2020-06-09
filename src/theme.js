@@ -1,9 +1,29 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
+const primaryColor = '#FFFFFF';
+// const secondaryColor = "#0FC6CC";
+const secondaryColor = '#0EB5BB';
+
 export default createMuiTheme({
+  typography: {
+    h1: {
+      fontSize: '5vh',
+      fontWeight: 700,
+      lineHeight: 1.5,
+    },
+    h2: {
+      fontSize: '3vh',
+    },
+    h3: {
+      fontSize: '2.5vh',
+    },
+    h4: {
+      fontSize: 12,
+    },
+  },
   palette: {
     primary: {
-      main: '#00AAE1',
+      main: primaryColor,
       dark: '#143C8C',
       contrastText: '#fff',
     },
@@ -27,17 +47,24 @@ export default createMuiTheme({
     },
     MuiContainer: {
       root: {
-        minHeight: '100vh',
+        // minHeight: "100vh",
+        height: '100vh',
+        background: secondaryColor,
       },
     },
     MuiButton: {
       root: {
+        'lineHeight': '2em',
+        'padding': '20px',
+        'fontSize': '2.5vh',
+        'borderRadius': '30px',
         'fontWeight': 'bold',
-        'backgroundColor': 'yellow',
+        'backgroundColor': 'white',
         'margin': '10px',
         '&:hover': {
           backgroundColor: 'white',
         },
+        'color': secondaryColor,
       },
     },
   },

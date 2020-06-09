@@ -4,6 +4,6 @@ import App from './App';
 
 test('renders learn react link', () => {
   const { getByText } = render(<App />);
-  const welcomeText = getByText('Welcome to our storybuilder!');
+  const welcomeText = getByText(/WELCOME/i);
   expect(welcomeText).toBeInTheDocument();
 });
