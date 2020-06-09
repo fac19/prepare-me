@@ -11,6 +11,8 @@ import {
 import styled from 'styled-components';
 import PrepareMeLogo from '../static/pm.png';
 
+import TopNavBar from '../components/TopNavBar';
+
 const MyGrid = styled(Grid)`
   height: 100vh;
 `;
@@ -32,12 +34,15 @@ const StoryTemplates = () => {
         justify="space-evenly"
       >
         <Grid item>
+          <TopNavBar />
+        </Grid>
+        <Grid item>
           <MyTitle variant="h3" align="center">
             Select A Story Template
           </MyTitle>
         </Grid>
 
-        <Card component={Link} to={'/blank-story-template'}>
+        <Card component={Link} to="/blank-story-template">
           <MyMedia
             component="img"
             alt="Blank Template"
@@ -49,7 +54,7 @@ const StoryTemplates = () => {
           <CardHeader subheader="Blank Template" />
         </Card>
 
-        <Card component={Link} to={'/school-story-template'}>
+        <Card component={Link} to="/school-story-template">
           <MyMedia
             component="img"
             alt="School Template"

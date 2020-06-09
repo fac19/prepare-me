@@ -25,6 +25,11 @@ function App() {
             <Switch>
               <Route exact path="/" component={LandingPage} />
               <Route path="/select-story-template" component={StoryTemplates} />
+              <Route path="/delete-page" component={StoryTemplates} />
+              <Route path="/add-page" component={StoryTemplates} />
+              <Route path="/view-mode" component={StoryTemplates} />
+              <Route path="/download" component={StoryTemplates} />
+              <Route path="/print" component={StoryTemplates} />
             </Switch>
           </Router>
         </SiteContext.Provider>
