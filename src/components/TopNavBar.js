@@ -7,7 +7,11 @@ import {
   IconButton,
   // ButtonGroup,
   // Button,
+  // BottomNavigation,
+  // BottomNavigationAction,
 } from '@material-ui/core';
+
+// Icons
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
@@ -27,6 +31,8 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 const ITEM_HEIGHT = 48;
 
 const TopNavbar = () => {
+  // const classes = useStyles();
+  // const [value, setValue] = React.useState(0);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -40,20 +46,6 @@ const TopNavbar = () => {
 
   return (
     <>
-      {/* <ButtonGroup
-          // variant="text"
-          // color="primary"
-          aria-label="text primary button group"
-        >
-          <MenuButton>
-            <div>
-              <HomeOutlinedIcon />
-            </div>
-            <Typography>Home</Typography>
-          </MenuButton>
-          <Button>Two</Button>
-          <Button>Three</Button>
-        </ButtonGroup> */}
       <IconButton color="inherit" aria-label="home" component={Link} to="/">
         <HomeOutlinedIcon />
         <Typography variant="h3" align="center">
@@ -82,7 +74,6 @@ const TopNavbar = () => {
           Add
         </Typography>
       </IconButton>
-
       <IconButton
         aria-label="more"
         aria-controls="long-menu"
