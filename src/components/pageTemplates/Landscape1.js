@@ -17,7 +17,7 @@ function Landscape1({ fields }) {
   return (
     <>
       <OurPic src={fields.pic1}></OurPic>
-      <OurText>{fields.text1}</OurText>
+      <OurText value={fields.text1}></OurText>
     </>
   );
 }

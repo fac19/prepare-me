@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import SiteState from '../model/SiteContext';
+import SiteContext from '../model/SiteContext';
 import { Paper } from '@material-ui/core';
 import styled from 'styled-components';
 import { Grid } from '@material-ui/core';
@@ -39,8 +39,8 @@ const StoryPage = () => {
   const params = useParams();
   const pageNumber = Number(params.pageNumber);
 
-  // Get the app state from SiteState context
-  const [state] = useContext(SiteState);
+  // Get the app state from SiteContext context
+  const [state] = useContext(SiteContext);
 
   // Get the fields for the page we are on
   const fields = state.pages[pageNumber - 1].fields;
@@ -48,10 +48,6 @@ const StoryPage = () => {
   // Get the template component for the page we are on
   const templateName = state.pages[pageNumber - 1].pageTemplate;
   const Page = getPageTemplateByName[templateName];
-
-  console.log('pageNumber', pageNumber);
-  console.log('fields', fields);
-  console.log('templateName', templateName);
 
   return (
     <>
