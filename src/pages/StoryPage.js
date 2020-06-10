@@ -48,6 +48,9 @@ const StoryPage = () => {
   // Get the app state from SiteContext context
   const [state] = useContext(SiteContext);
 
+  // Get the total number of pages
+  const totalPages = state.pages.length;
+
   // Get the fields for the page we are on
   const fields = state.pages[pageNumber - 1].fields;
 
@@ -67,7 +70,7 @@ const StoryPage = () => {
           </OurPaper>
         </Grid>
         <Grid item>
-          <BottomNavBar pageNumber={pageNumber} />
+          <BottomNavBar {...{ pageNumber, totalPages }} />
         </Grid>
       </MyGrid>
     </>
