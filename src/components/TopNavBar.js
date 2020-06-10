@@ -1,13 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Typography,
   Menu,
   MenuItem,
-  // IconButton,
-  // ButtonGroup,
-  // Button,
   BottomNavigation,
   BottomNavigationAction,
 } from '@material-ui/core';
@@ -33,11 +30,12 @@ const useStyles = makeStyles({
   selected: {},
 });
 
-const TopNavbar = () => {
+const TopNavbar = ({ pageNumber }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const history = useHistory();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -45,6 +43,13 @@ const TopNavbar = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleAdd = () => {
+    history.push({
+      pathname: '/select-page-template',
+      params: { pageNumber },
+    });
   };
 
   return (
@@ -86,8 +91,7 @@ const TopNavbar = () => {
           }}
           label="Add Page"
           icon={<AddOutlinedIcon />}
-          component={Link}
-          to="/add-page"
+          onClick={handleAdd}
         />
 
         <BottomNavigationAction
