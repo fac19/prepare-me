@@ -23,7 +23,7 @@
     "eject": "react-scripts eject",
     "format": "prettier --write './src/*.js'",
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run --spec 'cypress/integration/prepare.spec.js'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -57,7 +57,8 @@
   "lint-staged": {
     "*.js": [
       "pretty-quick --staged",
-      "eslint"
+      "eslint",
+      "cy:run"
     ]
   }
 }
