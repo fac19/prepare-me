@@ -8,8 +8,6 @@ import { Typography } from '@material-ui/core';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
-import initialState from '../model/initialState';
-
 // const yellowColor = '#fbb03b';
 const tealColor = '#0EB5BB';
 
@@ -28,13 +26,13 @@ const useStyles = makeStyles({
   disabled: {},
 });
 
-function BottomNavBar({ pageNumber }) {
+function BottomNavBar({ pageNumber, totalPages }) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const history = useHistory();
-  const bookSize = initialState.pages.length;
+  // const totalPages = initialState.pages.length;
   const isLastPage =
-    pageNumber >= bookSize ? `/final-page` : `/story-page/${pageNumber + 1}`;
+    pageNumber >= totalPages ? `/final-page` : `/story-page/${pageNumber + 1}`;
 
   return (
     <BottomNavigation
@@ -68,7 +66,7 @@ function BottomNavBar({ pageNumber }) {
         />
       )}
       <Typography variant="h3" align="center">
-        {pageNumber}/{bookSize}
+        {pageNumber}/{totalPages}
       </Typography>
 
       <BottomNavigationAction
