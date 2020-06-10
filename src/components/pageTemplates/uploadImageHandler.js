@@ -7,7 +7,8 @@ function uploadImageHandler(e, pageNumber, dispatch) {
       uploadPreset: 'ru2kdjzc',
       cropping: true,
       sources: ['local', 'url', 'image_search', 'facebook', 'google_drive'],
-      // googleApikey: searchBySites: [array of strings]
+      // searchBySites: ['https://unsplash.com/'],
+      // googleApikey:
       //   styles: {
       //     palette: {
       //   window: "#FFF",
