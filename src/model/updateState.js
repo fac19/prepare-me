@@ -24,6 +24,11 @@ function updateState(state, command) {
       copy.pages[pageNumber - 1].fields[fieldName] = newText;
       return copy;
     }
+    case 'upload image': {
+      const { url, fieldName, pageNumber } = command;
+      copy.pages[pageNumber - 1].fields[fieldName] = url;
+      return copy;
+    }
     default: {
       return copy;
     }

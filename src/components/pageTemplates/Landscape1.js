@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import editHandler from './editHandler';
 import SiteContext from '../../model/SiteContext';
+import uploadImageHandler from './uploadImageHandler';
 
 const OurText = styled.textarea`
   font-family: 'Short Stack', cursive;
@@ -19,7 +20,11 @@ function Landscape1({ pageNumber, fields }) {
   const [, dispatch] = React.useContext(SiteContext);
   return (
     <>
-      <OurPic src={fields.pic1}></OurPic>
+      <OurPic
+        src={fields.pic1}
+        id="pic1"
+        onClick={(e) => uploadImageHandler(e, pageNumber, dispatch)}
+      ></OurPic>
       <OurText
         id="text1"
         value={fields.text1}
