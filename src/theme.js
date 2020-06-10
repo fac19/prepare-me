@@ -3,6 +3,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 const primaryColor = '#FFFFFF';
 // const secondaryColor = "#0FC6CC";
 const secondaryColor = '#0EB5BB';
+const tertiaryColor = '#FBB03B';
 
 export default createMuiTheme({
   typography: {
@@ -41,7 +42,7 @@ export default createMuiTheme({
     MuiCssBaseline: {
       '@global': {
         html: {
-          background: 'red',
+          background: secondaryColor,
         },
       },
     },
@@ -52,6 +53,12 @@ export default createMuiTheme({
         background: secondaryColor,
       },
     },
+    MuiGrid: {
+      root: {
+        // backgroundColor: secondary,
+        // TODO we can't seem to get grid background
+      },
+    },
     MuiButton: {
       root: {
         'lineHeight': '2em',
@@ -59,12 +66,12 @@ export default createMuiTheme({
         'fontSize': '2.5vh',
         'borderRadius': '30px',
         'fontWeight': 'bold',
-        'backgroundColor': 'white',
+        'backgroundColor': secondaryColor,
         'margin': '10px',
         '&:hover': {
-          backgroundColor: 'white',
+          backgroundColor: tertiaryColor,
         },
-        'color': secondaryColor,
+        'color': primaryColor,
       },
     },
   },

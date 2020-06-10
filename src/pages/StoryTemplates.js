@@ -16,9 +16,19 @@ const MyGrid = styled(Grid)`
   height: 100vh;
 `;
 
+const MyCard = styled(Card)`
+  transition: 0.3s;
+  :hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: 0.5s;
+  }
+`;
+
 const MyTitle = styled(Typography)``;
 
 const MyMedia = styled(CardMedia)`
+  padding: 1em;
   height: 20vh;
   width: 30vw;
 `;
@@ -47,7 +57,7 @@ const StoryTemplates = () => {
           </MyTitle>
         </Grid>
 
-        <Card id="blank" onClick={handleClick}>
+        <MyCard id="blank" onClick={handleClick}>
           <MyMedia
             component="img"
             alt="Blank Template"
@@ -57,9 +67,9 @@ const StoryTemplates = () => {
             title="Blank Template"
           ></MyMedia>
           <CardHeader subheader="Blank Template" />
-        </Card>
+        </MyCard>
 
-        <Card id="school" onClick={handleClick}>
+        <MyCard id="school" onClick={handleClick}>
           <MyMedia
             component="img"
             alt="School Template"
@@ -69,7 +79,7 @@ const StoryTemplates = () => {
             title="School Template"
           ></MyMedia>
           <CardHeader subheader="School Template" />
-        </Card>
+        </MyCard>
       </MyGrid>
     </Container>
   );
