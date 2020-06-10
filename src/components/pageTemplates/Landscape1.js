@@ -2,13 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import editHandler from './editHandler';
 import SiteContext from '../../model/SiteContext';
-import { Link } from 'react-router-dom';
 
 const OurText = styled.textarea`
   font-family: 'Short Stack', cursive;
   font-size: 2vh;
   width: 100%;
-  height: 50%;
+  height: 60%;
 `;
 
 const OurPic = styled.img`
@@ -26,7 +25,6 @@ function Landscape1({ pageNumber, fields }) {
         value={fields.text1}
         onChange={(e) => editHandler(e, pageNumber, dispatch)}
       ></OurText>
-      <Link to={`/story-page/${pageNumber + 1}`}>Next Page >>></Link>
     </>
   );
 }
