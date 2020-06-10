@@ -1,92 +1,118 @@
 import React from 'react';
-// import SiteContext from '../model/SiteContext';
-// import { useHistory } from 'react-router-dom';
+import SiteContext from '../model/SiteContext';
+import { useHistory } from 'react-router-dom';
 import {
   Grid,
-  Container,
   Card,
   CardMedia,
   CardHeader,
   Typography,
 } from '@material-ui/core';
-// import styled from 'styled-components';
+import styled from 'styled-components';
+
+// Images
 import l1 from '../static/l1.svg';
 import l2 from '../static/l2.svg';
 import p1 from '../static/p1.svg';
 import p2 from '../static/p2.svg';
 
-const PageTemplates = () => {
-  function handleClick(e) {
-    console.log(e.target);
+const secondaryColor = '#0EB5BB';
+
+const MyGrid = styled(Grid)`
+  background-color: ${secondaryColor};
+`;
+
+const MyCard = styled(Card)`
+  margin: 1em;
+  width: 200px;
+  transition: 0.3s;
+  :hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: 0.5s;
   }
+`;
+
+const MyTitle = styled(Typography)`
+  padding: 1em;
+`;
+
+const MyMedia = styled(CardMedia)`
+  padding: 1em;
+  height: 100%;
+  width: 100%;
+`;
+
+const PageTemplates = () => {
+  const [, dispatch] = React.useContext(SiteContext);
+  const history = useHistory();
+  const pageNumber = history.location.params.pageNumber;
+
+  function handleClick(e) {
+    dispatch({
+      type: 'add page',
+      template: e.currentTarget.id,
+      pageNumber,
+    });
+    history.push(`/story-page/${pageNumber + 1}`);
+  }
+
   return (
-    <Container maxWidth="sm">
-      <Grid
-        container
-        direction="column"
-        alignItems="center"
-        justify="space-evenly"
-      >
-        <Grid item>
-          <Typography variant="h3" align="center">
-            Select A Page Template
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Card id="default-page-template" onClick={handleClick}>
-            <CardMedia
-              component="img"
-              alt="landscape 1"
-              height="150"
-              width="30px"
-              image={l1}
-              title="Landsacape One"
-            ></CardMedia>
-            <CardHeader subheader="Default Template" />
-          </Card>
-
-          <Card>
-            <CardMedia
-              component="img"
-              alt="landscape 2"
-              height="150"
-              width="30px"
-              image={l2}
-              title="Landscape Two"
-            ></CardMedia>
-            <CardHeader subheader="Landscape Two" />
-          </Card>
-        </Grid>
-
-        <Grid item>
-          <Card>
-            <CardMedia
-              component="img"
-              alt="portait one"
-              height="150"
-              width="30px"
-              image={p1}
-              title="Portrait One"
-            ></CardMedia>
-            <CardHeader subheader="Portrait One" />
-          </Card>
-        </Grid>
-
-        <Grid item>
-          <Card>
-            <CardMedia
-              component="img"
-              alt="portait two"
-              height="150"
-              width="30px"
-              image={p2}
-              title="Portrait Two"
-            ></CardMedia>
-            <CardHeader subheader="Portrait Two" />
-          </Card>
-        </Grid>
+    <MyGrid container justify="space-around">
+      <Grid item xs={12}>
+        <MyTitle variant="h2" align="center" justify="space-between">
+          Select A Page Template
+        </MyTitle>
       </Grid>
-    </Container>
+
+      <Grid item>
+        <MyCard id="Landscape1" onClick={handleClick}>
+          <MyMedia
+            component="img"
+            alt="landscape 1"
+            image={l1}
+            title="Landscape One"
+          ></MyMedia>
+          <CardHeader subheader="Default Template" />
+        </MyCard>
+      </Grid>
+
+      <Grid item>
+        <MyCard>
+          <MyMedia
+            component="img"
+            alt="landscape 2"
+            image={l2}
+            title="Landscape Two"
+          ></MyMedia>
+          <CardHeader subheader="Landscape Two" />
+        </MyCard>
+      </Grid>
+
+      <Grid item>
+        <MyCard>
+          <MyMedia
+            component="img"
+            alt="portrait one"
+            image={p1}
+            title="Portrait One"
+          ></MyMedia>
+          <CardHeader subheader="Portrait One" />
+        </MyCard>
+      </Grid>
+
+      <Grid item>
+        <MyCard>
+          <MyMedia
+            component="img"
+            alt="portrait two"
+            image={p2}
+            title="Portrait Two"
+          ></MyMedia>
+          <CardHeader subheader="Portrait Two" />
+        </MyCard>
+      </Grid>
+    </MyGrid>
   );
 };
 

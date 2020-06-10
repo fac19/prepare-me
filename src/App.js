@@ -29,7 +29,7 @@ function App() {
               <Route path="/select-story-template" component={StoryTemplates} />
               <Route path="/story-page/:pageNumber" component={StoryPage} />
               <Route path="/delete-page" component={StoryTemplates} />
-              <Route path="/add-page" component={PageTemplates} />
+              <Route path="/select-page-template" component={PageTemplates} />
               <Route path="/view-mode" component={StoryTemplates} />
               <Route path="/download" component={StoryTemplates} />
               <Route path="/print" component={StoryTemplates} />
