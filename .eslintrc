@@ -1,5 +1,5 @@
 {
-  "extends": ["react-app", "plugin:jsx-a11y/recommended"],
+  "extends": ["react-app", "plugin:jsx-a11y/recommended", "plugin:cypress/recommended"],
   "rules": {
     "prefer-promise-reject-errors": "off",
     "max-len": [
@@ -18,7 +18,7 @@
     ],
     "react/jsx-one-expression-per-line": [0]
   },
-  "plugins": ["jsx-a11y"],
+  "plugins": ["jsx-a11y", "cypress"],
   "env": {
     "es6": true,
     "jest": true,
