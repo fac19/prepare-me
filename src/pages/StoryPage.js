@@ -36,7 +36,7 @@ const getPageTemplateByName = {
 const OurPaper = styled(Paper)`
   height: 70vh;
   width: 50vh;
-  background: green;
+  // background: green;
   margin: 0 auto;
 `;
 

@@ -14,6 +14,7 @@ const OurText = styled.textarea`
 const OurPic = styled.img`
   width: 100%;
   height: 25%;
+  object-fit: contain;
 `;
 
 function Landscape2({ pageNumber, fields }) {
