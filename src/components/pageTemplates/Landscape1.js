@@ -33,4 +33,11 @@ function Landscape1({ pageNumber, fields }) {
     </>
   );
 }
+
+Landscape1.fields = {
+  pic1:
+    'https://res.cloudinary.com/didur5psx/image/upload/v1591714780/starting_school/yourpic_rjemqq.jpg',
+  text1: 'Click to edit text',
+};
+
 export default Landscape1;
