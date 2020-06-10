@@ -16,14 +16,15 @@
     "styled-components": "^5.1.1"
   },
   "scripts": {
-    "test:report": "react-scripts test --updateSnapshot --coverage --watchAll=false",
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-scripts start",
+    "test": "react-scripts test --watchAll",
+    "test:report": "react-scripts test --updateSnapshot --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "format": "prettier --write './src/*.js'",
     "cy:open": "cypress open",
-    "cy:run": "cypress run --spec 'cypress/integration/prepare.spec.js'"
+    "cy:run": "cypress run --spec 'cypress/integration/prepare.spec.js'",
+    "cy:ci": "start-server-and-test start http://localhost:3000 cy:run"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,7 +48,8 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.9",
     "prettier": "^2.0.5",
-    "pretty-quick": "^2.0.1"
+    "pretty-quick": "^2.0.1",
+    "start-server-and-test": "^1.11.0"
   },
   "husky": {
     "hooks": {
@@ -58,6 +60,7 @@
     "*.js": [
       "pretty-quick --staged",
       "eslint",
+      "test",
       "cy:run"
     ]
   }
