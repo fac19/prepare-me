@@ -5,9 +5,8 @@ function uploadImageHandler(e, pageNumber, dispatch) {
     {
       cloudName: 'prepareme',
       uploadPreset: 'ru2kdjzc',
-      sources: ['local', 'url', 'image_search', 'google_drive', 'facebook'],
-      googleApiKey: 'AIzaSyCoy_NII_6Wssms4Z6GHLTyZVJVpgr4Cic',
-      // showAdvancedOptions: true,
+      sources: ['local', 'image_search', 'url', 'google_drive', 'facebook'],
+      googleApiKey: process.env.REACT_APP_googleAPIkey,
       cropping: true,
       multiple: false,
       defaultSource: 'local',
@@ -32,7 +31,7 @@ function uploadImageHandler(e, pageNumber, dispatch) {
         //   "'Poppins', sans-serif": {
         //     url: 'https://fonts.googleapis.com/css?family=Poppins',
         //     active: true,
-        //   },
+        //   //   },
       },
     },
 
