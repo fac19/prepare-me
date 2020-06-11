@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     'width': '100%',
     'color': tealColor,
     '&$selected': {
-      color: tealColor,
+      color: 'black',
     },
     '&$disabled': {
       color: '#000',
@@ -32,43 +32,56 @@ function BottomNavBar({ pageNumber, totalPages }) {
   const history = useHistory();
   // const totalPages = initialState.pages.length;
   const isLastPage =
-    pageNumber >= totalPages ? `/final-page` : `/story-page/${pageNumber + 1}`;
+    pageNumber >= totalPages
+      ? `/actions-page`
+      : `/story-page/${pageNumber + 1}`;
 
-  return (
-    <BottomNavigation
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-      }}
-      showLabels
-    >
-      {pageNumber !== 1 ? (
-        <BottomNavigationAction
-          selected
-          classes={{
-            root: classes.root,
-            selected: classes.selected,
-          }}
-          label="Back"
-          icon={<NavigateBeforeIcon />}
-          onClick={() => history.push(`/story-page/${pageNumber - 1}`)}
-        />
-      ) : (
-        <BottomNavigationAction
-          disabled
-          classes={{
-            root: classes.root,
-            disabled: classes.disabled,
-          }}
-          label="Back"
-          icon={<NavigateBeforeIcon />}
-          onClick={() => history.push(`/story-page/${pageNumber - 1}`)}
-        />
-      )}
-      <Typography variant="h3" align="center">
-        {pageNumber}/{totalPages}
-      </Typography>
+  const NormalBackButton = () => {
+    return (
+      <BottomNavigationAction
+        selected
+        classes={{
+          root: classes.root,
+          selected: classes.selected,
+        }}
+        label="Back"
+        icon={<NavigateBeforeIcon />}
+        onClick={() => history.push(`/story-page/${pageNumber - 1}`)}
+      />
+    );
+  };
 
+  const DisabledBackButton = () => {
+    return (
+      <BottomNavigationAction
+        disabled
+        classes={{
+          root: classes.root,
+          disabled: classes.disabled,
+        }}
+        label="Back Disabled"
+      />
+    );
+  };
+
+  const ActionsPageBackButton = () => {
+    return (
+      <BottomNavigationAction
+        selected
+        classes={{
+          root: classes.root,
+          selected: classes.selected,
+          focused: classes.focused,
+        }}
+        label="Back"
+        icon={<NavigateBeforeIcon />}
+        onClick={() => history.goBack()}
+      />
+    );
+  };
+
+  const NormalNextButton = () => {
+    return (
       <BottomNavigationAction
         selected
         classes={{
@@ -80,7 +93,89 @@ function BottomNavBar({ pageNumber, totalPages }) {
         icon={<NavigateNextIcon />}
         onClick={() => history.push(isLastPage)}
       />
+    );
+  };
+
+  const DisabledNextButton = () => {
+    return (
+      <BottomNavigationAction
+        disabled
+        classes={{
+          root: classes.root,
+          disabled: classes.disabled,
+          focused: classes.focused,
+        }}
+        label="Next Disabled"
+      />
+    );
+  };
+
+  const PageNumberDisplay = () => {
+    return (
+      <Typography variant="h3" align="center">
+        {pageNumber}/{totalPages}
+      </Typography>
+    );
+  };
+
+  const PageFinishDisplay = () => {
+    return (
+      <Typography variant="h3" align="center">
+        Finished
+      </Typography>
+    );
+  };
+
+  let Back = NormalBackButton;
+  if (pageNumber === 1) Back = DisabledBackButton; // unless we're on 1st page
+  if (!pageNumber) Back = ActionsPageBackButton; // unless we're on actions page
+
+  let PageDisp = PageNumberDisplay;
+  if (!pageNumber) PageDisp = PageFinishDisplay; // unless we're on actions page
+
+  let Next = NormalNextButton;
+  if (!pageNumber) Next = DisabledNextButton; // unless we're on actions page
+
+  return (
+    <BottomNavigation
+      value={value}
+      onChange={(event, newValue) => {
+        setValue(newValue);
+      }}
+      showLabels
+    >
+      {Back && <Back />}
+      {PageDisp && <PageDisp />}
+      {Next && <Next />}
     </BottomNavigation>
+
+    // <BottomNavigation
+    //   value={value}
+    //   onChange={(event, newValue) => {
+    //     setValue(newValue);
+    //   }}
+    //   showLabels
+    // >
+    //   {!pageNumber ? (
+    //     <>
+    //       <ActionsPageBackButton />
+    //       <PageFinishDisplay />
+    //       <DisabledNextButton />
+    //     </>
+    //   ) : pageNumber === 1 ? (
+    //     <>
+    //       <DisabledBackButton />
+    //       <PageNumberDisplay />
+    //       <NormalNextButton />
+    //     </>
+    //   ) : (
+    //     <>
+    //       <NormalBackButton />
+    //       <PageNumberDisplay />
+    //       <NormalNextButton />
+    //     </>
+    //   )}
+    // </BottomNavigation>
   );
 }
 
