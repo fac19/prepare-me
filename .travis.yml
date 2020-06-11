@@ -8,4 +8,4 @@ script:
   - npm test
   - npm run test:report
   - npm run build
-  - num run cy:ci --record
+  - npm run cy:ci --record
