@@ -1,12 +1,12 @@
 function uploadImageHandler(e, pageNumber, dispatch) {
   const fieldName = e.currentTarget.id;
-
+  const googlekey = process.env.REACT_APP_googleAPIkey;
   window.cloudinary.openUploadWidget(
     {
       cloudName: 'prepareme',
       uploadPreset: 'ru2kdjzc',
       sources: ['local', 'image_search', 'url', 'google_drive', 'facebook'],
-      googleApiKey: process.env.REACT_APP_googleAPIkey,
+      googleApiKey: googlekey,
       cropping: true,
       multiple: false,
       defaultSource: 'local',
