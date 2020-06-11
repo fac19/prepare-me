@@ -15,6 +15,7 @@ import StoryTemplates from './pages/StoryTemplates';
 import PageTemplates from './pages/PageTemplates';
 import LandingPage from './pages/LandingPage';
 import StoryPage from './pages/StoryPage';
+import ActionsPage from './pages/ActionsPage';
 
 function App() {
   const [state, dispatch] = useReducer(updateState, initialState);
@@ -25,6 +26,7 @@ function App() {
         <SiteContext.Provider value={[state, dispatch]}>
           <Router>
             <Switch>
+              <Route path="/actions-page" component={ActionsPage} />
               <Route exact path="/" component={LandingPage} />
               <Route path="/select-story-template" component={StoryTemplates} />
               <Route path="/story-page/:pageNumber" component={StoryPage} />
@@ -33,7 +35,6 @@ function App() {
               <Route path="/view-mode" component={StoryTemplates} />
               <Route path="/download" component={StoryTemplates} />
               <Route path="/print" component={StoryTemplates} />
-              <Route path="/final-page" component={LandingPage} />
             </Switch>
           </Router>
         </SiteContext.Provider>
