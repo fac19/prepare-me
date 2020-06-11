@@ -8,14 +8,6 @@ import SiteContext from '../model/SiteContext';
 
 console.log('IN FINAL PAGE.');
 
-const TitleText = styled(Typography)`
-  /* color: #ffffff; */
-`;
-
-const SubText = styled(Typography)`
-  /* color: #ffffff; */
-`;
-
 const MyGrid = styled(Grid)`
   height: 100vh;
   /* border: 5px solid red; */
@@ -34,13 +26,13 @@ function FinalPage() {
       justify="space-evenly"
     >
       <Grid item>
-        <Typography variant="h3" align="center">
+        <Typography variant="h1" align="center">
           Looks like you're finished.
         </Typography>
       </Grid>
       <Grid item>
-        <Typography variant="h3" align="center">
-          What would you like to do now.
+        <Typography variant="h2" align="center">
+          What would you like to do now?
         </Typography>
       </Grid>
       <Grid item>
