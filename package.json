@@ -18,12 +18,12 @@
   "scripts": {
     "build": "react-scripts build",
     "start": "react-scripts start",
-    "test": "react-scripts test --watchAll",
+    "test": "CI=true react-scripts test --env=jsdom",
     "test:report": "react-scripts test --updateSnapshot --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "format": "prettier --write './src/*.js'",
     "cy:open": "cypress open",
-    "cy:run": "cypress run --spec 'cypress/integration/prepare.spec.js'",
+    "cy:run": "cypress run --spec 'cypress/integration/*.spec.js'",
     "cy:ci": "start-server-and-test start http://localhost:3000 cy:run"
   },
   "eslintConfig": {
@@ -53,15 +53,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm test"
     }
   },
   "lint-staged": {
     "*.js": [
       "pretty-quick --staged",
-      "eslint",
-      "test",
-      "cy:run"
+      "eslint"
     ]
   }
 }
