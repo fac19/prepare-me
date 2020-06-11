@@ -7,6 +7,9 @@
 
 # testing
 /coverage
+/cypress/integration/examples
+/cypress/videos
+
 
 # production
 /build
