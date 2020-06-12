@@ -40,7 +40,7 @@ Show what the library does as concisely as possible, developers should be able t
 1. clone this repo
 2. install all packages with ```npm i```
 3. run localhost with ```npm start```
-4. **ASK someone from the team for the Google API key**
+4. **Ask someone from the team for the Google API key**
 5. to run the cypress tests, run ```npm run cy:open``` Note: the server must be running!
 
 
