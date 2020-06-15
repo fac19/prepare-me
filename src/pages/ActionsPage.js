@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import BottomNavBar from '../components/BottomNavBar';
 import SiteContext from '../model/SiteContext';
 
-console.log('IN FINAL PAGE.');
+// console.log('IN FINAL PAGE.');
 
 const MyGrid = styled(Grid)`
   height: 100vh;
