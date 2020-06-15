@@ -8,6 +8,7 @@ import uploadImageHandler from './uploadImageHandler';
 const Logo = styled.img`
   width: 15vw;
   height: auto;
+  position: relative;
   top: 15vh;
   left: 30vw;
 `;
