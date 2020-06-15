@@ -8,6 +8,7 @@ import {
   BottomNavigation as TopNavigation,
   BottomNavigationAction as TopNavigationAction,
 } from '@material-ui/core';
+import RenderStory from './RenderStory';
 
 import WarningPage from './WarningPage';
 import SiteContext from '../model/SiteContext';
@@ -149,13 +150,9 @@ const TopNavbar = ({ pageNumber }) => {
           key="Download"
           selected={'Download' === 'Pyxis'}
           onClick={handleClose}
-          component={Link}
-          to="/download"
         >
           <GetAppOutlinedIcon />
-          <Typography variant="h3" align="center">
-            Download
-          </Typography>
+          <RenderStory />
         </MenuItem>
         <MenuItem
           key="Print"
