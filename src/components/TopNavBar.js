@@ -5,11 +5,12 @@ import {
   Typography,
   Menu,
   MenuItem,
-  BottomNavigation,
-  BottomNavigationAction,
+  BottomNavigation as TopNavigation,
+  BottomNavigationAction as TopNavigationAction,
 } from '@material-ui/core';
 
 import WarningPage from './WarningPage';
+import SiteContext from '../model/SiteContext';
 
 // Icons
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
@@ -39,10 +40,9 @@ const TopNavbar = ({ pageNumber }) => {
   const [alert, setAlert] = React.useState(false);
   const open = Boolean(anchorEl);
   const history = useHistory();
+  const [, dispatch] = React.useContext(SiteContext);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+  // const handleClick = (event) => {};
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -55,16 +55,24 @@ const TopNavbar = ({ pageNumber }) => {
     });
   };
 
+  const handleDelete = () => {
+    console.log('delete handler');
+    dispatch({
+      type: 'delete page',
+      pageNumber,
+    });
+  };
+
   return (
     <>
-      <BottomNavigation
+      <TopNavigation
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
         showLabels
       >
-        <BottomNavigationAction
+        <TopNavigationAction
           selected
           classes={{
             root: classes.root,
@@ -74,7 +82,7 @@ const TopNavbar = ({ pageNumber }) => {
           icon={<HomeOutlinedIcon />}
           onClick={() => setAlert(true)}
         />
-        <BottomNavigationAction
+        <TopNavigationAction
           selected
           classes={{
             root: classes.root,
@@ -82,10 +90,11 @@ const TopNavbar = ({ pageNumber }) => {
           }}
           label="Delete Page"
           icon={<DeleteOutlineOutlinedIcon />}
+          onClick={handleDelete}
           component={Link}
-          to="/delete-page"
+          to={`/story-page/${pageNumber - 1 || 1}`}
         />
-        <BottomNavigationAction
+        <TopNavigationAction
           selected
           classes={{
             root: classes.root,
@@ -96,7 +105,7 @@ const TopNavbar = ({ pageNumber }) => {
           onClick={handleAdd}
         />
 
-        <BottomNavigationAction
+        <TopNavigationAction
           selected
           classes={{
             root: classes.root,
@@ -105,10 +114,12 @@ const TopNavbar = ({ pageNumber }) => {
           aria-label="more"
           aria-controls="long-menu"
           aria-haspopup="true"
-          onClick={handleClick}
+          onClick={(event) => {
+            setAnchorEl(event.currentTarget);
+          }}
           icon={<MoreVertOutlinedIcon />}
         />
-      </BottomNavigation>
+      </TopNavigation>
       <Menu
         id="long-menu"
         anchorEl={anchorEl}

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import SiteContext from '../model/SiteContext';
 import { Paper } from '@material-ui/core';
 import styled from 'styled-components';
@@ -48,8 +48,16 @@ const StoryPage = () => {
   // Get the app state from SiteContext context
   const [state] = useContext(SiteContext);
 
-  // Get the total number of pages
+  // Get the total number of pages, bale if 0
   const totalPages = state.pages.length;
+  const history = useHistory();
+  if (totalPages === 0) {
+    history.push({
+      pathname: '/select-page-template',
+      params: { pageNumber: 0 },
+    });
+    return null; // Return early.
+  }
 
   // Get the fields for the page we are on
   const fields = state.pages[pageNumber - 1].fields;
