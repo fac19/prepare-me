@@ -56,10 +56,6 @@ const TopNavbar = ({ pageNumber }) => {
     });
   };
 
-  const handleDownload = () => {
-    setAnchorEl(null);
-  };
-
   return (
     <>
       <BottomNavigation
@@ -142,14 +138,10 @@ const TopNavbar = ({ pageNumber }) => {
         <MenuItem
           key="Download"
           selected={'Download' === 'Pyxis'}
-          onClick={handleDownload}
-          component={Link}
-          to="/download"
+          onClick={handleClose}
         >
           <GetAppOutlinedIcon />
-          <Typography variant="h3" align="center">
-            Download
-          </Typography>
+          <RenderStory />
         </MenuItem>
         <MenuItem
           key="Print"

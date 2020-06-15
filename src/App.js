@@ -17,7 +17,6 @@ import LandingPage from './pages/LandingPage';
 import StoryPage from './pages/StoryPage';
 import ActionsPage from './pages/ActionsPage';
 import PrintPages from './pages/PrintPages';
-import RenderStory from './components/RenderStory';
 
 function App() {
   const [state, dispatch] = useReducer(updateState, initialState);
@@ -35,7 +34,6 @@ function App() {
               <Route path="/delete-page" component={StoryTemplates} />
               <Route path="/select-page-template" component={PageTemplates} />
               <Route path="/view-mode" component={StoryTemplates} />
-              <Route path="/download" component={RenderStory} />
               <Route path="/print" component={PrintPages} />
             </Switch>
           </Router>

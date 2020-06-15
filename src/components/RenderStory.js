@@ -10,8 +10,8 @@ import {
   StyleSheet,
 } from '@react-pdf/renderer';
 import SiteContext from '../model/SiteContext';
-// import allPages from '../model/allPages';
-// import PrintPages from "../pages"
+import { Typography } from '@material-ui/core';
+
 const styles = StyleSheet.create({
   page: {
     // flexDirection: 'row',
@@ -21,6 +21,10 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 10,
     flexGrow: 1,
+  },
+  pdf: {
+    textDecoration: 'none',
+    color: 'black',
   },
 });
 
@@ -56,11 +60,16 @@ function RenderStory() {
 
   return (
     <PDFDownloadLink
+      style={styles.pdf}
       document={<MyDocument state={state} />}
       fileName="somename.pdf"
     >
       {({ blob, url, loading, error }) =>
-        loading ? 'Loading document...' : 'Download now!'
+        loading ? (
+          <Typography>'Loading document...' </Typography>
+        ) : (
+          <Typography>Download</Typography>
+        )
       }
     </PDFDownloadLink>
   );
