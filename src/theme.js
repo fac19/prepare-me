@@ -72,6 +72,7 @@ export default createMuiTheme({
           backgroundColor: tertiaryColor,
         },
         'color': primaryColor,
+        'width': '10em',
       },
     },
   },
