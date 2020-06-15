@@ -58,14 +58,10 @@ const TopNavbar = ({ pageNumber }) => {
 
   const handleDownload = () => {
     setAnchorEl(null);
-
-    //   renderStory();
   };
 
   return (
     <>
-      <RenderStory />
-
       <BottomNavigation
         value={value}
         onChange={(event, newValue) => {

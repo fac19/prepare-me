@@ -23,10 +23,10 @@ function allPages(state) {
   // const [state] = useContext(SiteContext);
   state.pages.forEach((item, index) => {
     // Get the fields for the page we are on
-    const fields = state.pages[index].fields;
+    const fields = item[index].fields;
 
     // Get the template component for the page we are on
-    const templateName = state.pages[index].pageTemplate;
+    const templateName = item[index].pageTemplate;
     const Page = getPageTemplateByName[templateName];
 
     pages.push(

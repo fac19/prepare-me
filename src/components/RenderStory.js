@@ -1,18 +1,21 @@
 import React from 'react';
+
 import {
   PDFDownloadLink,
   Page,
+  Image,
   Text,
   View,
   Document,
   StyleSheet,
 } from '@react-pdf/renderer';
-import allPages from '../model/allPages';
-
+import SiteContext from '../model/SiteContext';
+// import allPages from '../model/allPages';
+// import PrintPages from "../pages"
 const styles = StyleSheet.create({
   page: {
-    flexDirection: 'row',
-    backgroundColor: '#E4E4E4',
+    // flexDirection: 'row',
+    backgroundColor: '#fff',
   },
   section: {
     margin: 10,
@@ -22,23 +25,40 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-const MyDocument = () => (
+const MyDocument = ({ state }) => {
   // Use all pages in here! (need to pass state in)
-  <Document>
-    <Page size="A4" style={styles.page}>
-      <View style={styles.section}>
-        <Text>Section #1</Text>
-      </View>
-      <View style={styles.section}>
-        <Text>Section #2</Text>
-      </View>
-    </Page>
-  </Document>
-);
+  const pages = [];
+
+  state.pages.forEach((page) => {
+    console.log(page.pageTemplate);
+
+    pages.push(
+      <Page size="A4" style={styles.page}>
+        <View style={styles.section}>
+          <Image src={page.fields.pic1}></Image>
+          <Text> {page.fields.text1}</Text>
+        </View>
+        {page.pageTemplate === 'Landscape2' ? (
+          <View>
+            <Image src={page.fields.pic2}></Image>
+            <Text> {page.fields.text2}</Text>
+          </View>
+        ) : null}
+      </Page>,
+    );
+  });
+  return <Document>{pages}</Document>;
+};
 
 function RenderStory() {
+  const [state] = React.useContext(SiteContext);
+  // console.log(state);
+
   return (
-    <PDFDownloadLink document={<MyDocument />} fileName="somename.pdf">
+    <PDFDownloadLink
+      document={<MyDocument state={state} />}
+      fileName="somename.pdf"
+    >
       {({ blob, url, loading, error }) =>
         loading ? 'Loading document...' : 'Download now!'
       }
