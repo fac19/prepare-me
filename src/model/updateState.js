@@ -51,6 +51,13 @@ function updateState(state, command) {
       return copy;
     }
 
+    case 'delete page': {
+      const { pageNumber } = command;
+      console.log('updateState -> pageNumber', pageNumber);
+      copy.pages.splice(pageNumber - 1, 1);
+      return copy;
+    }
+
     default: {
       return copy;
     }
