@@ -13,6 +13,10 @@ const TitleText = styled(Typography)`
   /* color: #ffffff; */
 `;
 
+const LinkText = styled(Link)`
+  color: #000000;
+`;
+
 const MyGrid = styled(Grid)`
   height: 100vh;
   /* border: 5px solid red; */
@@ -56,11 +60,11 @@ function LandingPage() {
         </Button>
       </Grid>
       <Grid item>
-        <TitleText variant="h2" align="center">
-          <Link href="https://prepareme.ie/" underline="always">
+        <Link href="https://prepareme.ie/" underline="always">
+          <LinkText variant="h3" align="center">
             Find out more here
-          </Link>
-        </TitleText>
+          </LinkText>
+        </Link>
       </Grid>
     </MyGrid>
     // </Container>

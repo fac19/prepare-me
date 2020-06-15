@@ -10,6 +10,8 @@ import {
 } from '@material-ui/core';
 import RenderStory from './RenderStory';
 
+import WarningPage from './WarningPage';
+
 // Icons
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
@@ -35,6 +37,7 @@ const TopNavbar = ({ pageNumber }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [alert, setAlert] = React.useState(false);
   const open = Boolean(anchorEl);
   const history = useHistory();
 
@@ -78,8 +81,7 @@ const TopNavbar = ({ pageNumber }) => {
           }}
           label="Home"
           icon={<HomeOutlinedIcon />}
-          component={Link}
-          to="/"
+          onClick={() => setAlert(true)}
         />
         <BottomNavigationAction
           selected
@@ -166,6 +168,8 @@ const TopNavbar = ({ pageNumber }) => {
           </Typography>
         </MenuItem>
       </Menu>
+
+      {alert ? <WarningPage alert={alert} setAlert={setAlert} /> : null}
     </>
   );
 };
