@@ -8,6 +8,7 @@ import {
   BottomNavigation,
   BottomNavigationAction,
 } from '@material-ui/core';
+import RenderStory from './RenderStory';
 
 import WarningPage from './WarningPage';
 
@@ -55,8 +56,16 @@ const TopNavbar = ({ pageNumber }) => {
     });
   };
 
+  const handleDownload = () => {
+    setAnchorEl(null);
+
+    //   renderStory();
+  };
+
   return (
     <>
+      <RenderStory />
+
       <BottomNavigation
         value={value}
         onChange={(event, newValue) => {
@@ -137,7 +146,7 @@ const TopNavbar = ({ pageNumber }) => {
         <MenuItem
           key="Download"
           selected={'Download' === 'Pyxis'}
-          onClick={handleClose}
+          onClick={handleDownload}
           component={Link}
           to="/download"
         >
