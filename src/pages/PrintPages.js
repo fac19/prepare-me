@@ -31,7 +31,7 @@ function PrintPages() {
     const Page = getPageTemplateByName[templateName];
 
     pages.push(
-      <OurPaper>
+      <OurPaper key={index}>
         <Page fields={fields} />
       </OurPaper>,
     );
