@@ -1,6 +1,7 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import editHandler from './editHandler';
+// import editHandler from './editHandler';
 import SiteContext from '../../model/SiteContext';
 import uploadImageHandler from './uploadImageHandler';
 
@@ -19,6 +20,15 @@ const OurPic = styled.img`
 
 function Landscape1({ pageNumber, fields }) {
   const [, dispatch] = React.useContext(SiteContext);
+  const history = useHistory();
+
+  const handleTextEdit = (event, pageNumber) => {
+    history.push({
+      pathname: '/edit-text',
+      params: { fieldName: event.target.id, pageNumber },
+    });
+  };
+
   return (
     <>
       <OurPic
@@ -29,7 +39,10 @@ function Landscape1({ pageNumber, fields }) {
       <OurText
         id="text1"
         value={fields.text1}
-        onChange={(e) => editHandler(e, pageNumber, dispatch)}
+        // component={Link}
+        // to="/edit-text"
+        // onChange={(e) => editHandler(e, pageNumber, dispatch)}
+        onClick={(event) => handleTextEdit(event, pageNumber)}
       ></OurText>
     </>
   );
