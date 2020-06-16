@@ -1,5 +1,4 @@
 import React from 'react';
-import { Paper } from '@material-ui/core';
 import styled from 'styled-components';
 
 import getPageTemplateByName from '../components/pageTemplates/getPageTemplateByName';
