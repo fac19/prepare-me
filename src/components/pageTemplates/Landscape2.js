@@ -8,7 +8,9 @@ const OurText = styled.textarea`
   font-family: 'Short Stack', cursive;
   font-size: 2vh;
   width: 100%;
-  height: 20%;
+  height: 25%;
+  resize: none;
+  border: 0;
 `;
 
 const OurPic = styled.img`
@@ -44,5 +46,14 @@ function Landscape2({ pageNumber, fields }) {
     </>
   );
 }
+
+Landscape2.fields = {
+  pic1:
+    'https://res.cloudinary.com/didur5psx/image/upload/v1591714780/starting_school/yourpic_rjemqq.jpg',
+  text1: 'Click to edit text',
+  pic2:
+    'https://res.cloudinary.com/didur5psx/image/upload/v1591714780/starting_school/yourpic_rjemqq.jpg',
+  text2: 'Click to edit text',
+};
 
 export default Landscape2;

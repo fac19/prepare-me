@@ -1,16 +1,11 @@
 import schoolTemplate from '../storyTemplates/startingSchool';
 import blankTemplate from '../storyTemplates/blankTemplate';
-import Landscape1 from '../components/pageTemplates/Landscape1';
-import Landscape2 from '../components/pageTemplates/Landscape2';
+
+import getPageTemplateByName from '../components/pageTemplates/getPageTemplateByName';
 
 const nameToStoryTemplate = {
   school: schoolTemplate,
   blank: blankTemplate,
-};
-
-const nameToPageTemplate = {
-  Landscape1: Landscape1,
-  Landscape2: Landscape2,
 };
 
 function clone(obj) {
@@ -40,7 +35,7 @@ function updateState(state, command) {
     case 'add page': {
       const { template, pageNumber } = command;
       // get the template Component we need
-      const selectedTemplate = nameToPageTemplate[template];
+      const selectedTemplate = getPageTemplateByName[template];
       // Create a newPage with those fields imported from template
       const newPage = {
         pageTemplate: template,
