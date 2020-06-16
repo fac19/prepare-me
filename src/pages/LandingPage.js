@@ -41,7 +41,11 @@ function LandingPage() {
         alignItems="center"
         justify="space-evenly"
       >
-        <Button component={RouterLink} to="/select-story-template">
+        <Button
+          data-cy="PictureStoryButton"
+          component={RouterLink}
+          to="/select-story-template"
+        >
           PICTURE STORY
         </Button>
         <Button component={RouterLink} to="/select-pecs-template">

@@ -57,7 +57,7 @@ const StoryTemplates = () => {
           </MyTitle>
         </Grid>
 
-        <MyCard id="blank" onClick={handleClick}>
+        <MyCard id="blank" onClick={handleClick} data-cy="BlankTemplateCard">
           <MyMedia
             component="img"
             alt="Blank Template"

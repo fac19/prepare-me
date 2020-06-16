@@ -66,7 +66,11 @@ const PageTemplates = () => {
       </Grid>
 
       <Grid item>
-        <MyCard id="SinglePicture" onClick={handleClick}>
+        <MyCard
+          id="SinglePicture"
+          onClick={handleClick}
+          data-cy="SinglePicture"
+        >
           <MyMedia
             component="img"
             alt="Single Picture Template"
@@ -78,10 +82,10 @@ const PageTemplates = () => {
       </Grid>
 
       <Grid item>
-        <MyCard id="Landscape2" onClick={handleClick}>
+        <MyCard id="Landscape2" onClick={handleClick} data-cy="Landscape2">
           <MyMedia
             component="img"
-            alt="Two Landscape Pictures with text at the botttom"
+            alt="Two Landscape Pictures with text at the bottom"
             image={l2}
             title="Two Landscape Pictures"
           ></MyMedia>
@@ -90,7 +94,7 @@ const PageTemplates = () => {
       </Grid>
 
       <Grid item>
-        <MyCard id="Portrait2" onClick={handleClick}>
+        <MyCard id="Portrait2" onClick={handleClick} data-cy="Portrait2">
           <MyMedia
             component="img"
             alt="Two Pictures one the left, text on the right"
