@@ -33,7 +33,7 @@ const MyDiv = styled.div`
   align-items: center;
 `;
 
-function FrontCover({ pageNumber, fields }) {
+function FrontCover({ pageNumber, fields, active = true }) {
   const [, dispatch] = React.useContext(SiteContext);
 
   return (
@@ -41,12 +41,13 @@ function FrontCover({ pageNumber, fields }) {
       <OurPic
         src={fields.pic1}
         id="pic1"
-        onClick={(e) => uploadImageHandler(e, pageNumber, dispatch)}
+        onClick={(e) => active && uploadImageHandler(e, pageNumber, dispatch)}
       ></OurPic>
       <OurTitle
         id="text1"
         value={fields.text1}
         onChange={(e) => editHandler(e, pageNumber, dispatch)}
+        disabled={!active}
       ></OurTitle>
       <Logo src={logo} />
     </MyDiv>
