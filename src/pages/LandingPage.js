@@ -6,25 +6,14 @@ import styled from 'styled-components';
 
 const Logo = styled.img`
   height: 20vh;
-  /* width: 100px; */
-`;
-
-const TitleText = styled(Typography)`
-  /* color: #ffffff; */
-`;
-
-const LinkText = styled(Link)`
-  color: #000000;
 `;
 
 const MyGrid = styled(Grid)`
   height: 100vh;
-  /* border: 5px solid red; */
 `;
 
 function LandingPage() {
   return (
-    // <Container maxWidth="sm">
     <MyGrid
       container
       direction="column"
@@ -36,14 +25,14 @@ function LandingPage() {
         <Logo src={PrepareMeLogo} />
       </Grid>
       <Grid item>
-        <TitleText variant="h1" align="center">
+        <Typography variant="h1" align="center">
           WELCOME TO OUR STORY BUILDER
-        </TitleText>
+        </Typography>
       </Grid>
       <Grid item>
-        <TitleText variant="h3" align="center">
+        <Typography variant="h3" align="center">
           WHAT WOULD YOU LIKE TO MAKE TODAY?
-        </TitleText>
+        </Typography>
       </Grid>
       <Grid
         container
@@ -61,9 +50,9 @@ function LandingPage() {
       </Grid>
       <Grid item>
         <Link href="https://prepareme.ie/" underline="always">
-          <LinkText variant="h3" align="center">
+          <Typography variant="h3" align="center">
             Find out more here
-          </LinkText>
+          </Typography>
         </Link>
       </Grid>
     </MyGrid>
