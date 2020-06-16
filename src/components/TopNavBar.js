@@ -25,6 +25,7 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 const ITEM_HEIGHT = 48;
 const useStyles = makeStyles({
   root: {
+    'padding': '0.5em 0',
     'width': '70%',
     'color': 'black',
     '&$selected': {
