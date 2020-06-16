@@ -35,7 +35,6 @@ function App() {
               <Route path="/delete-page" component={StoryTemplates} />
               <Route path="/select-page-template" component={PageTemplates} />
               <Route path="/view-mode" component={StoryTemplates} />
-              <Route path="/download" component={StoryTemplates} />
               <Route path="/print" component={PrintPages} />
               <Route path="/edit-text" component={EditText} />
             </Switch>

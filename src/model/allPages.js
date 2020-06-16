@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import SiteContext from '../model/SiteContext';
+import React from 'react';
 import { Paper } from '@material-ui/core';
 import styled from 'styled-components';
 
@@ -19,32 +18,25 @@ const OurPaper = styled(Paper)`
   page-break-before: always;
 `;
 
-function PrintPages() {
+function allPages(state) {
   const pages = [];
-  const [state] = useContext(SiteContext);
+  // const [state] = useContext(SiteContext);
   state.pages.forEach((item, index) => {
     // Get the fields for the page we are on
-    const fields = state.pages[index].fields;
+    const fields = item[index].fields;
 
     // Get the template component for the page we are on
-    const templateName = state.pages[index].pageTemplate;
+    const templateName = item[index].pageTemplate;
     const Page = getPageTemplateByName[templateName];
 
     pages.push(
-      <OurPaper key={index}>
+      <OurPaper>
         <Page fields={fields} />
       </OurPaper>,
     );
   });
-  React.useEffect(() => {
-    // TODO, this is a kludge, find an event that
-    // allows us to detect when all the images are
-    // ready to print. Without this we only get the
-    // First one or two images.
-    setTimeout(window.print, 2000);
-  }, []);
 
-  return <>{pages}</>;
+  return pages;
 }
 
-export default PrintPages;
+export default allPages;
