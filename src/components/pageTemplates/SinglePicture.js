@@ -8,6 +8,7 @@ const OurText = styled.textarea`
   font-family: 'Short Stack', cursive;
   font-size: 2vh;
   width: 100%;
+  min-height: 40%;
   resize: none;
   border: 0;
 `;
