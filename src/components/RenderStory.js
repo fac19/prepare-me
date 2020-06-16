@@ -35,8 +35,6 @@ const MyDocument = ({ state }) => {
   const pages = [];
 
   state.pages.forEach((page, index) => {
-    console.log(page.pageTemplate);
-
     pages.push(
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
@@ -55,25 +53,26 @@ const MyDocument = ({ state }) => {
   return <Document>{pages}</Document>;
 };
 
-function RenderStory() {
+function RenderStory({ hasPressedDownload }) {
   const [state] = React.useContext(SiteContext);
-  // console.log(state);
 
-  return (
-    <PDFDownloadLink
-      style={styles.pdf}
-      document={<MyDocument state={state} />}
-      fileName="somename.pdf"
-    >
-      {({ blob, url, loading, error }) =>
-        loading ? (
-          <Typography>'Loading document...' </Typography>
-        ) : (
-          <Typography>Download</Typography>
-        )
-      }
-    </PDFDownloadLink>
-  );
+  if (hasPressedDownload)
+    return (
+      <PDFDownloadLink
+        style={styles.pdf}
+        document={<MyDocument state={state} />}
+        fileName="prepare-me-story.pdf"
+      >
+        {({ blob, url, loading, error }) =>
+          loading ? (
+            <Typography>'Loading document...' </Typography>
+          ) : (
+            <Typography>Download</Typography>
+          )
+        }
+      </PDFDownloadLink>
+    );
+  return null;
 }
 
 export default RenderStory;
