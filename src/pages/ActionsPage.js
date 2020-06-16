@@ -11,7 +11,7 @@ const MyGrid = styled(Grid)`
   height: 100vh;
 `;
 
-function FinalPage() {
+function ActionsPage() {
   const [state] = useContext(SiteContext);
   const totalPages = state.pages.length;
   const history = useHistory();
@@ -61,4 +61,4 @@ function FinalPage() {
   );
 }
 
-export default FinalPage;
+export default ActionsPage;
