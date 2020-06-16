@@ -11,6 +11,7 @@ import {
 } from '@react-pdf/renderer';
 import SiteContext from '../model/SiteContext';
 import { Typography } from '@material-ui/core';
+// import Landscape1 from './pageTemplates/Landscape1';
 
 const styles = StyleSheet.create({
   page: {
@@ -33,9 +34,7 @@ const MyDocument = ({ state }) => {
   // Use all pages in here! (need to pass state in)
   const pages = [];
 
-  state.pages.forEach((page) => {
-    // console.log(page.pageTemplate);
-
+  state.pages.forEach((page, index) => {
     pages.push(
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
