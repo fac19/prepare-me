@@ -9,5 +9,5 @@ cache:
 script:
   - npm test
   - npm run test:report && codecov
+  - npm run cy:ci && cy:record
   - npm run build
-  - npm run cy:ci --record --key 527e4fa6-e949-4262-bba0-8d5a0578b865
