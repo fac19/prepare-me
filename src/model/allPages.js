@@ -2,17 +2,7 @@ import React from 'react';
 import { Paper } from '@material-ui/core';
 import styled from 'styled-components';
 
-import Landscape1 from '../components/pageTemplates/Landscape1';
-import Landscape2 from '../components/pageTemplates/Landscape2';
-import FrontCover from '../components/pageTemplates/FrontCover';
-import BackCover from '../components/pageTemplates/BackCover';
-
-const getPageTemplateByName = {
-  Landscape1: Landscape1,
-  Landscape2: Landscape2,
-  FrontCover: FrontCover,
-  BackCover: BackCover,
-};
+import getPageTemplateByName from '../components/pageTemplates/getPageTemplateByName';
 
 const OurPaper = styled(Paper)`
   page-break-before: always;

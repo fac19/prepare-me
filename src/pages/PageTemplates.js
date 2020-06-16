@@ -13,7 +13,6 @@ import styled from 'styled-components';
 // Images
 import l1 from '../static/l1.svg';
 import l2 from '../static/l2.svg';
-import p1 from '../static/p1.svg';
 import p2 from '../static/p2.svg';
 
 const secondaryColor = '#0EB5BB';
@@ -49,6 +48,7 @@ const PageTemplates = () => {
   const pageNumber = history.location.params.pageNumber;
 
   function handleClick(e) {
+    console.log('ID:', e.currentTarget.id);
     dispatch({
       type: 'add page',
       template: e.currentTarget.id,
@@ -66,50 +66,42 @@ const PageTemplates = () => {
       </Grid>
 
       <Grid item>
-        <MyCard id="Landscape1" onClick={handleClick}>
+        <MyCard
+          id="SinglePicture"
+          onClick={handleClick}
+          data-cy="SinglePicture"
+        >
           <MyMedia
             component="img"
-            alt="landscape 1"
+            alt="Single Picture Template"
             image={l1}
-            title="Landscape One"
+            title="Single Picture"
           ></MyMedia>
-          <CardHeader subheader="Default Template" />
+          <CardHeader subheader="" />
         </MyCard>
       </Grid>
 
       <Grid item>
-        <MyCard>
+        <MyCard id="Landscape2" onClick={handleClick} data-cy="Landscape2">
           <MyMedia
             component="img"
-            alt="landscape 2"
+            alt="Two Landscape Pictures with text at the bottom"
             image={l2}
-            title="Landscape Two"
+            title="Two Landscape Pictures"
           ></MyMedia>
-          <CardHeader subheader="Landscape Two" />
+          <CardHeader subheader="" />
         </MyCard>
       </Grid>
 
       <Grid item>
-        <MyCard>
+        <MyCard id="Portrait2" onClick={handleClick} data-cy="Portrait2">
           <MyMedia
             component="img"
-            alt="portrait one"
-            image={p1}
-            title="Portrait One"
-          ></MyMedia>
-          <CardHeader subheader="Portrait One" />
-        </MyCard>
-      </Grid>
-
-      <Grid item>
-        <MyCard>
-          <MyMedia
-            component="img"
-            alt="portrait two"
+            alt="Two Pictures one the left, text on the right"
             image={p2}
-            title="Portrait Two"
+            title="Two Portrait Pictures"
           ></MyMedia>
-          <CardHeader subheader="Portrait Two" />
+          <CardHeader subheader="" />
         </MyCard>
       </Grid>
     </MyGrid>

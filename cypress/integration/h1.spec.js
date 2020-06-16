@@ -39,8 +39,7 @@ describe('Prepare.spec', () => {
     cy.contains('Next').click();
     cy.contains('Next').click();
     cy.contains('Add Page').click();
-    cy.contains('Default Template').click();
-    cy.contains('Click to edit text');
+    cy.get('[data-cy=SinglePicture]').click();
     cy.get('#pic1').should('exist');
     cy.get('#pic2').should('not.exist');
     cy.url().should('include', '/story-page/6');
