@@ -9,5 +9,7 @@ cache:
 script:
   - npm test
   - npm run test:report && codecov
-  - npm run cy:ci
+  - npm run cy:ci  && codecov
   - npm run build
+after-script:
+  - bash <(curl -s https://codecov.io/bash)
