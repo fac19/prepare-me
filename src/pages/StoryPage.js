@@ -6,24 +6,13 @@ import styled from 'styled-components';
 import { Grid } from '@material-ui/core';
 import { Swipeable } from 'react-swipeable';
 
-import Landscape1 from '../components/pageTemplates/Landscape1';
-import Landscape2 from '../components/pageTemplates/Landscape2';
-import FrontCover from '../components/pageTemplates/FrontCover';
-import BackCover from '../components/pageTemplates/BackCover';
-
+import getPageTemplateByName from '../components/pageTemplates/getPageTemplateByName';
 import TopNavBar from '../components/TopNavBar';
 import BottomNavBar from '../components/BottomNavBar';
 
 const MyGrid = styled(Grid)`
   height: 100vh;
 `;
-
-const getPageTemplateByName = {
-  Landscape1: Landscape1,
-  Landscape2: Landscape2,
-  FrontCover: FrontCover,
-  BackCover: BackCover,
-};
 
 const OurPaper = styled(Paper)`
   height: 70vh;

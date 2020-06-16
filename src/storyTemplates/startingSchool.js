@@ -4,7 +4,7 @@ const startingSchool = {
   pages: [
     {
       // page 1
-      pageTemplate: 'Landscape1',
+      pageTemplate: 'SinglePicture',
       fields: {
         text1: 'My New School - St Marys National School.',
         pic1:
@@ -13,7 +13,7 @@ const startingSchool = {
     },
     {
       // page 2
-      pageTemplate: 'Landscape1',
+      pageTemplate: 'SinglePicture',
       fields: {
         text1:
           'This is a storybook to show you your new school. School can be lots of fun. We hope you enjoy seeing some of the things, places and people in your school. We are so excited to meet you and your Mammy and Daddy soon.',
@@ -23,7 +23,7 @@ const startingSchool = {
     },
     {
       // page 3
-      pageTemplate: 'Landscape1',
+      pageTemplate: 'SinglePicture',
       fields: {
         text1:
           'This is your teacher Mrs Murphy. Mrs Murphy is also called Kate sometimes. She is kind and fun. She loves to help children and keeps a sweetie jar in her desk!',
@@ -33,7 +33,7 @@ const startingSchool = {
     },
     {
       // page 4
-      pageTemplate: 'Landscape1',
+      pageTemplate: 'SinglePicture',
       fields: {
         text1:
           'School will begin for your class on the 1st of September. You can use our Countdown Calendar and stickers to help you count down the days to starting school.',
@@ -55,7 +55,7 @@ const startingSchool = {
     },
     {
       // page 6
-      pageTemplate: 'Landscape1',
+      pageTemplate: 'SinglePicture',
       fields: {
         text1:
           "This what is what it looks like inside Mrs Murphy's Junior Infants Classroom.",
@@ -65,7 +65,7 @@ const startingSchool = {
     },
     {
       // page 7
-      pageTemplate: 'Landscape1',
+      pageTemplate: 'SinglePicture',
       fields: {
         text1:
           'This is where everybody hangs up their coat at the back of the class.',
@@ -75,7 +75,7 @@ const startingSchool = {
     },
     {
       // page 8
-      pageTemplate: 'Landscape1',
+      pageTemplate: 'SinglePicture',
       fields: {
         text1:
           'These are the toilets for your classroom. You can tell Mrs. Murphy if you need to use the toilet at school and she will show you where they are.',
@@ -97,7 +97,7 @@ const startingSchool = {
     },
     {
       // page 10
-      pageTemplate: 'Landscape1',
+      pageTemplate: 'SinglePicture',
       fields: {
         text1:
           'You will take a lunch with you to have at school break-time. Although it is always really good to share with your friends, at school nobody is allowed to share lunch. Your lunch is just for you.',
@@ -107,7 +107,7 @@ const startingSchool = {
     },
     {
       // page 11
-      pageTemplate: 'Landscape1',
+      pageTemplate: 'SinglePicture',
       fields: {
         text1:
           'When everybody has finished their lunch Mrs. Murphy will go outside to the school yard with all the children to play some games.',
@@ -117,7 +117,7 @@ const startingSchool = {
     },
     {
       // page 12
-      pageTemplate: 'Landscape1',
+      pageTemplate: 'SinglePicture',
       fields: {
         text1:
           "The school bell ring to let us know when break time is over. Don't worry, its a quiet bell and won't hurt your ears.",
@@ -127,7 +127,7 @@ const startingSchool = {
     },
     {
       // page 13
-      pageTemplate: 'Landscape1',
+      pageTemplate: 'SinglePicture',
       fields: {
         text1:
           'On your first day at school, Mrs. Murphy has some fun activities planned....like Lego.',
@@ -137,7 +137,7 @@ const startingSchool = {
     },
     {
       // page 14
-      pageTemplate: 'Landscape1',
+      pageTemplate: 'SinglePicture',
       fields: {
         text1:
           'Every day at school, just before home time, Mrs. Murphy will read a storybook to all the children.',
@@ -147,7 +147,7 @@ const startingSchool = {
     },
     {
       // page 15
-      pageTemplate: 'Landscape1',
+      pageTemplate: 'SinglePicture',
       fields: {
         text1:
           'This is the story Mrs. Murphy has picked for the 1st day at school. Have you read it before?',
