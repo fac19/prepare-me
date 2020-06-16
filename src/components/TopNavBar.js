@@ -25,6 +25,7 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 const ITEM_HEIGHT = 48;
 const useStyles = makeStyles({
   root: {
+    'padding': '0.5em 0',
     'width': '70%',
     'color': 'black',
     '&$selected': {
@@ -113,6 +114,7 @@ const TopNavbar = ({ pageNumber }) => {
             root: classes.root,
             selected: classes.selected,
           }}
+          label="More"
           aria-label="more"
           aria-controls="long-menu"
           aria-haspopup="true"
