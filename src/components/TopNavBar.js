@@ -39,6 +39,7 @@ const TopNavbar = ({ pageNumber }) => {
   const [value, setValue] = React.useState(0);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [alert, setAlert] = React.useState(false);
+  // const [hasPressedDownload, updateHasPressed] = React.useState(false);
   const open = Boolean(anchorEl);
   const history = useHistory();
   const [, dispatch] = React.useContext(SiteContext);
@@ -112,7 +113,6 @@ const TopNavbar = ({ pageNumber }) => {
             root: classes.root,
             selected: classes.selected,
           }}
-          label="More"
           aria-label="more"
           aria-controls="long-menu"
           aria-haspopup="true"
@@ -128,6 +128,7 @@ const TopNavbar = ({ pageNumber }) => {
         keepMounted
         open={open}
         onClose={handleClose}
+        // onClick={() => updateHasPressed(true)}
         PaperProps={{
           style: {
             maxHeight: ITEM_HEIGHT * 4.5,
@@ -153,7 +154,7 @@ const TopNavbar = ({ pageNumber }) => {
           onClick={handleClose}
         >
           <GetAppOutlinedIcon />
-          <RenderStory />
+          <RenderStory hasPressedDownload={anchorEl} />
         </MenuItem>
         <MenuItem
           key="Print"
