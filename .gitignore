@@ -10,7 +10,6 @@
 /cypress/integration/examples
 /cypress/screenshots
 /cypress/videos
-/cypress-coverage
 
 
 # production
