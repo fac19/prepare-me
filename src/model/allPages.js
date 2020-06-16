@@ -4,8 +4,9 @@ import styled from 'styled-components';
 
 import getPageTemplateByName from '../components/pageTemplates/getPageTemplateByName';
 
-const OurPaper = styled(Paper)`
+const OurPaper = styled.div`
   page-break-before: always;
+  height: 100vh;
 `;
 
 function allPages(state) {

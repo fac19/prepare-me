@@ -17,7 +17,6 @@ const MyGrid = styled(Grid)`
 const OurPaper = styled(Paper)`
   height: 70vh;
   width: 50vh;
-  // background: green;
   margin: 0 auto;
 `;
 
