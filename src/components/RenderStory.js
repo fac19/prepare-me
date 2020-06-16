@@ -10,7 +10,7 @@ import {
   StyleSheet,
 } from '@react-pdf/renderer';
 import SiteContext from '../model/SiteContext';
-import { Typography, Button } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 const styles = StyleSheet.create({
   page: {
