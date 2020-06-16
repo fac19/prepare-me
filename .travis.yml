@@ -1,11 +1,13 @@
 language: node_js
 node_js:
   - '12'
+env:
+  - CODECOV_TOKEN="07cf711c-3342-4b4d-abe3-4d98f8a1a8f69"
 cache:
   directories:
     - $HOME/.npm
 script:
   - npm test
-  - npm run test:report
+  - npm run test:report && codecov
   - npm run build
-  - npm run cy:ci --record
+  - npm run cy:ci --record --key 527e4fa6-e949-4262-bba0-8d5a0578b865
