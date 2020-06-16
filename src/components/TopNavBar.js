@@ -113,6 +113,7 @@ const TopNavbar = ({ pageNumber }) => {
             root: classes.root,
             selected: classes.selected,
           }}
+          label="More"
           aria-label="more"
           aria-controls="long-menu"
           aria-haspopup="true"
