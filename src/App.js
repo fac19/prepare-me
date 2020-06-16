@@ -17,6 +17,7 @@ import LandingPage from './pages/LandingPage';
 import StoryPage from './pages/StoryPage';
 import ActionsPage from './pages/ActionsPage';
 import PrintPages from './pages/PrintPages';
+import MissingPage from './pages/MissingPage';
 
 function App() {
   const [state, dispatch] = useReducer(updateState, initialState);
@@ -35,6 +36,7 @@ function App() {
               <Route path="/select-page-template" component={PageTemplates} />
               <Route path="/view-mode" component={StoryTemplates} />
               <Route path="/print" component={PrintPages} />
+              <Route path="*" component={MissingPage} />
             </Switch>
           </Router>
         </SiteContext.Provider>

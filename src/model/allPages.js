@@ -13,9 +13,6 @@ function allPages(state) {
   // const [state] = useContext(SiteContext);
   state.pages.forEach((item, index) => {
     // Get the fields for the page we are on
-    console.log('INDEX', index);
-    console.log('itemINDEX', item[index]);
-    console.log('item', item);
     const fields = item.fields;
 
     // Get the template component for the page we are on
@@ -23,7 +20,7 @@ function allPages(state) {
     const Page = getPageTemplateByName[templateName];
 
     pages.push(
-      <OurPaper>
+      <OurPaper key={index}>
         <Page fields={fields} />
       </OurPaper>,
     );
