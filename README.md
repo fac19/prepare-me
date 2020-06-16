@@ -1,5 +1,6 @@
-
 [![Build Status](https://travis-ci.com/fac19/prepare-me.svg?branch=master)](https://travis-ci.com/fac19/prepare-me)
+
+[![codecov](https://codecov.io/gh/fac19/prepare-me/branch/master/graph/badge.svg)](https://codecov.io/gh/fac19/prepare-me)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -7,12 +8,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 An interactive picture story builder for parents and social care professionals to easily make printable visual stories quickly and easily.
 
-
 ## **Screenshots**
+
 ![](https://i.imgur.com/GKDlyWX.png)
 
 ![](https://i.imgur.com/sFOXz2A.png)
-
 
 ## **Tech/framework used**
 
@@ -27,7 +27,7 @@ An interactive picture story builder for parents and social care professionals t
 
 - Mobile-First design
 - Simple interface
-- Integrate Cloudinary widget to implement local upload and Google image search 
+- Integrate Cloudinary widget to implement local upload and Google image search
 - Easy upload and crop feature
 - Printable and downloadable stories (coming soon)
 
@@ -38,12 +38,10 @@ Show what the library does as concisely as possible, developers should be able t
 ## **How to download**
 
 1. clone this repo
-2. install all packages with ```npm i```
-3. run localhost with ```npm start```
+2. install all packages with `npm i`
+3. run localhost with `npm start`
 4. **Ask someone from the team for the Google API key**
-5. to run the cypress tests, run ```npm run cy:open``` Note: the server must be running!
-
-
+5. to run the cypress tests, run `npm run cy:open` Note: the server must be running!
 
 ## The Team
 
