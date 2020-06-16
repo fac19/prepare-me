@@ -4,6 +4,7 @@ import SiteContext from '../model/SiteContext';
 import { Paper } from '@material-ui/core';
 import styled from 'styled-components';
 import { Grid } from '@material-ui/core';
+import { Swipeable } from 'react-swipeable';
 
 import Landscape1 from '../components/pageTemplates/Landscape1';
 import Landscape2 from '../components/pageTemplates/Landscape2';
@@ -13,15 +14,6 @@ import BackCover from '../components/pageTemplates/BackCover';
 import TopNavBar from '../components/TopNavBar';
 import BottomNavBar from '../components/BottomNavBar';
 
-// const TopNavDiv = styled.div`
-//   width: 100%;
-//   height: 12vh;
-//   background: blue;
-// `;
-
-// const TopNavBar = () => {
-//   return <TopNavDiv />;
-// };
 const MyGrid = styled(Grid)`
   height: 100vh;
 `;
@@ -66,21 +58,37 @@ const StoryPage = () => {
   const templateName = state.pages[pageNumber - 1].pageTemplate;
   const Page = getPageTemplateByName[templateName];
 
+  function handleLeftSwipe(event) {
+    // console.log('LEFT SWIPE DETECTED');
+    if (pageNumber < totalPages) history.push(`/story-page/${pageNumber + 1}`);
+    if (pageNumber === totalPages) history.push('/actions-page');
+  }
+  function handleRightSwipe(event) {
+    // console.log('RIGHT SWIPE DETECTED');
+    if (pageNumber > 1) history.push(`/story-page/${pageNumber - 1}`);
+    if (!pageNumber) history.push(`/story-page/${totalPages}`);
+  }
+
   return (
     <>
-      <MyGrid container direction="column" justify="space-between">
-        <Grid item>
-          <TopNavBar pageNumber={pageNumber} />
-        </Grid>
-        <Grid item>
-          <OurPaper>
-            <Page pageNumber={pageNumber} fields={fields} />
-          </OurPaper>
-        </Grid>
-        <Grid item>
-          <BottomNavBar {...{ pageNumber, totalPages }} />
-        </Grid>
-      </MyGrid>
+      <Swipeable
+        onSwipedRight={handleRightSwipe}
+        onSwipedLeft={handleLeftSwipe}
+      >
+        <MyGrid container direction="column" justify="space-between">
+          <Grid item>
+            <TopNavBar pageNumber={pageNumber} />
+          </Grid>
+          <Grid item>
+            <OurPaper>
+              <Page pageNumber={pageNumber} fields={fields} />
+            </OurPaper>
+          </Grid>
+          <Grid item>
+            <BottomNavBar {...{ pageNumber, totalPages }} />
+          </Grid>
+        </MyGrid>
+      </Swipeable>
     </>
   );
 };
