@@ -36,7 +36,6 @@ const ViewMode = () => {
   const [state] = useContext(SiteContext);
 
   function handleKeydown(event) {
-    console.log('KEY IS:', event.key);
     if (event.key === 'ArrowRight') goForwards();
     if (event.key === 'ArrowLeft') goBackwards();
   }

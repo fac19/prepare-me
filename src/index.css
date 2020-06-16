@@ -8,6 +8,12 @@ body {
   background: #ffffff; /* Site default background color */
 }
 
+textarea {
+  white-space: normal;
+  text-align: justify;
+  text-align-last: center;
+}
+
 textarea:disabled {
   background: #ffffff;
   color: #000000;

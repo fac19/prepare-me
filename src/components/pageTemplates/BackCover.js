@@ -13,7 +13,7 @@ const MyDiv = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 30vw;
+  width: 10vw;
   height: auto;
   margin: 0 auto;
 `;
