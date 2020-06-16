@@ -66,13 +66,12 @@
     }
   },
   "lint-staged": {
-    "src/*.js": [
+    "*.js": [
       "pretty-quick --staged",
       "eslint"
     ]
   },
   "nyc": {
-    "report-dir": "cypress-coverage",
     "exclude": "src/serviceWorker.js"
   },
   "jest": {
