@@ -1,6 +1,7 @@
-function editHandler(event, pageNumber, dispatch) {
-  const newText = event.currentTarget.value;
-  const fieldName = event.currentTarget.id;
+function editHandler(content, fieldName, pageNumber, dispatch) {
+  // console.log(newText, fieldName);
+  const newText = content.replace(/(<([^>]+)>)/g, '');
+  console.log('text', newText);
   dispatch({ type: 'edit field', newText, fieldName, pageNumber });
 }
 

@@ -34,7 +34,7 @@ const MyDocument = ({ state }) => {
   const pages = [];
 
   state.pages.forEach((page) => {
-    console.log(page.pageTemplate);
+    // console.log(page.pageTemplate);
 
     pages.push(
       <Page size="A4" style={styles.page}>

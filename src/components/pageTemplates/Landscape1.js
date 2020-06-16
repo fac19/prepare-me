@@ -1,9 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-// import editHandler from './editHandler';
 import SiteContext from '../../model/SiteContext';
 import uploadImageHandler from './uploadImageHandler';
+import TextEditor from '../EditText';
 
 const OurText = styled.textarea`
   font-family: 'Short Stack', cursive;
@@ -20,14 +20,14 @@ const OurPic = styled.img`
 
 function Landscape1({ pageNumber, fields }) {
   const [, dispatch] = React.useContext(SiteContext);
-  const history = useHistory();
+  // const history = useHistory();
 
-  const handleTextEdit = (event, pageNumber) => {
-    history.push({
-      pathname: '/edit-text',
-      params: { fieldName: event.target.id, pageNumber },
-    });
-  };
+  // const handleTextEdit = (event, pageNumber) => {
+  //   history.push({
+  //     pathname: '/edit-text',
+  //     params: { fieldName: event.target.id, pageNumber },
+  //   });
+  // };
 
   return (
     <>
@@ -36,14 +36,18 @@ function Landscape1({ pageNumber, fields }) {
         id="pic1"
         onClick={(e) => uploadImageHandler(e, pageNumber, dispatch)}
       ></OurPic>
-      <OurText
+      {/* <OurText
         id="text1"
-        value={fields.text1}
         // component={Link}
         // to="/edit-text"
-        // onChange={(e) => editHandler(e, pageNumber, dispatch)}
-        onClick={(event) => handleTextEdit(event, pageNumber)}
-      ></OurText>
+        // onClick={(event) => handleTextEdit(event, pageNumber)}
+      ></OurText> */}
+
+      <TextEditor
+        id="text1"
+        pageNumber={pageNumber}
+        fields={fields}
+      ></TextEditor>
     </>
   );
 }

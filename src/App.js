@@ -17,7 +17,7 @@ import LandingPage from './pages/LandingPage';
 import StoryPage from './pages/StoryPage';
 import ActionsPage from './pages/ActionsPage';
 import PrintPages from './pages/PrintPages';
-import EditText from './pages/EditText';
+// import EditText from './pages/EditText';
 
 function App() {
   const [state, dispatch] = useReducer(updateState, initialState);
@@ -36,7 +36,7 @@ function App() {
               <Route path="/select-page-template" component={PageTemplates} />
               <Route path="/view-mode" component={StoryTemplates} />
               <Route path="/print" component={PrintPages} />
-              <Route path="/edit-text" component={EditText} />
+              {/* <Route path="/edit-text" component={EditText} /> */}
             </Switch>
           </Router>
         </SiteContext.Provider>
