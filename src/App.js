@@ -13,6 +13,8 @@ import updateState from './model/updateState';
 // Pages
 import StoryTemplates from './pages/StoryTemplates';
 import PageTemplates from './pages/PageTemplates';
+import PecsStoryTemplates from './pages/PecsStoryTemplates';
+import PecsPageTemplates from './pages/PecsPageTemplates';
 import LandingPage from './pages/LandingPage';
 import StoryPage from './pages/StoryPage';
 import ActionsPage from './pages/ActionsPage';
@@ -32,9 +34,17 @@ function App() {
               <Route path="/actions-page" component={ActionsPage} />
               <Route exact path="/" component={LandingPage} />
               <Route path="/select-story-template" component={StoryTemplates} />
+              <Route
+                path="/select-pecs-template"
+                component={PecsStoryTemplates}
+              />
               <Route path="/story-page/:pageNumber" component={StoryPage} />
               <Route path="/delete-page" component={StoryTemplates} />
               <Route path="/select-page-template" component={PageTemplates} />
+              <Route
+                path="/add-pecs-page-template"
+                component={PecsPageTemplates}
+              />
               <Route path="/view-mode" component={ViewMode} />
               <Route path="/print" component={PrintPages} />
               <Route path="*" component={MissingPage} />
