@@ -6,3 +6,5 @@ const pecsDoctorTemplate = {
     },
   ],
 };
+
+export default pecsDoctorTemplate;
