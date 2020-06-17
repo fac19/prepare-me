@@ -18,6 +18,7 @@ import StoryPage from './pages/StoryPage';
 import ActionsPage from './pages/ActionsPage';
 import PrintPages from './pages/PrintPages';
 import MissingPage from './pages/MissingPage';
+import ViewMode from './pages/ViewMode';
 
 function App() {
   const [state, dispatch] = useReducer(updateState, initialState);
@@ -34,7 +35,7 @@ function App() {
               <Route path="/story-page/:pageNumber" component={StoryPage} />
               <Route path="/delete-page" component={StoryTemplates} />
               <Route path="/select-page-template" component={PageTemplates} />
-              <Route path="/view-mode" component={StoryTemplates} />
+              <Route path="/view-mode" component={ViewMode} />
               <Route path="/print" component={PrintPages} />
               <Route path="*" component={MissingPage} />
             </Switch>

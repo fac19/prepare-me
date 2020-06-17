@@ -3,7 +3,7 @@ const blankTemplate = {
     {
       pageTemplate: 'FrontCover',
       fields: {
-        text1: 'Click to add a title',
+        text1: 'Click to add a story title.',
         pic1:
           'https://res.cloudinary.com/didur5psx/image/upload/v1591714780/starting_school/yourpic_rjemqq.jpg',
       },

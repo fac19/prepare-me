@@ -22,7 +22,7 @@ const OurPic = styled.img`
   object-fit: contain;
 `;
 
-function Portrait2({ pageNumber, fields }) {
+function Portrait2({ pageNumber, fields, active = true }) {
   const [, dispatch] = React.useContext(SiteContext);
   return (
     <Grid>
@@ -30,24 +30,26 @@ function Portrait2({ pageNumber, fields }) {
         <OurPic
           src={fields.pic1}
           id="pic1"
-          onClick={(e) => uploadImageHandler(e, pageNumber, dispatch)}
+          onClick={(e) => active && uploadImageHandler(e, pageNumber, dispatch)}
         ></OurPic>
         <OurText
           id="text1"
           value={fields.text1}
           onChange={(e) => editHandler(e, pageNumber, dispatch)}
+          disabled={!active}
         ></OurText>
       </Grid>
       <Grid item>
         <OurPic
           src={fields.pic2}
           id="pic2"
-          onClick={(e) => uploadImageHandler(e, pageNumber, dispatch)}
+          onClick={(e) => active && uploadImageHandler(e, pageNumber, dispatch)}
         ></OurPic>
         <OurText
           id="text2"
           value={fields.text2}
           onChange={(e) => editHandler(e, pageNumber, dispatch)}
+          disabled={!active}
         ></OurText>
       </Grid>
     </Grid>

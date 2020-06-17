@@ -140,14 +140,14 @@ const TopNavbar = ({ pageNumber }) => {
       >
         <MenuItem
           key="ReadMode"
-          selected={'Read Mode' === 'Pyxis'}
+          selected={'View' === 'Pyxis'}
           onClick={handleClose}
           component={Link}
           to="/view-mode"
         >
           <MenuBookIcon />
           <Typography variant="h3" align="center">
-            Read Mode
+            View Mode
           </Typography>
         </MenuItem>
         <MenuItem

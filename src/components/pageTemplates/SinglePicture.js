@@ -19,19 +19,20 @@ const OurPic = styled.img`
   object-fit: contain;
 `;
 
-function SinglePicture({ pageNumber, fields }) {
+function SinglePicture({ pageNumber, fields, active = true }) {
   const [, dispatch] = React.useContext(SiteContext);
   return (
     <>
       <OurPic
         src={fields.pic1}
         id="pic1"
-        onClick={(e) => uploadImageHandler(e, pageNumber, dispatch)}
+        onClick={(e) => active && uploadImageHandler(e, pageNumber, dispatch)}
       ></OurPic>
       <OurText
         id="text1"
         value={fields.text1}
         onChange={(e) => editHandler(e, pageNumber, dispatch)}
+        disabled={!active}
       ></OurText>
     </>
   );
