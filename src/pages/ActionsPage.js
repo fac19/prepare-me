@@ -28,7 +28,7 @@ function ActionsPage() {
         direction="column"
         alignContent="stretch"
         alignItems="center"
-        justify="space-evenly"
+        justify="space-between"
       >
         <Grid item>
           <Typography variant="h1" align="center">
