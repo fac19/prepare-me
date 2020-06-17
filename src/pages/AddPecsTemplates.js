@@ -11,7 +11,7 @@ import {
 import styled from 'styled-components';
 
 // Images
-import l1 from '../static/l1.svg';
+// import l1 from '../static/l1.svg';
 import l2 from '../static/l2.svg';
 import p2 from '../static/p2.svg';
 
