@@ -10,239 +10,239 @@ import uploadImageHandler from './uploadImageHandler';
 const OurText = styled.textarea`
   font-family: 'Short Stack', cursive;
   font-size: 1vh;
-  width: 50%;
+  width: 90%;
   resize: none;
   border: 0;
 `;
 
 const OurPic = styled.img`
   width: 100%;
-  height: 20%;
+  height: 50%;
   object-fit: contain;
 `;
 
 const OurCard = styled.div`
   width: 150%;
-  /* height: 30%; */
   border: 3px solid red;
   text-align: center;
 `;
 
-// const pec = {
-//   justifyItems: 'center',
-//   alignItems: 'center',
-//   height: '7%',
-//   background: 'blue',
-// };
-
 function Pecs12({ pageNumber, fields, active = true }) {
   const [, dispatch] = React.useContext(SiteContext);
   return (
-    <Grid container spacing={3}>
-      <Grid item xs={3}>
-        <OurCard>
-          <OurPic
-            src={fields.pic1}
-            id="pic1"
-            onClick={(e) =>
-              active && uploadImageHandler(e, pageNumber, dispatch)
-            }
-          ></OurPic>
-          <OurText
-            id="text1"
-            value={fields.text1}
-            onChange={(e) => editHandler(e, pageNumber, dispatch)}
-            disabled={!active}
-          ></OurText>
-        </OurCard>
+    <Grid container spacing={4}>
+      <Grid container item justify="space-around" xs={12} spacing={3}>
+        <Grid item xs={3}>
+          <OurCard>
+            <OurPic
+              src={fields.pic1}
+              id="pic1"
+              onClick={(e) =>
+                active && uploadImageHandler(e, pageNumber, dispatch)
+              }
+            ></OurPic>
+            <OurText
+              id="text1"
+              value={fields.text1}
+              onChange={(e) => editHandler(e, pageNumber, dispatch)}
+              disabled={!active}
+            ></OurText>
+          </OurCard>
+        </Grid>{' '}
+        <Grid item xs={3}>
+          <OurCard>
+            <OurPic
+              src={fields.pic2}
+              id="pic2"
+              onClick={(e) =>
+                active && uploadImageHandler(e, pageNumber, dispatch)
+              }
+            ></OurPic>
+            <OurText
+              id="text2"
+              value={fields.text2}
+              onChange={(e) => editHandler(e, pageNumber, dispatch)}
+              disabled={!active}
+            ></OurText>
+          </OurCard>
+        </Grid>{' '}
+        <Grid item xs={3}>
+          <OurCard>
+            <OurPic
+              src={fields.pic3}
+              id="pic3"
+              onClick={(e) =>
+                active && uploadImageHandler(e, pageNumber, dispatch)
+              }
+            ></OurPic>
+            <OurText
+              id="text3"
+              value={fields.text3}
+              onChange={(e) => editHandler(e, pageNumber, dispatch)}
+              disabled={!active}
+            ></OurText>
+          </OurCard>
+        </Grid>{' '}
       </Grid>{' '}
-      <Grid item xs={3}>
-        <OurCard>
-          <OurPic
-            src={fields.pic2}
-            id="pic2"
-            onClick={(e) =>
-              active && uploadImageHandler(e, pageNumber, dispatch)
-            }
-          ></OurPic>
-          <OurText
-            id="text2"
-            value={fields.text2}
-            onChange={(e) => editHandler(e, pageNumber, dispatch)}
-            disabled={!active}
-          ></OurText>
-        </OurCard>
+      <Grid container item justify="space-around" xs={12} spacing={3}>
+        <Grid item xs={3}>
+          <OurCard>
+            <OurPic
+              src={fields.pic4}
+              id="pic4"
+              onClick={(e) =>
+                active && uploadImageHandler(e, pageNumber, dispatch)
+              }
+            ></OurPic>
+            <OurText
+              id="text4"
+              value={fields.text4}
+              onChange={(e) => editHandler(e, pageNumber, dispatch)}
+              disabled={!active}
+            ></OurText>
+          </OurCard>
+        </Grid>{' '}
+        <Grid item xs={3}>
+          <OurCard>
+            <OurPic
+              src={fields.pic5}
+              id="pic5"
+              onClick={(e) =>
+                active && uploadImageHandler(e, pageNumber, dispatch)
+              }
+            ></OurPic>
+            <OurText
+              id="text5"
+              value={fields.text5}
+              onChange={(e) => editHandler(e, pageNumber, dispatch)}
+              disabled={!active}
+            ></OurText>
+          </OurCard>
+        </Grid>{' '}
+        <Grid item xs={3}>
+          <OurCard>
+            <OurPic
+              src={fields.pic6}
+              id="pic6"
+              onClick={(e) =>
+                active && uploadImageHandler(e, pageNumber, dispatch)
+              }
+            ></OurPic>
+            <OurText
+              id="text6"
+              value={fields.text6}
+              onChange={(e) => editHandler(e, pageNumber, dispatch)}
+              disabled={!active}
+            ></OurText>
+          </OurCard>
+        </Grid>{' '}
       </Grid>{' '}
-      <Grid item xs={3}>
-        <OurCard>
-          <OurPic
-            src={fields.pic3}
-            id="pic3"
-            onClick={(e) =>
-              active && uploadImageHandler(e, pageNumber, dispatch)
-            }
-          ></OurPic>
-          <OurText
-            id="text3"
-            value={fields.text3}
-            onChange={(e) => editHandler(e, pageNumber, dispatch)}
-            disabled={!active}
-          ></OurText>
-        </OurCard>
+      <Grid container item justify="space-around" xs={12} spacing={3}>
+        <Grid item xs={3}>
+          <OurCard>
+            <OurPic
+              src={fields.pic7}
+              id="pic7"
+              onClick={(e) =>
+                active && uploadImageHandler(e, pageNumber, dispatch)
+              }
+            ></OurPic>
+            <OurText
+              id="text7"
+              value={fields.text7}
+              onChange={(e) => editHandler(e, pageNumber, dispatch)}
+              disabled={!active}
+            ></OurText>
+          </OurCard>
+        </Grid>{' '}
+        <Grid item xs={3}>
+          <OurCard>
+            <OurPic
+              src={fields.pic8}
+              id="pic8"
+              onClick={(e) =>
+                active && uploadImageHandler(e, pageNumber, dispatch)
+              }
+            ></OurPic>
+            <OurText
+              id="text8"
+              value={fields.text8}
+              onChange={(e) => editHandler(e, pageNumber, dispatch)}
+              disabled={!active}
+            ></OurText>
+          </OurCard>
+        </Grid>{' '}
+        <Grid item xs={3}>
+          <OurCard>
+            <OurPic
+              src={fields.pic9}
+              id="pic9"
+              onClick={(e) =>
+                active && uploadImageHandler(e, pageNumber, dispatch)
+              }
+            ></OurPic>
+            <OurText
+              id="text9"
+              value={fields.text9}
+              onChange={(e) => editHandler(e, pageNumber, dispatch)}
+              disabled={!active}
+            ></OurText>
+          </OurCard>
+        </Grid>{' '}
       </Grid>{' '}
-      <Grid item xs={3}>
-        <OurCard>
-          <OurPic
-            src={fields.pic4}
-            id="pic4"
-            onClick={(e) =>
-              active && uploadImageHandler(e, pageNumber, dispatch)
-            }
-          ></OurPic>
-          <OurText
-            id="text4"
-            value={fields.text4}
-            onChange={(e) => editHandler(e, pageNumber, dispatch)}
-            disabled={!active}
-          ></OurText>
-        </OurCard>
+      <Grid container item justify="space-around" xs={12} spacing={3}>
+        <Grid item xs={3}>
+          <OurCard>
+            <OurPic
+              src={fields.pic10}
+              id="pic10"
+              onClick={(e) =>
+                active && uploadImageHandler(e, pageNumber, dispatch)
+              }
+            ></OurPic>
+            <OurText
+              id="text10"
+              value={fields.text10}
+              onChange={(e) => editHandler(e, pageNumber, dispatch)}
+              disabled={!active}
+            ></OurText>
+          </OurCard>
+        </Grid>{' '}
+        <Grid item xs={3}>
+          <OurCard>
+            <OurPic
+              src={fields.pic11}
+              id="pic11"
+              onClick={(e) =>
+                active && uploadImageHandler(e, pageNumber, dispatch)
+              }
+            ></OurPic>
+            <OurText
+              id="text11"
+              value={fields.text11}
+              onChange={(e) => editHandler(e, pageNumber, dispatch)}
+              disabled={!active}
+            ></OurText>
+          </OurCard>
+        </Grid>
+        <Grid item xs={3}>
+          <OurCard>
+            <OurPic
+              src={fields.pic12}
+              id="pic12"
+              onClick={(e) =>
+                active && uploadImageHandler(e, pageNumber, dispatch)
+              }
+            ></OurPic>
+            <OurText
+              id="text12"
+              value={fields.text12}
+              onChange={(e) => editHandler(e, pageNumber, dispatch)}
+              disabled={!active}
+            ></OurText>
+          </OurCard>
+        </Grid>
       </Grid>{' '}
-      <Grid item xs={3}>
-        <OurCard>
-          <OurPic
-            src={fields.pic5}
-            id="pic5"
-            onClick={(e) =>
-              active && uploadImageHandler(e, pageNumber, dispatch)
-            }
-          ></OurPic>
-          <OurText
-            id="text5"
-            value={fields.text5}
-            onChange={(e) => editHandler(e, pageNumber, dispatch)}
-            disabled={!active}
-          ></OurText>
-        </OurCard>
-      </Grid>{' '}
-      <Grid item xs={3}>
-        <OurCard>
-          <OurPic
-            src={fields.pic6}
-            id="pic6"
-            onClick={(e) =>
-              active && uploadImageHandler(e, pageNumber, dispatch)
-            }
-          ></OurPic>
-          <OurText
-            id="text6"
-            value={fields.text6}
-            onChange={(e) => editHandler(e, pageNumber, dispatch)}
-            disabled={!active}
-          ></OurText>
-        </OurCard>
-      </Grid>{' '}
-      <Grid item xs={3}>
-        <OurCard>
-          <OurPic
-            src={fields.pic7}
-            id="pic7"
-            onClick={(e) =>
-              active && uploadImageHandler(e, pageNumber, dispatch)
-            }
-          ></OurPic>
-          <OurText
-            id="text7"
-            value={fields.text7}
-            onChange={(e) => editHandler(e, pageNumber, dispatch)}
-            disabled={!active}
-          ></OurText>
-        </OurCard>
-      </Grid>{' '}
-      <Grid item xs={3}>
-        <OurCard>
-          <OurPic
-            src={fields.pic8}
-            id="pic8"
-            onClick={(e) =>
-              active && uploadImageHandler(e, pageNumber, dispatch)
-            }
-          ></OurPic>
-          <OurText
-            id="text8"
-            value={fields.text8}
-            onChange={(e) => editHandler(e, pageNumber, dispatch)}
-            disabled={!active}
-          ></OurText>
-        </OurCard>
-      </Grid>{' '}
-      <Grid item xs={3}>
-        <OurCard>
-          <OurPic
-            src={fields.pic9}
-            id="pic9"
-            onClick={(e) =>
-              active && uploadImageHandler(e, pageNumber, dispatch)
-            }
-          ></OurPic>
-          <OurText
-            id="text9"
-            value={fields.text9}
-            onChange={(e) => editHandler(e, pageNumber, dispatch)}
-            disabled={!active}
-          ></OurText>
-        </OurCard>
-      </Grid>{' '}
-      <Grid item xs={3}>
-        <OurCard>
-          <OurPic
-            src={fields.pic10}
-            id="pic10"
-            onClick={(e) =>
-              active && uploadImageHandler(e, pageNumber, dispatch)
-            }
-          ></OurPic>
-          <OurText
-            id="text10"
-            value={fields.text10}
-            onChange={(e) => editHandler(e, pageNumber, dispatch)}
-            disabled={!active}
-          ></OurText>
-        </OurCard>
-      </Grid>{' '}
-      <Grid item xs={3}>
-        <OurCard>
-          <OurPic
-            src={fields.pic11}
-            id="pic11"
-            onClick={(e) =>
-              active && uploadImageHandler(e, pageNumber, dispatch)
-            }
-          ></OurPic>
-          <OurText
-            id="text11"
-            value={fields.text11}
-            onChange={(e) => editHandler(e, pageNumber, dispatch)}
-            disabled={!active}
-          ></OurText>
-        </OurCard>
-      </Grid>
-      <Grid item xs={3}>
-        <OurCard>
-          <OurPic
-            src={fields.pic12}
-            id="pic12"
-            onClick={(e) =>
-              active && uploadImageHandler(e, pageNumber, dispatch)
-            }
-          ></OurPic>
-          <OurText
-            id="text12"
-            value={fields.text12}
-            onChange={(e) => editHandler(e, pageNumber, dispatch)}
-            disabled={!active}
-          ></OurText>
-        </OurCard>
-      </Grid>
     </Grid>
   );
 }
