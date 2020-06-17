@@ -28,7 +28,7 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run --spec 'cypress/integration/*.spec.js'",
     "cy:record": "cypress run --record --key 527e4fa6-e949-4262-bba0-8d5a0578b865",
-    "cy:ci": "start-server-and-test start http://localhost:3000"
+    "cy:ci": "start-server-and-test start http://localhost:3000 cy:run"
   },
   "eslintConfig": {
     "extends": "react-app"
