@@ -27,6 +27,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   section: {
+    display: 'flex',
+    flexDirection: 'column',
+    margin: 10,
+    padding: 10,
+    flexGrow: 1,
+  },
+  sectionP: {
+    display: 'flex',
+    flexDirection: 'row',
     margin: 10,
     padding: 10,
     flexGrow: 1,
@@ -59,7 +68,11 @@ const MyDocument = ({ state }) => {
   state.pages.forEach((page, index) => {
     pages.push(
       <Page size="A4" style={styles.page} key={index}>
-        <View style={styles.section}>
+        <View
+          style={
+            page.pageTemplate === 'Portrait2' ? styles.sectionP : styles.section
+          }
+        >
           <Image src={page.fields.pic1} style={styles.storyImage}></Image>
           <Text style={styles.storyText}> {page.fields.text1} </Text>
         </View>
