@@ -17,6 +17,7 @@ function updateState(state, command) {
 
   switch (command.type) {
     case 'load story template': {
+      console.log('COMMAND:', command);
       const { template } = command;
       copy.pages = nameToStoryTemplate[template].pages;
       return copy;
