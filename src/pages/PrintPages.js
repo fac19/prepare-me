@@ -1,7 +1,17 @@
 import React, { useContext } from 'react';
 import SiteContext from '../model/SiteContext';
-
+import styled from 'styled-components';
 import allPages from '../model/allPages';
+import { Grid, Typography } from '@material-ui/core';
+const Overlay = styled.div`
+  position: absolute;
+  background: #ffffff;
+  color: #000000;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+`;
 
 function PrintPages() {
   const [state] = useContext(SiteContext);
@@ -15,7 +25,18 @@ function PrintPages() {
     setTimeout(window.print, 5000);
   }, []);
 
-  return <>{pages}</>;
+  return (
+    <>
+      <Overlay id="printOverlay">
+        <Grid container alignContent="center" alignItems="center">
+          <Grid item>
+            <Typography>Please wait while we prepare your printout.</Typography>
+          </Grid>
+        </Grid>
+      </Overlay>
+      {pages}
+    </>
+  );
 }
 
 export default PrintPages;

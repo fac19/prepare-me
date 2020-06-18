@@ -7,7 +7,6 @@ const OurPaper = styled.div`
   page-break-before: always;
   /* width: 100%; */
   height: 90vh;
-  // object-fit: cover;
 `;
 
 function allPages(state) {
