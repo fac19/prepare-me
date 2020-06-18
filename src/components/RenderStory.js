@@ -8,10 +8,18 @@ import {
   View,
   Document,
   StyleSheet,
+  Font,
 } from '@react-pdf/renderer';
 import SiteContext from '../model/SiteContext';
 import { Typography } from '@material-ui/core';
+import font from '../fonts/ShortStack-Regular.ttf';
 // import Landscape1 from './pageTemplates/Landscape1';
+Font.register({
+  family: 'Short Stack',
+  src: font,
+  fontStyle: 'normal',
+  fontWeight: 'normal',
+});
 
 const styles = StyleSheet.create({
   page: {
@@ -19,6 +27,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   section: {
+    display: 'flex',
+    flexDirection: 'column',
+    margin: 10,
+    padding: 10,
+    flexGrow: 1,
+  },
+  sectionP: {
+    display: 'flex',
+    flexDirection: 'row',
     margin: 10,
     padding: 10,
     flexGrow: 1,
@@ -26,6 +43,20 @@ const styles = StyleSheet.create({
   pdf: {
     textDecoration: 'none',
     color: 'black',
+  },
+
+  storyText: {
+    fontFamily: 'Short Stack',
+    fontSize: '2vh',
+    width: '100%',
+    minHeight: '40%',
+    border: 0,
+  },
+
+  storyImage: {
+    width: '100%',
+    maxHeight: '60%',
+    objectFit: 'contain',
   },
 });
 
@@ -36,15 +67,25 @@ const MyDocument = ({ state }) => {
 
   state.pages.forEach((page, index) => {
     pages.push(
-      <Page size="A4" style={styles.page}>
-        <View style={styles.section}>
-          <Image src={page.fields.pic1}></Image>
-          <Text> {page.fields.text1}</Text>
+      <Page size="A4" style={styles.page} key={index}>
+        <View
+          style={
+            page.pageTemplate === 'Portrait2' ? styles.sectionP : styles.section
+          }
+        >
+          <Image src={page.fields.pic1} style={styles.storyImage}></Image>
+          <Text style={styles.storyText}> {page.fields.text1} </Text>
         </View>
         {page.pageTemplate === 'Landscape2' ? (
-          <View>
-            <Image src={page.fields.pic2}></Image>
-            <Text> {page.fields.text2}</Text>
+          <View style={styles.section}>
+            <Image src={page.fields.pic2} style={styles.storyImage}></Image>
+            <Text style={styles.storyText}> {page.fields.text2} </Text>
+          </View>
+        ) : null}
+        {page.pageTemplate === 'Portrait2' ? (
+          <View style={styles.section}>
+            <Image src={page.fields.pic2} style={styles.storyImage}></Image>
+            <Text style={styles.storyText}> {page.fields.text2} </Text>
           </View>
         ) : null}
       </Page>,
