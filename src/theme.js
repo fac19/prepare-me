@@ -29,12 +29,12 @@ export default createMuiTheme({
       contrastText: '#fff',
     },
     secondary: {
-      main: '#64B42D',
+      main: secondaryColor,
       dark: '#008732',
       contrastText: '#fff',
     },
     error: {
-      main: '#BD0043',
+      main: tertiaryColor,
       contrastText: '#fff',
     },
   },

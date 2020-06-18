@@ -3,17 +3,20 @@ import SiteContext from '../model/SiteContext';
 import { useHistory } from 'react-router-dom';
 import {
   Grid,
-  Container,
   Card,
   CardMedia,
   CardHeader,
   Typography,
 } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import styled from 'styled-components';
 import PrepareMeLogo from '../static/pm.png';
+import Div100vh from 'react-div-100vh';
 
 const MyGrid = styled(Grid)`
-  height: 100vh;
+  /* background: green; */
+  background: ${(props) => props.bgcol};
+  height: 100%;
 `;
 
 const MyCard = styled(Card)`
@@ -34,6 +37,8 @@ const MyMedia = styled(CardMedia)`
 `;
 
 const StoryTemplates = () => {
+  const theme = useTheme();
+  console.log('SECONDARY', theme.palette.secondary.main);
   const [, dispatch] = React.useContext(SiteContext);
   const history = useHistory();
 
@@ -44,15 +49,16 @@ const StoryTemplates = () => {
   };
 
   return (
-    <Container maxWidth="sm">
+    <Div100vh>
       <MyGrid
         container
         direction="column"
         alignItems="center"
         justify="space-evenly"
+        bgcol={theme.palette.secondary.main}
       >
         <Grid item>
-          <MyTitle variant="h3" align="center">
+          <MyTitle variant="h2" align="center">
             Select A Story Template
           </MyTitle>
         </Grid>
@@ -81,7 +87,7 @@ const StoryTemplates = () => {
           <CardHeader subheader="School Template" />
         </MyCard>
       </MyGrid>
-    </Container>
+    </Div100vh>
   );
 };
 
