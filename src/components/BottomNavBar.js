@@ -7,6 +7,7 @@ import { Typography } from '@material-ui/core';
 // Icons
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import styled from 'styled-components';
 
 // const yellowColor = '#fbb03b';
 const tealColor = '#0EB5BB';
@@ -25,6 +26,10 @@ const useStyles = makeStyles({
   selected: {},
   disabled: {},
 });
+
+const MyText = styled(Typography)`
+  align-self: center;
+`;
 
 function BottomNavBar({ pageNumber, totalPages }) {
   const classes = useStyles();
@@ -112,17 +117,17 @@ function BottomNavBar({ pageNumber, totalPages }) {
 
   const PageNumberDisplay = () => {
     return (
-      <Typography variant="h3" align="center">
+      <MyText variant="h3" align="center">
         {pageNumber}/{totalPages}
-      </Typography>
+      </MyText>
     );
   };
 
   const PageFinishDisplay = () => {
     return (
-      <Typography variant="h3" align="center">
-        Finished
-      </Typography>
+      <MyText variant="h3" align="center" justify="center">
+        Done!
+      </MyText>
     );
   };
 

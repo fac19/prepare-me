@@ -40,10 +40,18 @@ const ViewModeWarning = ({ alert, setAlert }) => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button
+            data-cy="ViewModeWarningOK"
+            onClick={handleClose}
+            color="primary"
+          >
             OK
           </Button>
-          <Button onClick={handleCancel} color="primary">
+          <Button
+            data-cy="ViewModeWarningCancel"
+            onClick={handleCancel}
+            color="primary"
+          >
             Cancel
           </Button>
         </DialogActions>

@@ -28,7 +28,7 @@ function ActionsPage() {
         direction="column"
         alignContent="stretch"
         alignItems="center"
-        justify="space-evenly"
+        justify="space-between"
       >
         <Grid item>
           <Typography variant="h1" align="center">
@@ -47,10 +47,14 @@ function ActionsPage() {
           <Button component={Link}>Download</Button>
         </Grid>
         <Grid item>
-          <Button component={Link}>Read Mode</Button>
+          <Button data-cy="ReadMode" component={Link} to="/view-mode">
+            Read Mode
+          </Button>
         </Grid>
         <Grid item>
-          <Button component={Link}>Start Over</Button>
+          <Button component={Link} to="/">
+            Start Over
+          </Button>
         </Grid>
         <Grid item>
           {/* <BottomNavBar {...{ pageNumber, totalPages }} /> */}
