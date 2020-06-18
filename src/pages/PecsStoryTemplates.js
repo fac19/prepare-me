@@ -56,6 +56,7 @@ const PecsStoryTemplates = () => {
         direction="column"
         alignItems="center"
         justify="space-evenly"
+        data-cy="PecsStoryGrid"
       >
         <Grid item>
           <MyTitle variant="h3" align="center">
@@ -75,7 +76,7 @@ const PecsStoryTemplates = () => {
           <CardHeader subheader="PECS 12 - BLANK" />
         </MyCard>
 
-        <MyCard id="Pecs6" onClick={handlePageClick} data-cy="PECS 6 BLANK">
+        <MyCard id="Pecs6" onClick={handlePageClick} data-cy="PECS6BLANK">
           <MyMedia
             component="img"
             alt="6 card PECS template"
@@ -87,7 +88,7 @@ const PecsStoryTemplates = () => {
           <CardHeader subheader="PECS 6 - BLANK" />
         </MyCard>
 
-        <MyCard id="pecsDoctor" onClick={handleStoryClick}>
+        <MyCard id="pecsDoctor" onClick={handleStoryClick} data-cy="PecsDoctor">
           <MyMedia
             component="img"
             alt="Doctors Visit PECS card template"
