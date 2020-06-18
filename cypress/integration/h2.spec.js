@@ -10,7 +10,7 @@ describe('Can upload images and displays front and back covers', () => {
     cy.get('[data-cy=NextButton]').click();
     cy.get('img')
       .invoke('attr', 'src')
-      .should('eq', '/static/media/pm.49abeb23.png');
+      .should('include', '/static/media/generic_backpage');
     cy.get('[data-cy=NextButton]').click();
     cy.get('[data-cy=NextDisabledButton]').should('be.visible');
   });
