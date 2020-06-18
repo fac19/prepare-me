@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTheme } from '@material-ui/core/styles';
 
 import { Grid } from '@material-ui/core';
 
@@ -9,9 +10,9 @@ import uploadImageHandler from './uploadImageHandler';
 
 const OurText = styled.textarea`
   font-family: 'Short Stack', cursive;
-  font-size: 2vh;
-  max-width: 100%;
-  max-height: 49%;
+  font-size: ${(props) => props.fontSize};
+  width: 50%;
+  height: 100%;
   resize: none;
   border: 0;
 `;
@@ -27,6 +28,8 @@ const MyGrid = styled(Grid)`
 `;
 
 function Portrait2({ pageNumber, fields, active = true }) {
+  const theme = useTheme();
+  console.log('FONTSIZE', theme.siteSettings.storyFontSize);
   const [, dispatch] = React.useContext(SiteContext);
   return (
     <>
@@ -52,6 +55,7 @@ function Portrait2({ pageNumber, fields, active = true }) {
             value={fields.text1}
             onChange={(e) => editHandler(e, pageNumber, dispatch)}
             disabled={!active}
+            fontSize={theme.siteSettings.storyFontSize}
           ></OurText>
         </Grid>
 
@@ -70,6 +74,7 @@ function Portrait2({ pageNumber, fields, active = true }) {
             value={fields.text2}
             onChange={(e) => editHandler(e, pageNumber, dispatch)}
             disabled={!active}
+            fontSize={theme.siteSettings.storyFontSize}
           ></OurText>
         </Grid>
       </MyGrid>
