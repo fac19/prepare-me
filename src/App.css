@@ -44,7 +44,7 @@
 
 /* Font Size for story pages on screen */
 textarea {
-  font-size: 17pt;
+  font-size: 2.4vh;
 }
 
 /* Font Size for story pages in print */
@@ -52,7 +52,6 @@ textarea {
   textarea {
     font-size: 26pt;
   }
-
   #printOverlay {
     display: none;
   }
