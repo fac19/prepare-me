@@ -9,7 +9,7 @@ import uploadImageHandler from './uploadImageHandler';
 
 const OurText = styled.textarea`
   font-family: 'Short Stack', cursive;
-  font-size: 1vh;
+  font-size: 0.3rem;
   width: 90%;
   resize: none;
   border: 0;
@@ -17,20 +17,21 @@ const OurText = styled.textarea`
 
 const OurPic = styled.img`
   width: 100%;
-  height: 50%;
+  height: 70%;
   object-fit: contain;
 `;
 
 const OurCard = styled.div`
-  width: 140%;
-  border: 3px solid red;
+  width: 120%;
+  height: 15vh;
+  border: 2px solid black;
   text-align: center;
 `;
 
 function Pecs12({ pageNumber, fields, active = true }) {
   const [, dispatch] = React.useContext(SiteContext);
   return (
-    <Grid container spacing={2}>
+    <Grid container justify="space-between" spacing={1}>
       <Grid container item justify="space-around" xs={12} spacing={2}>
         <Grid item xs={3}>
           <OurCard>
