@@ -27,14 +27,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   section: {
-    display: 'flex',
     flexDirection: 'column',
     margin: 10,
     padding: 10,
     flexGrow: 1,
   },
   sectionP: {
-    display: 'flex',
     flexDirection: 'row',
     margin: 10,
     padding: 10,
@@ -48,15 +46,16 @@ const styles = StyleSheet.create({
   storyText: {
     fontFamily: 'Short Stack',
     fontSize: '2vh',
-    width: '100%',
-    minHeight: '40%',
-    border: 0,
+    width: '80vw',
+    maxHeight: '40vh',
+    marginBottom: '20px',
   },
 
   storyImage: {
-    width: '100%',
-    maxHeight: '60%',
+    width: '80vw',
+    maxHeight: '40vh',
     objectFit: 'contain',
+    marginBottom: '20px',
   },
 });
 
@@ -66,8 +65,9 @@ const MyDocument = ({ state }) => {
   const pages = [];
 
   state.pages.forEach((page, index) => {
+    console.log(page);
     pages.push(
-      <Page size="A4" style={styles.page} key={index}>
+      <Page size="A4" style={styles.page} key={index} wrap={false}>
         <View
           style={
             page.pageTemplate === 'Portrait2' ? styles.sectionP : styles.section
@@ -75,15 +75,15 @@ const MyDocument = ({ state }) => {
         >
           <Image src={page.fields.pic1} style={styles.storyImage}></Image>
           <Text style={styles.storyText}> {page.fields.text1} </Text>
+          {page.pageTemplate === 'Landscape2' ? (
+            <>
+              <Image src={page.fields.pic2} style={styles.storyImage}></Image>
+              <Text style={styles.storyText}> {page.fields.text2} </Text>
+            </>
+          ) : null}
         </View>
-        {page.pageTemplate === 'Landscape2' ? (
-          <View style={styles.section}>
-            <Image src={page.fields.pic2} style={styles.storyImage}></Image>
-            <Text style={styles.storyText}> {page.fields.text2} </Text>
-          </View>
-        ) : null}
         {page.pageTemplate === 'Portrait2' ? (
-          <View style={styles.section}>
+          <View style={styles.sectionP}>
             <Image src={page.fields.pic2} style={styles.storyImage}></Image>
             <Text style={styles.storyText}> {page.fields.text2} </Text>
           </View>
