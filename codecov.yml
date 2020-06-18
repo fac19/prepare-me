@@ -3,6 +3,8 @@ codecov:
 
 # configuration related to pull request comments
 
+ignore: src/serviceWorker.js
+
 coverage:
   status:
     project: # settings affecting project coverage
