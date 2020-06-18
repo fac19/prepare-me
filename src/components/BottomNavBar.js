@@ -50,6 +50,7 @@ function BottomNavBar({ pageNumber, totalPages }) {
           selected: classes.selected,
         }}
         label="Back"
+        data-cy="BackButton"
         icon={<NavigateBeforeIcon />}
         onClick={() => history.push(`/story-page/${pageNumber - 1}`)}
       />
@@ -65,6 +66,7 @@ function BottomNavBar({ pageNumber, totalPages }) {
           disabled: classes.disabled,
         }}
         label="Back Disabled"
+        data-cy="BackDisabledButton"
       />
     );
   };
