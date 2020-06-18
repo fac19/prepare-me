@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import editHandler from './editHandler';
 import SiteContext from '../../model/SiteContext';
 import uploadImageHandler from './uploadImageHandler';
+import { useTheme } from '@material-ui/core/styles';
 
 const OurText = styled.textarea`
   font-family: 'Short Stack', cursive;
-  font-size: 2vh;
+  font-size: ${(props) => props.fontSize};
   width: 100%;
   height: 25%;
   resize: none;
@@ -20,6 +21,8 @@ const OurPic = styled.img`
 `;
 
 function Landscape2({ pageNumber, fields, active = true }) {
+  const theme = useTheme();
+  console.log('FONTSIZE', theme.siteSettings.storyFontSize);
   const [, dispatch] = React.useContext(SiteContext);
   return (
     <>
@@ -33,6 +36,7 @@ function Landscape2({ pageNumber, fields, active = true }) {
         value={fields.text1}
         onChange={(e) => editHandler(e, pageNumber, dispatch)}
         disabled={!active}
+        fontSize={theme.siteSettings.storyFontSize}
       ></OurText>
       <OurPic
         src={fields.pic2}
@@ -44,6 +48,7 @@ function Landscape2({ pageNumber, fields, active = true }) {
         value={fields.text2}
         onChange={(e) => editHandler(e, pageNumber, dispatch)}
         disabled={!active}
+        fontSize={theme.siteSettings.storyFontSize}
       ></OurText>
     </>
   );

@@ -91,6 +91,7 @@ const startingSchool = {
           'There are NO noisy hand-dryers in school toilets. We use paper towels instead.',
         pic1:
           'https://res.cloudinary.com/didur5psx/image/upload/v1591644954/starting_school/09image1_wkd2gv.jpg',
+        text2: '',
         pic2:
           'https://res.cloudinary.com/didur5psx/image/upload/v1591644950/starting_school/09image2_ifk4fi.jpg',
       },

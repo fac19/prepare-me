@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import editHandler from './editHandler';
 import SiteContext from '../../model/SiteContext';
 import uploadImageHandler from './uploadImageHandler';
+import { useTheme } from '@material-ui/core/styles';
 
 const OurText = styled.textarea`
   font-family: 'Short Stack', cursive;
-  font-size: 2vh;
+  font-size: ${(props) => props.fontSize};
   width: 100%;
   min-height: 40%;
   resize: none;
@@ -20,6 +21,7 @@ const OurPic = styled.img`
 `;
 
 function SinglePicture({ pageNumber, fields, active = true }) {
+  const theme = useTheme();
   const [, dispatch] = React.useContext(SiteContext);
   return (
     <>
@@ -33,6 +35,7 @@ function SinglePicture({ pageNumber, fields, active = true }) {
         value={fields.text1}
         onChange={(e) => editHandler(e, pageNumber, dispatch)}
         disabled={!active}
+        fontSize={theme.siteSettings.storyFontSize}
       ></OurText>
     </>
   );

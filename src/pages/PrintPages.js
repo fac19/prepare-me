@@ -12,7 +12,7 @@ function PrintPages() {
     // allows us to detect when all the images are
     // ready to print. Without this we only get the
     // First one or two images.
-    window.print();
+    setTimeout(window.print, 5000);
   }, []);
 
   return <>{pages}</>;
