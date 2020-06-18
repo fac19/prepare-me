@@ -10,49 +10,70 @@ import uploadImageHandler from './uploadImageHandler';
 const OurText = styled.textarea`
   font-family: 'Short Stack', cursive;
   font-size: 2vh;
-  width: 50%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 49%;
   resize: none;
   border: 0;
 `;
 
 const OurPic = styled.img`
-  width: 50%;
-  height: 40%;
+  max-width: 100%;
+  max-height: 50%;
   object-fit: contain;
+`;
+
+const MyGrid = styled(Grid)`
+  height: 50vh;
 `;
 
 function Portrait2({ pageNumber, fields, active = true }) {
   const [, dispatch] = React.useContext(SiteContext);
   return (
-    <Grid>
-      <Grid item>
-        <OurPic
-          src={fields.pic1}
-          id="pic1"
-          onClick={(e) => active && uploadImageHandler(e, pageNumber, dispatch)}
-        ></OurPic>
-        <OurText
-          id="text1"
-          value={fields.text1}
-          onChange={(e) => editHandler(e, pageNumber, dispatch)}
-          disabled={!active}
-        ></OurText>
-      </Grid>
-      <Grid item>
-        <OurPic
-          src={fields.pic2}
-          id="pic2"
-          onClick={(e) => active && uploadImageHandler(e, pageNumber, dispatch)}
-        ></OurPic>
-        <OurText
-          id="text2"
-          value={fields.text2}
-          onChange={(e) => editHandler(e, pageNumber, dispatch)}
-          disabled={!active}
-        ></OurText>
-      </Grid>
-    </Grid>
+    <>
+      <MyGrid
+        container
+        direction="row"
+        alignContent="stretch"
+        alignItems="center"
+      >
+        <Grid item xs={6}>
+          <OurPic
+            src={fields.pic1}
+            id="pic1"
+            onClick={(e) =>
+              active && uploadImageHandler(e, pageNumber, dispatch)
+            }
+          ></OurPic>
+        </Grid>
+
+        <Grid item xs={6}>
+          <OurText
+            id="text1"
+            value={fields.text1}
+            onChange={(e) => editHandler(e, pageNumber, dispatch)}
+            disabled={!active}
+          ></OurText>
+        </Grid>
+
+        <Grid item xs={6}>
+          <OurPic
+            src={fields.pic2}
+            id="pic2"
+            onClick={(e) =>
+              active && uploadImageHandler(e, pageNumber, dispatch)
+            }
+          ></OurPic>
+        </Grid>
+        <Grid item xs={6}>
+          <OurText
+            id="text2"
+            value={fields.text2}
+            onChange={(e) => editHandler(e, pageNumber, dispatch)}
+            disabled={!active}
+          ></OurText>
+        </Grid>
+      </MyGrid>
+    </>
   );
 }
 

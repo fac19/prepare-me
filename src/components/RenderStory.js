@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
     width: '100%',
     minHeight: '40%',
     border: 0,
-    color: 'red',
   },
 
   storyImage: {
@@ -65,13 +64,13 @@ const MyDocument = ({ state }) => {
           <Text style={styles.storyText}> {page.fields.text1} </Text>
         </View>
         {page.pageTemplate === 'Landscape2' ? (
-          <View>
+          <View style={styles.section}>
             <Image src={page.fields.pic2} style={styles.storyImage}></Image>
             <Text style={styles.storyText}> {page.fields.text2} </Text>
           </View>
         ) : null}
         {page.pageTemplate === 'Portrait2' ? (
-          <View>
+          <View style={styles.section}>
             <Image src={page.fields.pic2} style={styles.storyImage}></Image>
             <Text style={styles.storyText}> {page.fields.text2} </Text>
           </View>
