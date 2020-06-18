@@ -19,6 +19,7 @@ const WarningPage = ({ alert, setAlert }) => {
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        data-cy="WarningPage"
       >
         <DialogTitle id="alert-dialog-title">{'Warning!'}</DialogTitle>
         <DialogContent>
@@ -28,10 +29,20 @@ const WarningPage = ({ alert, setAlert }) => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button
+            data-cy="WarningNoButton"
+            onClick={handleClose}
+            color="primary"
+          >
             No
           </Button>
-          <Button onClick={handleClose} component={Link} to="/" color="primary">
+          <Button
+            data-cy="WarningYesButton"
+            onClick={handleClose}
+            component={Link}
+            to="/"
+            color="primary"
+          >
             Yes
           </Button>
         </DialogActions>
