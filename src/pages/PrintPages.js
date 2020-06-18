@@ -30,7 +30,9 @@ function PrintPages() {
       <Overlay id="printOverlay">
         <Grid container alignContent="center" alignItems="center">
           <Grid item>
-            <Typography>Please wait while we prepare your printout.</Typography>
+            <Typography>
+              Please wait while we prepare your printout...
+            </Typography>
           </Grid>
         </Grid>
       </Overlay>
