@@ -73,7 +73,7 @@
     ]
   },
   "nyc": {
-    "exclude": "/src/serviceWorker.js"
+    "exclude": "src/serviceWorker.js"
   },
   "jest": {
     "collectCoverageFrom": [

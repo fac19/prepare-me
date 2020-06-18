@@ -82,6 +82,7 @@ const TopNavbar = ({ pageNumber }) => {
             selected: classes.selected,
           }}
           label="Home"
+          data-cy="Home"
           icon={<HomeOutlinedIcon />}
           onClick={() => setAlert(true)}
         />

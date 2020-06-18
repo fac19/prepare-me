@@ -25,4 +25,20 @@ describe('Can upload images and displays front and back covers', () => {
     cy.get('[data-cy=UploadImg]').click();
     cy.get('iframe').should('exist');
   });
+
+  it('displays warning when pressing the home button', () => {
+    cy.visit('/');
+    cy.contains('PICTURE STORY').click();
+    cy.get('[data-cy=BlankTemplate').click();
+    cy.get('[data-cy=BackDisabledButton]').should('be.visible');
+    cy.get('[data-cy=NextButton]').click();
+    cy.get('[data-cy=BackButton]').should('be.visible');
+    cy.get('[data-cy=Home]').click();
+    cy.get('[data-cy=WarningPage]').children().should('have.length', 4);
+    cy.get('[data-cy=WarningNoButton]').should('exist');
+    cy.get('[data-cy=WarningYesButton]').should('exist');
+    cy.get('[data-cy=WarningYesButton]').click();
+    cy.url().should('include', '/');
+    cy.get('[data-cy=PictureStoryButton]').should('exist');
+  });
 });
