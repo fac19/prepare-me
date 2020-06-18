@@ -66,6 +66,7 @@ const StoryTemplates = () => {
         <MyCard id="blank" onClick={handleClick} data-cy="BlankTemplateCard">
           <MyMedia
             component="img"
+            data-cy="BlankTemplate"
             alt="Blank Template"
             height="150"
             width="30px"
@@ -78,6 +79,7 @@ const StoryTemplates = () => {
         <MyCard id="school" onClick={handleClick}>
           <MyMedia
             component="img"
+            data-cy="SchoolTemplate"
             alt="School Template"
             height="150"
             width="30px"
