@@ -6,7 +6,6 @@ import uploadImageHandler from './uploadImageHandler';
 
 const OurText = styled.textarea`
   font-family: 'Short Stack', cursive;
-  font-size: 2vh;
   width: 100%;
   height: 25%;
   resize: none;

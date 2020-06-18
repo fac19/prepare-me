@@ -6,6 +6,9 @@ const secondaryColor = '#0EB5BB';
 const tertiaryColor = '#FBB03B';
 
 export default createMuiTheme({
+  siteSettings: {
+    storyFontSize: '1.4rem',
+  },
   typography: {
     h1: {
       fontSize: '5vh',
