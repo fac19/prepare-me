@@ -46,7 +46,8 @@ const startingSchool = {
       pageTemplate: 'Landscape2',
       fields: {
         text1:
-          'Your class is called Junior Infants. The door will look like this. Can you spot your name on the balloons??',
+          'Your class is called Junior Infants. The door will look like this.',
+        text2: 'Can you spot your name on the balloons??',
         pic1:
           'https://res.cloudinary.com/didur5psx/image/upload/v1591644962/starting_school/05image1_ipkd2i.jpg',
         pic2:
@@ -87,11 +88,10 @@ const startingSchool = {
       // page 9
       pageTemplate: 'Landscape2',
       fields: {
-        text1:
-          'There are NO noisy hand-dryers in school toilets. We use paper towels instead.',
+        text1: 'There are NO noisy hand-dryers in school toilets.',
         pic1:
           'https://res.cloudinary.com/didur5psx/image/upload/v1591644954/starting_school/09image1_wkd2gv.jpg',
-        text2: '',
+        text2: 'We use paper towels instead.',
         pic2:
           'https://res.cloudinary.com/didur5psx/image/upload/v1591644950/starting_school/09image2_ifk4fi.jpg',
       },
