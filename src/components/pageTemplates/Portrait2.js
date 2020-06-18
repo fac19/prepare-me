@@ -11,7 +11,6 @@ import uploadImageHandler from './uploadImageHandler';
 const OurText = styled.textarea`
   font-family: 'Short Stack', cursive;
   font-size: ${(props) => props.fontSize};
-  display: inline-block;
   width: 50%;
   height: 100%;
   resize: none;
