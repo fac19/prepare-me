@@ -32,9 +32,10 @@ function ActionsPage() {
           alignItems="center"
           justify="space-between"
         >
+          <Grid item>&nbsp;</Grid>
           <Grid item>
             <Typography variant="h1" align="center">
-              Looks like you're finished.
+              Looks like you finished.
             </Typography>
           </Grid>
           <Grid item>
@@ -49,10 +50,14 @@ function ActionsPage() {
             <Button component={Link}>Download</Button>
           </Grid>
           <Grid item>
-            <Button component={Link}>Read Mode</Button>
+            <Button data-cy="ReadMode" component={Link} to="/view-mode">
+              Read Mode
+            </Button>
           </Grid>
           <Grid item>
-            <Button component={Link}>Start Over</Button>
+            <Button component={Link} to="/">
+              Start Over
+            </Button>
           </Grid>
           <Grid item>
             {/* <BottomNavBar {...{ pageNumber, totalPages }} /> */}

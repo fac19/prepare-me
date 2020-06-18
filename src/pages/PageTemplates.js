@@ -72,8 +72,8 @@ const PageTemplates = () => {
       <Grid item>
         <MyCard
           id="SinglePicture"
-          onClick={handleClick}
           data-cy="SinglePicture"
+          onClick={handleClick}
         >
           <MyMedia
             component="img"
