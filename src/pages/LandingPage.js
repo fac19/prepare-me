@@ -50,11 +50,7 @@ function LandingPage() {
           >
             PICTURE STORY
           </Button>
-          <Button
-            data-cy="PecsButton"
-            component={RouterLink}
-            to="/select-pecs-template"
-          >
+          <Button component={RouterLink} to="/select-pecs-template">
             PECS
           </Button>
         </Grid>

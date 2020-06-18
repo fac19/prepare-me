@@ -31,10 +31,10 @@ const OurCard = styled.div`
 function Pecs12({ pageNumber, fields, active = true }) {
   const [, dispatch] = React.useContext(SiteContext);
   return (
-    <Grid data-cy="Pecs12Grid" container justify="space-between" spacing={1}>
+    <Grid container justify="space-between" spacing={1}>
       <Grid container item justify="space-around" xs={12} spacing={2}>
         <Grid item xs={3}>
-          <OurCard data-cy="PecsCard">
+          <OurCard>
             <OurPic
               src={fields.pic1}
               id="pic1"

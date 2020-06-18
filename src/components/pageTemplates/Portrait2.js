@@ -41,7 +41,6 @@ function Portrait2({ pageNumber, fields, active = true }) {
       >
         <Grid item xs={6}>
           <OurPic
-            data-cy="UploadImg"
             src={fields.pic1}
             id="pic1"
             onClick={(e) =>

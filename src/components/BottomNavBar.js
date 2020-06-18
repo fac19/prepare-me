@@ -95,7 +95,6 @@ function BottomNavBar({ pageNumber, totalPages }) {
           focused: classes.focused,
         }}
         label="Next"
-        data-cy="NextButton"
         icon={<NavigateNextIcon />}
         onClick={() => history.push(isLastPage)}
       />
@@ -112,7 +111,6 @@ function BottomNavBar({ pageNumber, totalPages }) {
           focused: classes.focused,
         }}
         label="Next Disabled"
-        data-cy="NextDisabledButton"
       />
     );
   };
