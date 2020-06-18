@@ -47,7 +47,7 @@ function ActionsPage() {
           <Button component={Link}>Download</Button>
         </Grid>
         <Grid item>
-          <Button component={Link} to="/view-mode">
+          <Button data-cy="ReadMode" component={Link} to="/view-mode">
             Read Mode
           </Button>
         </Grid>

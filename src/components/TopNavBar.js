@@ -92,6 +92,7 @@ const TopNavbar = ({ pageNumber }) => {
             selected: classes.selected,
           }}
           label="Delete Page"
+          data-cy="DeletePage"
           icon={<DeleteOutlineOutlinedIcon />}
           onClick={handleDelete}
           component={Link}
@@ -104,6 +105,7 @@ const TopNavbar = ({ pageNumber }) => {
             selected: classes.selected,
           }}
           label="Add Page"
+          data-cy="AddPage"
           icon={<AddOutlinedIcon />}
           onClick={handleAdd}
         />
@@ -126,6 +128,7 @@ const TopNavbar = ({ pageNumber }) => {
       </TopNavigation>
       <Menu
         id="long-menu"
+        data-cy="VerticalMenu"
         anchorEl={anchorEl}
         keepMounted
         open={open}
@@ -144,6 +147,7 @@ const TopNavbar = ({ pageNumber }) => {
           onClick={handleClose}
           component={Link}
           to="/view-mode"
+          data-cy="ViewMode"
         >
           <MenuBookIcon />
           <Typography variant="h3" align="center">
@@ -172,7 +176,13 @@ const TopNavbar = ({ pageNumber }) => {
         </MenuItem>
       </Menu>
 
-      {alert ? <WarningPage alert={alert} setAlert={setAlert} /> : null}
+      {alert ? (
+        <WarningPage
+          data-cy="ViewModeWarning"
+          alert={alert}
+          setAlert={setAlert}
+        />
+      ) : null}
     </>
   );
 };
