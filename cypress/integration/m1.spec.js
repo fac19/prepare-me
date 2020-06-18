@@ -7,8 +7,8 @@ describe('m1.spec', () => {
     cy.contains('Blank Template').click();
     cy.contains('Next').click();
     cy.url().should('include', '/story-page/2');
-    cy.get('[data-cy="VerticalMenu"]').click({ force: true });
-    cy.get('[data-cy="ViewMode"]').click({ force: true });
+    cy.get('[data-cy="VerticalMenu"]').click();
+    cy.get('[data-cy="ViewMode"]').click();
   });
 
   it('should return you to the correct page after clicking cancel in view mode warning', () => {
@@ -17,9 +17,9 @@ describe('m1.spec', () => {
     cy.contains('Blank Template').click();
     cy.contains('Next').click();
     cy.url().should('include', '/story-page/2');
-    cy.get('[data-cy="VerticalMenu"]').click({ force: true });
-    cy.get('[data-cy="ViewMode"]').click({ force: true });
-    cy.get('[ data-cy="ViewModeWarningCancel"]').click({ force: true });
+    cy.get('[data-cy="VerticalMenu"]').click();
+    cy.get('[data-cy="ViewMode"]').click();
+    cy.get('[ data-cy="ViewModeWarningCancel"]').click();
     cy.url().should('include', '/story-page/2');
   });
 
@@ -29,9 +29,9 @@ describe('m1.spec', () => {
     cy.contains('Blank Template').click();
     cy.contains('Next').click();
     cy.url().should('include', '/story-page/2');
-    cy.get('[data-cy="VerticalMenu"]').click({ force: true });
-    cy.get('[data-cy="ViewMode"]').click({ force: true });
-    cy.get('[data-cy="ViewModeWarningOK"]').click({ force: true });
+    cy.get('[data-cy="VerticalMenu"]').click();
+    cy.get('[data-cy="ViewMode"]').click();
+    cy.get('[data-cy="ViewModeWarningOK"]').click();
     cy.url().should('include', '/view-mode');
   });
 

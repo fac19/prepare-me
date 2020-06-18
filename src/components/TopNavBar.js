@@ -117,6 +117,7 @@ const TopNavbar = ({ pageNumber }) => {
             selected: classes.selected,
           }}
           label="More"
+          data-cy="VerticalMenu"
           aria-label="more"
           aria-controls="long-menu"
           aria-haspopup="true"
@@ -128,7 +129,6 @@ const TopNavbar = ({ pageNumber }) => {
       </TopNavigation>
       <Menu
         id="long-menu"
-        data-cy="VerticalMenu"
         anchorEl={anchorEl}
         keepMounted
         open={open}
@@ -156,6 +156,7 @@ const TopNavbar = ({ pageNumber }) => {
         </MenuItem>
         <MenuItem
           key="Download"
+          data-cy="Download"
           selected={'Download' === 'Pyxis'}
           onClick={handleClose}
         >
@@ -168,6 +169,7 @@ const TopNavbar = ({ pageNumber }) => {
           onClick={handleClose}
           component={Link}
           to="/print"
+          data-cy="Print"
         >
           <PrintOutlinedIcon />
           <Typography variant="h3" align="center">
