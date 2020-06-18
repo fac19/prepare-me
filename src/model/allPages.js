@@ -5,7 +5,8 @@ import getPageTemplateByName from '../components/pageTemplates/getPageTemplateBy
 
 const OurPaper = styled.div`
   page-break-before: always;
-  height: 100vh;
+  /* width: 100%; */
+  height: 90vh;
 `;
 
 function allPages(state) {

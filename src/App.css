@@ -37,3 +37,23 @@
     transform: rotate(360deg);
   }
 }
+
+/* STORY FONT SIZES, KEEP IN SYNC! */
+/* STORY FONT SIZES, KEEP IN SYNC! */
+/* STORY FONT SIZES, KEEP IN SYNC! */
+
+/* Font Size for story pages on screen */
+textarea {
+  font-size: 17pt;
+}
+
+/* Font Size for story pages in print */
+@media print {
+  textarea {
+    font-size: 26pt;
+  }
+
+  #printOverlay {
+    display: none;
+  }
+}

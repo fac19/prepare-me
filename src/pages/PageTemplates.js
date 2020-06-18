@@ -8,6 +8,7 @@ import {
   CardHeader,
   Typography,
 } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import styled from 'styled-components';
 
 // Images
@@ -15,10 +16,8 @@ import l1 from '../static/l1.svg';
 import l2 from '../static/l2.svg';
 import p2 from '../static/p2.svg';
 
-const secondaryColor = '#0EB5BB';
-
 const MyGrid = styled(Grid)`
-  background-color: ${secondaryColor};
+  background-color: ${(props) => props.bgcol};
 `;
 
 const MyCard = styled(Card)`
@@ -43,6 +42,7 @@ const MyMedia = styled(CardMedia)`
 `;
 
 const PageTemplates = () => {
+  const theme = useTheme();
   const [, dispatch] = React.useContext(SiteContext);
   const history = useHistory();
   const pageNumber = history.location.params.pageNumber;
@@ -58,7 +58,11 @@ const PageTemplates = () => {
   }
 
   return (
-    <MyGrid container justify="space-around">
+    <MyGrid
+      container
+      justify="space-around"
+      bgcol={theme.palette.secondary.main}
+    >
       <Grid item xs={12}>
         <MyTitle variant="h2" align="center" justify="space-between">
           Select A Page Template
@@ -68,8 +72,8 @@ const PageTemplates = () => {
       <Grid item>
         <MyCard
           id="SinglePicture"
-          onClick={handleClick}
           data-cy="SinglePicture"
+          onClick={handleClick}
         >
           <MyMedia
             component="img"

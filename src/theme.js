@@ -6,6 +6,9 @@ const secondaryColor = '#0EB5BB';
 const tertiaryColor = '#FBB03B';
 
 export default createMuiTheme({
+  siteSettings: {
+    storyFontSize: '1.4rem',
+  },
   typography: {
     h1: {
       fontSize: '5vh',
@@ -29,12 +32,12 @@ export default createMuiTheme({
       contrastText: '#fff',
     },
     secondary: {
-      main: '#64B42D',
+      main: secondaryColor,
       dark: '#008732',
       contrastText: '#fff',
     },
     error: {
-      main: '#BD0043',
+      main: tertiaryColor,
       contrastText: '#fff',
     },
   },
