@@ -28,12 +28,16 @@ const styles = StyleSheet.create({
   },
   section: {
     flexDirection: 'column',
+    alignContent: 'center',
+    alignItems: 'center',
     margin: 10,
     padding: 10,
     flexGrow: 1,
   },
   sectionP: {
     flexDirection: 'row',
+    alignContent: 'center',
+    alignItems: 'center',
     margin: 10,
     padding: 10,
     flexGrow: 1,
@@ -45,17 +49,17 @@ const styles = StyleSheet.create({
 
   storyText: {
     fontFamily: 'Short Stack',
-    fontSize: '2vh',
+    fontSize: '26pt',
     width: '80vw',
     maxHeight: '40vh',
-    marginBottom: '20px',
+    marginBottom: '10px',
+    marginLeft: '10px',
   },
 
   storyImage: {
-    width: '80vw',
     maxHeight: '40vh',
     objectFit: 'contain',
-    marginBottom: '20px',
+    marginBottom: '10px',
   },
 });
 
