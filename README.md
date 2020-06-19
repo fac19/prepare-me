@@ -17,7 +17,7 @@ Try it live on the web: https://prepare-me.netlify.app/
 - Pre built and blank story templates
 - Simple interface that works on mobile and desktop
 - Integrated picture searching, taking, uploading and cropping
-- View Mode to view stories on a mobile device
+- View Mode to consume stories on a mobile device
 - Stories are printable on desktop (mobile coming soon)
 
 ## Notes to testers / reviewers
@@ -38,15 +38,17 @@ Install all the required libraries with `npm i`
 
 Run the project with `npm start` and your system should open a browser to http://localhost:3000
 
+In the terminal you should also be given a URL that points to the ip address of your local machine. You can use this URL to try the app on your other devices e.g. mobiles, tablets, smart fridges etc
+
 ### Using inbuilt google image search
 
-If you want to try the built in google image search then you will need to create a .env file in the projects root folder with a key `REACT_APP_googleAPIkey`. The value should be set to your API key.
+If you want to use the built in google image search then you will need to create a .env file in the projects root folder with a key `REACT_APP_googleAPIkey`. The value should be set to your API key.
 
 ```bash
 echo "REACT_APP_googleAPIkey=SIzaSYAAtXpb1wKjWD0tJevuMrLvmBx_FfzaTrM" > .env
 ```
 
-To get an API key either ask someone from the team for ours or get your own from the link below. The free API keys are good for up to 100 searches per day. https://developers.google.com/custom-search/v1/introduction
+To get an API key either ask someone from the team if you can borrow ours or get your own from the link below. The free API keys are good for up to 100 searches per day and can be generated in seconds if you already have a google account. https://developers.google.com/custom-search/v1/introduction
 
 
 ## Testing
