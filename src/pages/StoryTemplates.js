@@ -20,8 +20,6 @@ const MyGrid = styled(Grid)`
 `;
 
 const MyCard = styled(Card)`
-  justify-content: center;
-  text-align: center;
   transition: 0.3s;
   :hover {
     transform: scale(1.05);
@@ -33,10 +31,9 @@ const MyCard = styled(Card)`
 const MyTitle = styled(Typography)``;
 
 const MyMedia = styled(CardMedia)`
-  padding: 0.8rem;
-  height: 25vh;
-  width: 40vw;
-  margin: 0 auto;
+  padding: 1em;
+  height: 20vh;
+  width: 30vw;
 `;
 
 const StoryTemplates = () => {
@@ -71,6 +68,8 @@ const StoryTemplates = () => {
             component="img"
             data-cy="BlankTemplate"
             alt="Blank Template"
+            height="150"
+            width="30px"
             image={PrepareMeLogo}
             title="Blank Template"
           ></MyMedia>
@@ -82,7 +81,9 @@ const StoryTemplates = () => {
             component="img"
             data-cy="SchoolTemplate"
             alt="School Template"
-            image="https://res.cloudinary.com/prepareme/image/upload/v1592470087/School%20template/school_sdjy9j.jpg"
+            height="150"
+            width="30px"
+            image={PrepareMeLogo}
             title="School Template"
           ></MyMedia>
           <CardHeader subheader="School Template" />
