@@ -48,27 +48,27 @@ School journey - Create a picture story about your child's first day at a new sc
 
 ### Current experience making stories
 
-absolute nightmare to make your template, 
+absolute nightmare to make your template,
 
-have to make your own template, put in text box yourself, add images yourself, google search image elsewhere, add them, then layout will miss up, trying to find the images you want, especially with pecs, 
+have to make your own template, put in text box yourself, add images yourself, google search image elsewhere, add them, then layout will miss up, trying to find the images you want, especially with pecs,
 
-try to crop, won't let you 
+try to crop, won't let you
 
 just trying to find the actual images you need
 
-to long, can do a quick spontaneous one on the go 
+to long, can do a quick spontaneous one on the go
 
 ### Things that would be nice
 
-Liked the difference choices of template, text box and layout 
+Liked the difference choices of template, text box and layout
 
 Need to be able to add page in between pages
 
-Access photos that you already know is useful 
+Access photos that you already know is useful
 
-flip images 
+flip images
 
-print, read mode 
+print, read mode
 
 save onto the app,
 
