@@ -161,7 +161,7 @@ const startingSchool = {
       pageTemplate: 'BackCover',
       fields: {
         pic1:
-          'https://res.cloudinary.com/prepareme/image/upload/v1592559715/School%20template/16image1_jhktkn.jpg',
+          'https://res.cloudinary.com/didur5psx/image/upload/v1591648463/starting_school/BackCover_prpwsv.jpg',
       },
     },
   ],
