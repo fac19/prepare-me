@@ -4,7 +4,7 @@
 
 ## **Prepare ME**
 
-An interactive picture story builder for parents and social care professionals to easily make printable visual stories and other visual aids quickly and easily.
+An interactive picture story builder for parents and social care professionals allowing printable visual aids to be made quickly and easily.
 
 ![](https://res.cloudinary.com/didur5psx/image/upload/v1592550439/starting_school/prepare_me_app_02_us5xyp.gif)
 
