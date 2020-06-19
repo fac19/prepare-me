@@ -6,7 +6,7 @@ import genericBackPage from '../../static/generic_backpage.svg';
 
 const MyDiv = styled.div`
   height: 100%;
-  width: 100%100px;
+  width: 100%;
 `;
 
 function BackCover() {
