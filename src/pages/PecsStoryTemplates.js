@@ -30,7 +30,8 @@ const MyTitle = styled(Typography)``;
 const MyMedia = styled(CardMedia)`
   padding: 1em;
   height: 20vh;
-  width: 30vw;
+  width: 40vw;
+  margin: 0 auto;
 `;
 
 const PecsStoryTemplates = () => {
@@ -68,8 +69,6 @@ const PecsStoryTemplates = () => {
           <MyMedia
             component="img"
             alt="12 card PECS template"
-            height="150"
-            width="30px"
             image={PrepareMeLogo}
             title="Blank Template"
           ></MyMedia>
@@ -80,8 +79,6 @@ const PecsStoryTemplates = () => {
           <MyMedia
             component="img"
             alt="6 card PECS template"
-            height="150"
-            width="30px"
             image={PrepareMeLogo}
             title="Blank Template"
           ></MyMedia>
@@ -92,8 +89,6 @@ const PecsStoryTemplates = () => {
           <MyMedia
             component="img"
             alt="Doctors Visit PECS card template"
-            height="150"
-            width="30px"
             image={PrepareMeLogo}
             title="Doctors Visit Premade Template"
           ></MyMedia>
