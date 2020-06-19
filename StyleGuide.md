@@ -1,0 +1,22 @@
+- Simplicity - users have enough on their plate already
+- Consistency - in naming, fonts, colours, positioning of nav items etc.
+- Navigability
+    - User should be able to leave any area and find their way back
+    - The options they need should be close to hand
+- If icons are used in place of text they must be unambiguous
+- Tone of writing should be warm and personal e.g. Your journey, My photos
+- Errors and modal dialogs appear as overlays
+- Fonts
+    - System text: Roboto (probably)
+    - Page text: Short Stack
+- Colour scheme - existing brand colours
+    - #0FC6CC Prepareme Turquoise (primary)
+    - #FBB03B Prepareme Yellow
+    - #CCCCCC Prepareme Light Grey
+    - #FFFFFF Pure White
+    - #000000 Pure Black
+- White backgrounds should have black text and icons
+- ~~Primary backgrounds should have white text and icons~~
+- Mobile first design,
+- Material UI for grid, UI widgets and base theme
+- Styled components for customising MUI components and non-MUI components
