@@ -14,34 +14,33 @@ Hello, sorry to butt in. Not sure if you saw this but I wrote out the available 
 
 ### Kick off questions
 
-May I ask you a few initial questions about yourself?
+#### May I ask you a few initial questions about yourself?
 
-What is your occupation?
+#### What is your occupation?
 
-What is the main browser you use?
+#### What is the main browser you use?
 
 google chrome
 
-How much do you use your phone vs a laptop when on the
-internet?
+#### How much do you use your phone vs a laptop when on the internet?
 
 if i am creating resourcec, like picture stories its pc but she uses phone mostly. 
 
 ### Whilst using the app
 
-Task 1: Could you create a picture story using a blank template?
+#### Task 1: Could you create a picture story using a blank template?
 
-Task 2: Can you create a set of PECS cards from a blank template?
+#### Task 2: Can you create a set of PECS cards from a blank template?
 
-Task 3: Can you find the page to print, download and start over?
+#### Task 3: Can you find the page to print, download and start over?
 
 ### Further Questions
 
-How was your overall experience moving around the app?
+#### How was your overall experience moving around the app?
 
-Now you have an idea what the web app is doing, what else would you like it to do?
+#### Now you have an idea what the web app is doing, what else would you like it to do?
 
-Anything else you feel we should know?
+#### Anything else you feel we should know?
 
 ## Things we need to fix:
 
