@@ -159,10 +159,7 @@ const startingSchool = {
     {
       // page 16
       pageTemplate: 'BackCover',
-      fields: {
-        pic1:
-          'https://res.cloudinary.com/didur5psx/image/upload/v1591648463/starting_school/BackCover_prpwsv.jpg',
-      },
+      fields: {},
     },
   ],
 };
