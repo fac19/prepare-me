@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import genericBackPage from '../../static/generic_backpage.svg';
 
-// import { Grid } from '@material-ui/core';
-
 const MyDiv = styled.div`
   height: 100%;
   width: 100%;

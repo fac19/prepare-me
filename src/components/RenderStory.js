@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   PDFDownloadLink,
   Page,
@@ -14,6 +13,13 @@ import SiteContext from '../model/SiteContext';
 import { Typography } from '@material-ui/core';
 import font from '../fonts/ShortStack-Regular.ttf';
 // import Landscape1 from './pageTemplates/Landscape1';
+
+/* 
+    This is the code for rendering a PDF and creating a download link. Initially we had hoped to find a React module that would just render an arbitrary React component to a PDF page. Sadly there doesn't seem to be such a free npm module. there is a commercial module that looks like it might do what we want (KendoReact) but it is pretty expensive to license ($900 per seat). In the meantime we have React-PDF (https://github.com/diegomura/react-pdf) which only allows PDF's to be created using a small subset of primitives it supplies (<Page>, <View>, <Image>, <Text> etc). As we can't use our existing template components directly our stopgap solution has been to try and recreate each template's layout using the supplied primitives and CSS. This has not proved to be straightforward, nor will it scale well as more templates are required.
+
+    Possible alternatives might be 1) See if we can modify our page templates to use the react-pdf primitives instead so we are not duplicating effort. 2) Investigate rendering components to an intermediate graphical format like SVG or PNG and then passing those into react-pdf as images. 3) Forking out for Kendo.
+*/
+
 Font.register({
   family: 'Short Stack',
   src: font,

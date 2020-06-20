@@ -9,6 +9,10 @@ import ViewModeWarning from '../components/ViewModeWarning';
 
 import getPageTemplateByName from '../components/pageTemplates/getPageTemplateByName';
 
+/*
+    This page displays the whole story from page one in "View Mode", a mode that just shows the pages with editing disabled and all navigation removed. They may leave View Mode by swiping up or using the browsers back button.
+*/
+
 const Wrapper = styled.div`
   position: absolute;
   left: 0;

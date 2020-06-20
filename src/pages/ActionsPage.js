@@ -8,6 +8,10 @@ import SiteContext from '../model/SiteContext';
 import { Swipeable } from 'react-swipeable';
 import Div100vh from 'react-div-100vh';
 
+/*
+    This page displays buttons offering various options you might want once you have finished customising your template. It is currently displayed if you continue to navigate past the end of your story. 
+*/
+
 const MyGrid = styled(Grid)`
   height: 100%;
 `;
@@ -18,7 +22,6 @@ function ActionsPage() {
   const history = useHistory();
 
   function handleRightSwipe(event) {
-    // console.log('RIGHT SWIPE DETECTED');
     history.push(`/story-page/${totalPages}`);
   }
 
@@ -60,7 +63,6 @@ function ActionsPage() {
             </Button>
           </Grid>
           <Grid item>
-            {/* <BottomNavBar {...{ pageNumber, totalPages }} /> */}
             <BottomNavBar totalPages={totalPages} />
           </Grid>
         </MyGrid>
