@@ -159,7 +159,12 @@ const startingSchool = {
     {
       // page 16
       pageTemplate: 'BackCover',
-      fields: {},
+      fields: {
+        text1:
+          'This is the story Mrs. Murphy has picked for the 1st day at school. Have you read it before?',
+        pic1:
+          'https://res.cloudinary.com/didur5psx/image/upload/v1591644938/starting_school/15image1_vm6pat.jpg',
+      },
     },
   ],
 };
