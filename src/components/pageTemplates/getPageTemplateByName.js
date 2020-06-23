@@ -5,6 +5,8 @@ import BackCover from './BackCover';
 import SinglePicture from './SinglePicture';
 import Pecs12 from './Pecs12';
 
+/* Relates component names to the actual components */
+
 const getPageTemplateByName = {
   Landscape2: Landscape2,
   Portrait2: Portrait2,

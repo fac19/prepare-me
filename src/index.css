@@ -14,6 +14,7 @@ textarea {
   text-align-last: center;
 }
 
+/* This is needed to stop the textareas greying out when they are disabled in View Mode */
 textarea:disabled {
   background: #ffffff;
   color: #000000;

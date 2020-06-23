@@ -7,6 +7,10 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
+/*
+    This page is to warn users they may lose their progress if they return to the home page.
+*/
+
 const WarningPage = ({ alert, setAlert }) => {
   const handleClose = () => {
     setAlert(false);

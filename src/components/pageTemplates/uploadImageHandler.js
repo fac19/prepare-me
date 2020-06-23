@@ -26,20 +26,12 @@ function uploadImageHandler(e, pageNumber, dispatch) {
           textDark: '#000000',
           textLight: '#FFFFFF',
         },
-        // fonts: {
-        //   'default': null,
-        //   "'Poppins', sans-serif": {
-        //     url: 'https://fonts.googleapis.com/css?family=Poppins',
-        //     active: true,
-        //   //   },
       },
     },
 
     (error, result) => {
       if (!error && result && result.event === 'success') {
-        console.log(result.info);
         const url = result.info.url;
-        console.log(url);
         dispatch({ type: 'upload image', url, fieldName, pageNumber });
       }
     },

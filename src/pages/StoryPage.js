@@ -11,6 +11,10 @@ import getPageTemplateByName from '../components/pageTemplates/getPageTemplateBy
 import TopNavBar from '../components/TopNavBar';
 import BottomNavBar from '../components/BottomNavBar';
 
+/*
+    This is the page that renders the pages of the story on screen in editing mode (the default). It takes the page number to render from the URL. The component could be made to do all it's navigation internally rather than asking for a new URL each time (that is how we implemented View Mode) but we preferred to keep the component stateless and have the browser back button history work.
+*/
+
 const Wrapper = styled.div`
   position: absolute;
   left: 0;
@@ -60,12 +64,10 @@ const StoryPage = () => {
   const Page = getPageTemplateByName[templateName];
 
   function handleLeftSwipe(event) {
-    // console.log('LEFT SWIPE DETECTED');
     if (pageNumber < totalPages) history.push(`/story-page/${pageNumber + 1}`);
     if (pageNumber === totalPages) history.push('/actions-page');
   }
   function handleRightSwipe(event) {
-    // console.log('RIGHT SWIPE DETECTED');
     if (pageNumber > 1) history.push(`/story-page/${pageNumber - 1}`);
     if (!pageNumber) history.push(`/story-page/${totalPages}`);
   }

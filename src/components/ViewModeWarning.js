@@ -7,6 +7,10 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
+/*
+    This is the warning dialog displayed when the user enters View Mode. It informs them how to navigate and how to leave View Mode.
+*/
+
 const ViewModeWarning = ({ alert, setAlert }) => {
   const history = useHistory();
 
