@@ -29,6 +29,7 @@ function Landscape2({ pageNumber, fields, active = true }) {
       ></OurPic>
       <OurText
         id="text1"
+        data-cy="text1"
         value={fields.text1}
         onChange={(e) => editHandler(e, pageNumber, dispatch)}
         disabled={!active}
@@ -40,6 +41,7 @@ function Landscape2({ pageNumber, fields, active = true }) {
       ></OurPic>
       <OurText
         id="text2"
+        data-cy="text2"
         value={fields.text2}
         onChange={(e) => editHandler(e, pageNumber, dispatch)}
         disabled={!active}
