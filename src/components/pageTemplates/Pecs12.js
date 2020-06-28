@@ -34,7 +34,7 @@ function Pecs12({ pageNumber, fields, active = true }) {
     <Grid data-cy="Pecs12Grid" container justify="space-between" spacing={1}>
       <Grid container item justify="space-around" xs={12} spacing={2}>
         <Grid item xs={3}>
-          <OurCard data-cy="PecsCard1">
+          <OurCard data-cy="PecsCard">
             <OurPic
               src={fields.pic1}
               id="pic1"
@@ -44,7 +44,6 @@ function Pecs12({ pageNumber, fields, active = true }) {
             ></OurPic>
             <OurText
               id="text1"
-              data-cy="text1"
               value={fields.text1}
               onChange={(e) => editHandler(e, pageNumber, dispatch)}
               disabled={!active}
