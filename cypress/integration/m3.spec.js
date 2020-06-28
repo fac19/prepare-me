@@ -46,6 +46,8 @@ describe('As a user I want to create pecs', () => {
     cy.get('[data-cy=text1]').contains('Click to edit text');
     cy.get('#text1').type('hello');
     cy.get('[data-cy=text1]').contains('Click to edit texthello');
+    cy.get('#text1').type('hello');
+    cy.get('[data-cy=text1]').contains('Click to edit texthello');
   });
 
   it('can upload pictures in pecs cards', () => {

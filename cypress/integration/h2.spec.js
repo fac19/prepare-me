@@ -26,6 +26,19 @@ describe('Can upload images and displays front and back covers', () => {
     cy.get('iframe').should('exist');
   });
 
+  it('can edit text on all page templates', () => {
+    cy.visit('/');
+    cy.contains('PICTURE STORY').click();
+    cy.get('[data-cy=BlankTemplate').click();
+    cy.get('[data-cy="AddPage"]').click();
+    cy.url().should('include', '/select-page-template');
+    cy.get('[data-cy="Landscape2"]').click();
+    cy.get('#text1').type('howdy');
+    cy.get('[data-cy=text1]').contains('Click to edit texthowdy');
+    cy.get('#text2').type('partner');
+    cy.get('[data-cy=text2]').contains('Click to edit textpartner');
+  });
+
   it('displays warning when pressing the home button', () => {
     cy.visit('/');
     cy.contains('PICTURE STORY').click();
