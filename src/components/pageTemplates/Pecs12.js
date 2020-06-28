@@ -44,6 +44,7 @@ function Pecs12({ pageNumber, fields, active = true }) {
             ></OurPic>
             <OurText
               id="text1"
+              data-cy="text1"
               value={fields.text1}
               onChange={(e) => editHandler(e, pageNumber, dispatch)}
               disabled={!active}
