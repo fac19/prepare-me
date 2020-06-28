@@ -17,7 +17,42 @@ describe('As a user I want to create pecs', () => {
     cy.url().should('include', '/select-pecs-template');
     cy.get('[data-cy=PECS12BLANK]').click();
     cy.get('[data-cy=Pecs12Grid]').children().its('length').should('eq', 4);
-    cy.get('[data-cy=PecsCard]').children().should('have.length', 2);
-    cy.get('[data-cy=PecsCard]').contains('Click to edit text');
+    cy.get('[data-cy=PecsCard1]').children().should('have.length', 2);
+    cy.get('[data-cy=PecsCard1]').contains('Click to edit text');
+  });
+
+  it('should have 12 pecs cards', () => {
+    cy.visit('/select-pecs-template');
+    cy.get('[data-cy=PECS12BLANK]').click();
+    cy.get('[data-cy=Pecs12Grid]').children().its('length').should('eq', 4);
+    cy.get('[data-cy=PecsCard1]').children().should('have.length', 2);
+    cy.get('[data-cy=PecsCard2]').children().should('have.length', 2);
+    cy.get('[data-cy=PecsCard3]').children().should('have.length', 2);
+    cy.get('[data-cy=PecsCard4]').children().should('have.length', 2);
+    cy.get('[data-cy=PecsCard5]').children().should('have.length', 2);
+    cy.get('[data-cy=PecsCard6]').children().should('have.length', 2);
+    cy.get('[data-cy=PecsCard7]').children().should('have.length', 2);
+    cy.get('[data-cy=PecsCard8]').children().should('have.length', 2);
+    cy.get('[data-cy=PecsCard9]').children().should('have.length', 2);
+    cy.get('[data-cy=PecsCard10]').children().should('have.length', 2);
+    cy.get('[data-cy=PecsCard11]').children().should('have.length', 2);
+    cy.get('[data-cy=PecsCard12]').children().should('have.length', 2);
+  });
+
+  it('can edit text in pecs cards', () => {
+    cy.visit('/select-pecs-template');
+    cy.get('[data-cy=PECS12BLANK]').click();
+    cy.get('[data-cy=PecsCard1]').children().should('have.length', 2);
+    cy.get('[data-cy=text1]').contains('Click to edit text');
+    cy.get('#text1').type('hello');
+    cy.get('[data-cy=text1]').contains('Click to edit texthello');
+  });
+
+  it('can upload pictures in pecs cards', () => {
+    cy.visit('/select-pecs-template');
+    cy.get('[data-cy=PECS12BLANK]').click();
+    cy.get('[data-cy=PecsCard1]').children().should('have.length', 2);
+    cy.get('#pic1').click();
+    cy.get('iframe').should('exist');
   });
 });
