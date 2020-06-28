@@ -34,7 +34,7 @@ function Pecs12({ pageNumber, fields, active = true }) {
     <Grid data-cy="Pecs12Grid" container justify="space-between" spacing={1}>
       <Grid container item justify="space-around" xs={12} spacing={2}>
         <Grid item xs={3}>
-          <OurCard data-cy="PecsCard">
+          <OurCard data-cy="PecsCard1">
             <OurPic
               src={fields.pic1}
               id="pic1"
@@ -51,7 +51,7 @@ function Pecs12({ pageNumber, fields, active = true }) {
           </OurCard>
         </Grid>{' '}
         <Grid item xs={3}>
-          <OurCard>
+          <OurCard data-cy="PecsCard2">
             <OurPic
               src={fields.pic2}
               id="pic2"
@@ -68,7 +68,7 @@ function Pecs12({ pageNumber, fields, active = true }) {
           </OurCard>
         </Grid>{' '}
         <Grid item xs={3}>
-          <OurCard>
+          <OurCard data-cy="PecsCard3">
             <OurPic
               src={fields.pic3}
               id="pic3"
@@ -87,7 +87,7 @@ function Pecs12({ pageNumber, fields, active = true }) {
       </Grid>{' '}
       <Grid container item justify="space-around" xs={12} spacing={2}>
         <Grid item xs={3}>
-          <OurCard>
+          <OurCard data-cy="PecsCard4">
             <OurPic
               src={fields.pic4}
               id="pic4"
@@ -104,7 +104,7 @@ function Pecs12({ pageNumber, fields, active = true }) {
           </OurCard>
         </Grid>{' '}
         <Grid item xs={3}>
-          <OurCard>
+          <OurCard data-cy="PecsCard5">
             <OurPic
               src={fields.pic5}
               id="pic5"
@@ -121,7 +121,7 @@ function Pecs12({ pageNumber, fields, active = true }) {
           </OurCard>
         </Grid>{' '}
         <Grid item xs={3}>
-          <OurCard>
+          <OurCard data-cy="PecsCard6">
             <OurPic
               src={fields.pic6}
               id="pic6"
@@ -140,7 +140,7 @@ function Pecs12({ pageNumber, fields, active = true }) {
       </Grid>{' '}
       <Grid container item justify="space-around" xs={12} spacing={2}>
         <Grid item xs={3}>
-          <OurCard>
+          <OurCard data-cy="PecsCard7">
             <OurPic
               src={fields.pic7}
               id="pic7"
@@ -157,7 +157,7 @@ function Pecs12({ pageNumber, fields, active = true }) {
           </OurCard>
         </Grid>{' '}
         <Grid item xs={3}>
-          <OurCard>
+          <OurCard data-cy="PecsCard8">
             <OurPic
               src={fields.pic8}
               id="pic8"
@@ -174,7 +174,7 @@ function Pecs12({ pageNumber, fields, active = true }) {
           </OurCard>
         </Grid>{' '}
         <Grid item xs={3}>
-          <OurCard>
+          <OurCard data-cy="PecsCard9">
             <OurPic
               src={fields.pic9}
               id="pic9"
@@ -193,7 +193,7 @@ function Pecs12({ pageNumber, fields, active = true }) {
       </Grid>{' '}
       <Grid container item justify="space-around" xs={12} spacing={2}>
         <Grid item xs={3}>
-          <OurCard>
+          <OurCard data-cy="PecsCard10">
             <OurPic
               src={fields.pic10}
               id="pic10"
@@ -210,7 +210,7 @@ function Pecs12({ pageNumber, fields, active = true }) {
           </OurCard>
         </Grid>{' '}
         <Grid item xs={3}>
-          <OurCard>
+          <OurCard data-cy="PecsCard11">
             <OurPic
               src={fields.pic11}
               id="pic11"
@@ -227,7 +227,7 @@ function Pecs12({ pageNumber, fields, active = true }) {
           </OurCard>
         </Grid>
         <Grid item xs={3}>
-          <OurCard>
+          <OurCard data-cy="PecsCard12">
             <OurPic
               src={fields.pic12}
               id="pic12"
