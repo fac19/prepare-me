@@ -22,6 +22,10 @@ import PrintPages from './pages/PrintPages';
 import MissingPage from './pages/MissingPage';
 import ViewMode from './pages/ViewMode';
 
+/*
+    Our main file provides react-router routes for each page and wraps the site in provider components that make styling, theme and site state available to each subcomponent.
+*/
+
 function App() {
   const [state, dispatch] = useReducer(updateState, initialState);
   return (

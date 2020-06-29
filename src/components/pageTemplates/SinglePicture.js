@@ -18,6 +18,7 @@ const OurPic = styled.img`
   object-fit: contain;
 `;
 
+// Note setting active to false disables click handlers (used in View Mode)
 function SinglePicture({ pageNumber, fields, active = true }) {
   const [, dispatch] = React.useContext(SiteContext);
   return (

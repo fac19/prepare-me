@@ -38,9 +38,11 @@
   }
 }
 
-/* STORY FONT SIZES, KEEP IN SYNC! */
-/* STORY FONT SIZES, KEEP IN SYNC! */
-/* STORY FONT SIZES, KEEP IN SYNC! */
+/* STORY FONT SIZES, KEEP THESE IN SYNC WITH EACH OTHER! */
+/* STORY FONT SIZES, KEEP THESE IN SYNC WITH EACH OTHER! */
+/* STORY FONT SIZES, KEEP THESE IN SYNC WITH EACH OTHER! */
+
+/* These two values are hand tweaked so the font size on the printed page is the same as it is on screen. In the future we might be able to related them using CSS variables and CSS arithmetic but we are not sure if the relationship between viewport units and print points is linear so we'd need to look into that. */
 
 /* Font Size for story pages on screen */
 textarea {

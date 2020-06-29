@@ -9,8 +9,7 @@ import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import styled from 'styled-components';
 
-// const yellowColor = '#fbb03b';
-const tealColor = '#0EB5BB';
+const tealColor = '#0EB5BB'; // TODO - get from theme instead
 
 const useStyles = makeStyles({
   root: {
@@ -35,7 +34,6 @@ function BottomNavBar({ pageNumber, totalPages }) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const history = useHistory();
-  // const totalPages = initialState.pages.length;
   const isLastPage =
     pageNumber >= totalPages
       ? `/actions-page`

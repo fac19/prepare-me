@@ -3,11 +3,8 @@ import blankTemplate from '../storyTemplates/blankTemplate';
 import getPageTemplateByName from '../components/pageTemplates/getPageTemplateByName';
 
 /*
-    updateState handles all state changes in our model.
-    We pass this function to the useReducer hook to generate
-    a "dispatch" function which we then pass down to our
-    components via React's context mechanism. Components can
-    then use this dispatch function to initiate state changes.
+    updateState handles all state changes in our model. We pass this function to the useReducer hook to generate a "dispatch" function which we then pass down to our
+    components via React's context mechanism. Components can then use this dispatch function to initiate state changes.
 */
 
 const nameToStoryTemplate = {
@@ -15,11 +12,8 @@ const nameToStoryTemplate = {
   blank: blankTemplate,
 };
 
-// For each state change we be careful NOT to mutate the existing
-// state. We call this function to make a clone of the existing
-// state object. Note this is not a particularly efficient way to
-// do this but it works and is simple. Maybe refactor it if testing
-// shows this causes performace problems.
+/* For each state change we be careful NOT to mutate the existing state. We call this function to make a clone of the existing state object. Note this is not a particularly efficient way to do this but it works and is simple. Maybe refactor it if testing shows it causes performance problems. */
+
 function clone(obj) {
   return JSON.parse(JSON.stringify(obj));
 }

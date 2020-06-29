@@ -12,6 +12,10 @@ import {
 import styled from 'styled-components';
 import PrepareMeLogo from '../static/pm.png';
 
+/*
+    This page allows the user to select from a list of pre-made PECS story templates or start a new story with a page template of their choosing.
+*/
+
 const MyGrid = styled(Grid)`
   height: 100vh;
 `;

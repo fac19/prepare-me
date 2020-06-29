@@ -13,8 +13,11 @@ import styled from 'styled-components';
 import PrepareMeLogo from '../static/pm.png';
 import Div100vh from 'react-div-100vh';
 
+/* 
+    This page allows the user to choose from a selection of pre-made story templates or start with a blank story.
+*/
+
 const MyGrid = styled(Grid)`
-  /* background: green; */
   background: ${(props) => props.bgcol};
   height: 100%;
 `;

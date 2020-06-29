@@ -8,6 +8,7 @@ import editHandler from './editHandler';
 import SiteContext from '../../model/SiteContext';
 import uploadImageHandler from './uploadImageHandler';
 
+/* TODO - Styling not working as expected, textareas are currently much too small. Also there is no spacing between the top and bottom parts. */
 const OurText = styled.textarea`
   font-family: 'Short Stack', cursive;
   font-size: ${(props) => props.fontSize};

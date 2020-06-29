@@ -29,15 +29,10 @@ function PrintPages() {
   const [state] = useContext(SiteContext);
   const pages = allPages(state);
 
-  // function handlePrintClose() {
-  //   console.log('GOT PRINT WINDOW CLOSE EVENT!!!! BOOYAKKASHAHA!');
-  // }
-
   React.useEffect(() => {
-    // TODO, this is a kludge, find an event that
-    // allows us to detect when all the images are
-    // ready to print. Without this we only get the
-    // First one or two images.
+    /* TODO. The setTimeout below is a kludge. When this useEffect runs only the html is guaranteed to be rendered, not the images. This seems to be causing a race condition that leads to an indeterminate number of images to appearing in the printout. We have some ideas how to do this properly but some research and testing are required and we were running short on time so we just stuck an arbitrary delay in. */
+
+    /* We're not sure if the problem is that the images aren't loaded from cache yet, or that they are loaded but not painted yet. Trying to detect if the images have loaded by setting onload listeners for each pic might just cause another race condition as some images may already be loaded by the time we set them. A better idea might be to poll every 1/2 second with setInterval and check each image tag's .complete property. This might get stuck if a download fails though so we would also want to check the image's .naturalHeight property is not zero. This would guarantee the image has been downloaded or tell us that it has failed. That doesn't seem to guarantee the image has been painted yet though so to be thorough we might also need to await (one?) animation frame. */
 
     setTimeout(window.print, 5000);
     window.addEventListener('afterprint', history.goBack);

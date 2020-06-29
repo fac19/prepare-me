@@ -1,0 +1,1 @@
+These are resources we do not currently use but may do soon. They can be moved around and edited without changing / breaking anything. All graphical assets that are in use live in /src/static.

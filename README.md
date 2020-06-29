@@ -8,9 +8,7 @@ An interactive picture story builder for parents and social care professionals a
 
 ![](https://res.cloudinary.com/didur5psx/image/upload/v1592550439/starting_school/prepare_me_app_02_us5xyp.gif)
 
-
 Try it live on the web: https://prepare-me.netlify.app/
-
 
 ## **Features**
 
@@ -50,12 +48,11 @@ echo "REACT_APP_googleAPIkey=SIzaSYAAtXpb1wKjWD0tJevuMrLvmBx_FfzaTrM" > .env
 
 To get an API key either ask someone from the team if you can borrow ours or get your own from the link below. The free API keys are good for up to 100 searches per day and can be generated in seconds if you already have a google account. https://developers.google.com/custom-search/v1/introduction
 
-
 ## Testing
 
 - Unit tests (Jest) can be run with `npm run test`
 - E2E and integration tests (Cypress) can be run in console mode with `npm run cy:ci`
-- Alternatively if you want to see the above  tests happening on screen the start the sever with `npm start` and then run `npm run cy:open`.
+- Alternatively if you want to see the above tests happening on screen the start the sever with `npm start` and then run `npm run cy:open`.
 
 ## The Team
 
@@ -69,10 +66,10 @@ Roger, [Roger-Heathcote](https://github.com/Roger-Heathcote)- UX/UI Lead
 
 Kat, [Alexreid95](https://github.com/Alexreid95) - QA Lead
 
-
 ## Our Tech Stack
 
 ### Front end
+
 - React
   - create-react-app
   - react-router-dom
@@ -82,15 +79,30 @@ Kat, [Alexreid95](https://github.com/Alexreid95) - QA Lead
 - Cloudinary upload widget
 
 ### Back end
+
 - Netlify
 - Travis
 - Cloudinary
 
 ### Testing
+
 - RTL + Jest
 - Cypress
 - Codecov
 
 ## Further information
 
-Comprehensive documentation of the whole project process, inlcuding user research and tech spikes can be found here: https://www.notion.so/Prepare-me-e5c3c1eeeccf40e18ce9a7733985dc25
+### Creating/Removing templates
+
+We have two types of template, Story Templates and Page Templates.
+
+Story Templates are sequences of pages, each page consisting of a page template name and the values needed to populate it's fields. These live in src/storyTemplates. This is where you would create new ready made templates like the School Story.
+
+Page Templates are the React components that render the individual pages. They also contain the default values for their fields. They live in /src/components/pageTemplates. In that folder there are also two handler functions for dealing with clicks on the text (editHandler) and clicks on the images (uploadImageHandler). There is also a helper object getPageTemplateByName which relates page template names to their actual React components. So to add a new page template right now you would need to...
+
+1. Create a component in src/components/pageTemplates and set defaults for its fields.
+2. Add that page template to getPageTemplateByName
+3. If that template is general purpose i.e. not a custom one for a particular story then add it to the appropriate page template chooser page, right now either src/pages/PageTemplates for story page templates or src/pages/PecsPageTemplates for pecs page templates.
+4. To support PDF printing all the layout must be duplicated using react-pdf primitives in the file /src/components/RenderStory
+
+We hope steps 2 and 3 can be eliminated in the near future. Step 4 looks to be trickier but hopefully that too can be eliminated in time.
