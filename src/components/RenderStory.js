@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
   },
 
   storyImage: {
+    width: '90vw',
     maxHeight: '40vh',
     objectFit: 'contain',
     marginBottom: '10px',
