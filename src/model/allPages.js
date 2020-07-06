@@ -3,12 +3,16 @@ import styled from 'styled-components';
 import getPageTemplateByName from '../components/pageTemplates/getPageTemplateByName';
 
 /*
-   This file creates an array containing every page in the story. The intent was that it would be consumed by both the Print routine and the PDF generation routine but right now it is only used by Print.
+   This file creates an array containing every page in the story. It is consumed by both the Print routine and the PDF generation routine.
 */
 
+// Break this out into separate Papers for Print and DL
+// Break this out into separate Papers for Print and DL
+// Break this out into separate Papers for Print and DL
 const OurPaper = styled.div`
   page-break-before: always;
-  height: 90vh;
+  height: 780pt;
+  width: 595pt;
 `;
 
 function allPages(state) {
@@ -19,12 +23,13 @@ function allPages(state) {
 
     // Get the template component for the page we are on
     const templateName = item.pageTemplate;
+    console.log('Geting template:', templateName);
     const Page = getPageTemplateByName[templateName];
 
     // Render each component with the right fields and
     // push it onto the array.
     pages.push(
-      <OurPaper key={index}>
+      <OurPaper key={index} className="pageframe">
         <Page fields={fields} />
       </OurPaper>,
     );

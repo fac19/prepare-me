@@ -8,19 +8,44 @@ body {
   background: #ffffff; /* Site default background color */
 }
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* STORY FONT SIZES, KEEP THESE IN SYNC WITH EACH OTHER! */
+/* STORY FONT SIZES, KEEP THESE IN SYNC WITH EACH OTHER! */
+/* STORY FONT SIZES, KEEP THESE IN SYNC WITH EACH OTHER! */
+
+/* These two values are hand tweaked so the font size on the printed page is the same as it is on screen. In the future we might be able to related them using CSS variables and CSS arithmetic but we are not sure if the relationship between viewport units and print points is linear so we'd need to look into that. */
+
+/* Font Size for story pages on screen */
+textarea {
+  font-size: 2.4vh;
+}
+
 textarea {
   white-space: normal;
-  text-align: justify;
-  text-align-last: center;
+  /* text-align: center; */
+  background: white;
+  /* overflow-wrap: break-word; */
 }
 
 /* This is needed to stop the textareas greying out when they are disabled in View Mode */
 textarea:disabled {
-  background: #ffffff;
+  background: white;
   color: #000000;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.pageframe textarea {
+  font-size: 26pt;
+}
+/* Font Size for story pages in print */
+@media print {
+  /* textarea {
+    font-size: 26pt;
+  } */
+  #printOverlay {
+    display: none;
+  }
 }

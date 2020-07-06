@@ -8,7 +8,6 @@ import {
   BottomNavigation as TopNavigation,
   BottomNavigationAction as TopNavigationAction,
 } from '@material-ui/core';
-import RenderStory from './RenderStory';
 
 import WarningPage from './WarningPage';
 import SiteContext from '../model/SiteContext';
@@ -40,12 +39,9 @@ const TopNavbar = ({ pageNumber }) => {
   const [value, setValue] = React.useState(0);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [alert, setAlert] = React.useState(false);
-  // const [hasPressedDownload, updateHasPressed] = React.useState(false);
   const open = Boolean(anchorEl);
   const history = useHistory();
   const [, dispatch] = React.useContext(SiteContext);
-
-  // const handleClick = (event) => {};
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -156,15 +152,6 @@ const TopNavbar = ({ pageNumber }) => {
           </Typography>
         </MenuItem>
         <MenuItem
-          key="Download"
-          data-cy="Download"
-          selected={'Download' === 'Pyxis'}
-          onClick={handleClose}
-        >
-          <GetAppOutlinedIcon />
-          <RenderStory hasPressedDownload={anchorEl} />
-        </MenuItem>
-        <MenuItem
           key="Print"
           selected={'Print' === 'Pyxis'}
           onClick={handleClose}
@@ -175,6 +162,19 @@ const TopNavbar = ({ pageNumber }) => {
           <PrintOutlinedIcon />
           <Typography variant="h3" align="center">
             Print
+          </Typography>
+        </MenuItem>
+        <MenuItem
+          key="PrintPDF"
+          selected={'Print' === 'Pyxis'}
+          onClick={handleClose}
+          component={Link}
+          to="/printPDF"
+          data-cy="PrintPDF"
+        >
+          <GetAppOutlinedIcon />
+          <Typography variant="h3" align="center">
+            Download
           </Typography>
         </MenuItem>
       </Menu>

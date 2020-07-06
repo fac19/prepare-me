@@ -19,6 +19,7 @@ import LandingPage from './pages/LandingPage';
 import StoryPage from './pages/StoryPage';
 import ActionsPage from './pages/ActionsPage';
 import PrintPages from './pages/PrintPages';
+import PrintPDF from './pages/PrintPDF';
 import MissingPage from './pages/MissingPage';
 import ViewMode from './pages/ViewMode';
 
@@ -51,6 +52,7 @@ function App() {
               />
               <Route path="/view-mode" component={ViewMode} />
               <Route path="/print" component={PrintPages} />
+              <Route path="/printPDF" component={PrintPDF} />
               <Route path="*" component={MissingPage} />
             </Switch>
           </Router>
